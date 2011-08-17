@@ -22,4 +22,26 @@
 		<![endif]-->
 		<script src="assets/js/respond.min.js"></script>
 	</head>
+	
 	<body>
+	
+		<div id="header">
+			
+			<div id="container-head">
+				
+				<div id="header-left">
+				</div> <!-- End header-left -->
+			
+				<div id="header-right">
+					
+					<div id="nav">
+					</div> <!--End na -->
+					
+				</div><!-- End header-right -->
+		
+			</div> <!-- End container-head -->
+	
+		</div> <!-- End header-->
+	
+		
+		
