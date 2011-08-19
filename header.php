@@ -28,26 +28,31 @@
 	</head>
 	
 	<body>
-
 		<div id="container-head">
 			
 			<div id="header">
 				
 				<div id="header-left">
-				<h1>LOGO</h1>
+				<div id="logo"><a href="http://krieger.jhu.edu"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.gif" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="header-right">
 					
-					<div id="nav">
-					<h2>Department of Economics</h2>
-					<? //php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?><p>Navigation</p>
-					</div> <!--End nav -->
+					<div id="blogtitle">
+					<h2 class="small">Department of</h2>
+					<h2><?php bloginfo('name'); ?></h2>
+					</div>
+					
+					
 					
 				</div><!-- End header-right -->
-		
+				<div id="nav">
+					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+					<div class="clearboth"></div> <!--to have background work properly -->
+					</div> <!--End nav -->
+			
 			</div> <!-- End header -->
-	
+			
 		</div> <!-- End container-head-->
 	
 		

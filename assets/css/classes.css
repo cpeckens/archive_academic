@@ -33,6 +33,10 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 	margin: 0 0 1.625em;
 }
 
+.clearboth {
+clear:both;
+}
+
 
 /* Containers
 ----------------------------------- */
@@ -42,7 +46,7 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 #container-head {
 	width:100%;
 	background: #333 url('../img/bg_header.gif') repeat-x left bottom;
-	min-height: 115px;
+
 }
 
 #header {
@@ -54,6 +58,7 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 
 #header-left {
 	width: 22.9166666666667%; /* 220px / 960px */
+
 	float:left;
 
 }
@@ -67,19 +72,21 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 ----------------------------------- */
 #container-mid {
 	width:100%;
-	clear: both;
+	
+
 }
 
 #main {
 	width:100%;
 	max-width: 960px;
+	background: #e2e1df url("../img/blog.gif") repeat-y 22.9166666666667% 0; /* 220px / 960px */
 	margin: 0 auto;
 	display: block;
+	
 
 }
 
 #sidebar-left {
-	background-color: #ededed;
 	width: 22.9166666666667%; /* 220px / 960px */
 	float:left;
 }
@@ -105,6 +112,7 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 	margin: 0 auto;
 	display: block;
 	clear: both;
+	padding-top: 5.2083333333333%; /* 50px / 960px */
 }
 
 #footer-left {
@@ -119,9 +127,27 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 
 /* Nav
 ---------------------------------------------*/
-
 #nav {
+	padding-left: 27.0833333333333%; /* 260px / 960px */
+	
+}
+
+#nav ul {
+	padding-bottom: 4.7916666666667%; /* 46px / 960px */
+	margin-bottom:0;
+}
+
+#nav ul li{
 	display:inline;
+	margin-right: 4.1666666666667%; /* 40px / 960px */
+	padding-bottom: 1.5625%; /* 15px / 960px */
+
+}
+
+#nav li.current_page_item {
+	background: url('../img/nav-current.gif') no-repeat center bottom;
+	
+
 }
 
 #subnav {
@@ -136,11 +162,40 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 	border-bottom: solid 1px #fafafa;	
 }
 
+#subnav li.current_page_item {
+	background: url('../img/subnav-current.gif') no-repeat left center;
+	margin-left: 5.4545454545455%; /* 12px / 220px */
+	padding-left: 9.0909090909091%; /* 20px / 220px */
+	}
+
+/* Blog Title
+---------------------------------------------*/
+
+#blogtitle {
+	padding-left: 5.4054054054054%; /* 40px / 740px */
+	padding-top: 4.7297297297297%; /* 35px /740px */
+	padding-bottom: 3.3783783783784% /*25px / 740px */
+}
+
+#blogtitle h2 {
+	color:#FFF;
+	text-transform: uppercase;
+	margin:0;
+	padding:0;
+}
+
+#blogtitle h2.small {
+	font-size: 40%;
+}
+
+#logo {
+}
+
 /*Entry
 ----------------------------------*/
 
 .entry {
 	padding-left: 5.4054054054054%; /* 40px / 740px */
 	padding-top: 4.7297297297297%; /* 35px /740px */
-	
+	padding-bottom: 4.7297297297297%; /* 35px /740px */
 }

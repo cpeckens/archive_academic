@@ -12,7 +12,7 @@
 				</div>
 				
 			</div> <!--End footer -->
-		
+		<div class="clearboth"></div> <!--to have background work properly -->
 		</div> <!--End container-foot -->
 
 	</body>
