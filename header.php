@@ -39,8 +39,8 @@
 				<div id="header-right">
 					
 					<div id="blogtitle">
-					<h2 class="small">Department of</h2>
-					<h2><?php bloginfo('name'); ?></h2>
+					<h1 class="small">Department of</h2>
+					<h1><?php bloginfo('name'); ?></h2>
 					</div>
 					
 					

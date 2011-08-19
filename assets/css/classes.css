@@ -141,6 +141,10 @@ clear:both;
 	display:inline;
 	margin-right: 4.1666666666667%; /* 40px / 960px */
 	padding-bottom: 1.5625%; /* 15px / 960px */
+	font-weight: 700;
+	font-size: 1.25em;
+	font-family: 'PT Sans Narrow', sans-serif;
+	
 
 }
 
@@ -177,14 +181,14 @@ clear:both;
 	padding-bottom: 3.3783783783784% /*25px / 740px */
 }
 
-#blogtitle h2 {
+#blogtitle h1 {
 	color:#FFF;
 	text-transform: uppercase;
 	margin:0;
 	padding:0;
 }
 
-#blogtitle h2.small {
+#blogtitle h1.small {
 	font-size: 40%;
 }
 

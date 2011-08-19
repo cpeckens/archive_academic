@@ -1,5 +1,12 @@
 
-  
+  <?php
+//if the post has a parent
+if($post->post_parent){
+  //collect ancestor pages
+  $relations = get_post_ancestors($post->ID);
+function get_top_page 
+($relations->post_parent) {
+	$toplevel= get_post_ancestors($relations); }
   
   
   <?php
