@@ -13,7 +13,7 @@
 		<!-- Don't forget to update the bookmark icons (favicon.ico and apple-touch-icons) in the root: http://mathiasbynens.be/notes/touch-icons -->
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="assets/css/main.css?version=1" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
 
 		<!-- JavaScript -->
 		<!--[if IE]><![endif]-->
@@ -21,27 +21,34 @@
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<script src="assets/js/respond.min.js"></script>
+		
+		<!--Wordpress Neccessities -->
+		<?php wp_enqueue_script('jquery'); ?> 
+		<?php wp_head(); ?>
 	</head>
 	
 	<body>
-	
-		<div id="header">
+
+		<div id="container-head">
 			
-			<div id="container-head">
+			<div id="header">
 				
 				<div id="header-left">
+				<h1>LOGO</h1>
 				</div> <!-- End header-left -->
 			
 				<div id="header-right">
 					
 					<div id="nav">
-					</div> <!--End na -->
+					<h2>Department of Economics</h2>
+					<? //php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?><p>Navigation</p>
+					</div> <!--End nav -->
 					
 				</div><!-- End header-right -->
 		
-			</div> <!-- End container-head -->
+			</div> <!-- End header -->
 	
-		</div> <!-- End header-->
+		</div> <!-- End container-head-->
 	
 		
 		

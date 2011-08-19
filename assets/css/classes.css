@@ -1,0 +1,146 @@
+/* Base structure
+---------------------------------------- */
+
+/*
+	* The body will work like a 'div#wrapper' (for this to work, the 'body' needs to have a set width)
+
+	* To add a background to the PAGE, set it in the 'html' element
+	* To add a background to the WRAPPER, set it in the 'body' element
+*/
+html {
+	height: 100%;
+	font-size: 90%;
+	overflow-y: scroll; /* Force a scrollbar in non-IE */
+	-webkit-text-size-adjust: 90%; /* Prevent iOS text size adjust on orientation change without disabling user zoom */
+	-ms-text-size-adjust: 90%;
+}
+
+body {
+	margin: 0 auto;
+	min-height: 100%;
+	background-color:#e2e1df;
+}
+
+/* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
+body, button, input, select, textarea {
+	font: 1em/1.5 "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #444; /* Black on white is too much contrast, #333 is a lot better */
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+}
+
+/* Add and/or remove tags as your baseline grid needs */
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, h4, h5, h6, img, figure, figcaption, button, hr {
+	margin: 0 0 1.625em;
+}
+
+
+/* Containers
+----------------------------------- */
+
+/*Header 
+----------------------------------- */
+#container-head {
+	width:100%;
+	background: #333 url('../img/bg_header.gif') repeat-x left bottom;
+	min-height: 115px;
+}
+
+#header {
+	width:100%;
+	max-width: 960px;
+	margin: 0 auto;
+	display:block;
+}
+
+#header-left {
+	width: 22.9166666666667%; /* 220px / 960px */
+	float:left;
+
+}
+
+#header-right {
+	width: 77.0833333333333%; /* 740px / 960px */
+	float:right;
+}
+
+/*Content 
+----------------------------------- */
+#container-mid {
+	width:100%;
+	clear: both;
+}
+
+#main {
+	width:100%;
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+
+}
+
+#sidebar-left {
+	background-color: #ededed;
+	width: 22.9166666666667%; /* 220px / 960px */
+	float:left;
+}
+
+
+#content {
+	width: 77.0833333333333%; /* 740px / 960px */
+	float:right;
+}
+
+
+/*Footer
+----------------------------------- */
+#container-foot {
+	background: #a9aaa4 url('../img/bg_footer.gif') repeat-x left top;
+	width:100%;
+}
+
+
+#footer {
+	width:100%;
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+	clear: both;
+}
+
+#footer-left {
+	width: 77.0833333333333%; /* 740px / 960px */
+	float: left;
+}
+
+#footer-right {
+	width: 22.9166666666667%; /* 220px / 960px */
+	float:right;
+}
+
+/* Nav
+---------------------------------------------*/
+
+#nav {
+	display:inline;
+}
+
+#subnav {
+	
+	padding-top: 15.9090909090909%; /* 35px /220px */
+
+}
+
+#subnav li {
+	list-style: none;
+	padding-left: 6.8181818181818%; /* 15px / 220px */
+	border-bottom: solid 1px #fafafa;	
+}
+
+/*Entry
+----------------------------------*/
+
+.entry {
+	padding-left: 5.4054054054054%; /* 40px / 740px */
+	padding-top: 4.7297297297297%; /* 35px /740px */
+	
+}

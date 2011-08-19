@@ -1,9 +1,10 @@
 /*
-Theme Name: Responsive Magazine
+Theme Name: Academic Template
 Version: 1.0
 Description: Designed by <a href="http://www.cpeckens.com">Cara Peckens</a>.
 Author: Cara Peckens
 Author URI: http://www.cpeckens.com
 */
 
-import url(assets/css/main.css)
+@import url("/wp-content/themes/academic/assets/css/main.css");
+@import url("/wp-content/themes/academic/assets/css/classes.css");
