@@ -8,7 +8,12 @@
 				
 		
 				<div id="blogfeed">
-					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+					<?php
+    					$recentPosts = new WP_Query();
+    					$recentPosts->query('showposts=3');
+					?>
+					
+					<?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?> <!--Start the loop -->
 					
 					<div class="snippet">
 						
@@ -23,13 +28,11 @@
 			
 					</div><!--End snippet -->
 					
-					<?php endwhile; else: ?>
-						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-					<?php endif; ?>
-				
-				<p><a href="/about/news-archive/">More News and Announcements</a></p>
+					<?php endwhile; ?>
+					
+					<p><a href="/about/news-archive/">More News and Announcements</a></
+				<div class="clearboth"></div>
 				</div> <!--End blogfeed -->	
-				
 				
 				<div id="sidebar-right">
 				<h3>Sidebar Right</h3>

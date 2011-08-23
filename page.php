@@ -21,7 +21,7 @@
 									
 					if ($children) { ?>
 						<ul id="subnav">
-							<li class="subnav-head">Also in <span class="highlight"><?php echo get_the_title($parent); ?></span></li>
+							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo get_permalink($parent); ?>"><?php echo get_the_title($parent); ?></a></span></li>
 							<?php echo $children; ?>
 						</ul>			
 				<?php } ?> <!--End subnav -->
@@ -34,6 +34,12 @@
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 					
 					<div class="entry">
+						
+						<?php if ( has_post_thumbnail()) { ?> 
+						<img src="<?php $image_id = get_post_thumbnail_id();
+										$image_url = wp_get_attachment_image_src($image_id,’page-image’, true);
+										echo $image_url[0];  ?>" />
+						<?php	} ?>
 						
 						<h2><?php the_title() ?></h2>
 						
