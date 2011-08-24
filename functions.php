@@ -4,14 +4,14 @@
 	add_theme_support( 'menus' );
 
 //register menus
-	function register_my_menus() {
+	function ksas_register_my_menus() {
   		register_nav_menus(
     		array( 'header-menu' => __( 'Header Menu' ), 'mobile-menu' => __( 'Mobile Menu' ))
   		);
 	}
 	
 	// initiate register menus
-		add_action( 'init', 'register_my_menus' );
+		add_action( 'init', 'ksas_register_my_menus' );
 
 
 
@@ -24,7 +24,7 @@
 
 
 //pagination function
-	function pagination($prev = '«', $next = '»') {
+	function ksas_pagination($prev = '«', $next = '»') {
     	global $wp_query, $wp_rewrite;
     	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
     	$pagination = array(
@@ -45,6 +45,36 @@
     	echo paginate_links( $pagination );
 	};		
 
+// addd is subpage of conditional statement
+	function ksas_is_subpage_of( $parentpage = '' ) {
+	
+		$posts = $GLOBALS['posts'];
+	
+		if ( is_numeric($parentpage) ) {
+			if ( $parentpage == $posts[0]->post_parent ) {
+				return true;
+			} else {
+				is_subpage_of( $posts[0]->post_parent );
+			}
+		} else {
+			return false;
+		}
+	}
 
+
+//register sidebars
+	function ksas_register_sidebars() {
+	
+		register_sidebar(array(
+			'name'          => 'Homepage Sidebar',
+			'id'            => 'homepage-sidebar',
+			'description'   => '',
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>' 
+			));
+}
+include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
 
 ?>

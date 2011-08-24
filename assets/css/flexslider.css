@@ -21,31 +21,39 @@
 
 .flexslider .slides img {
 	max-width: 100%; 
-	display: block;}
+	display: block;
+}
+
 ul.slides {
-	list-style: none;}
+	list-style: none;
+}
+
 .flexslider ul {
 	list-style: none;
-	margin:0;}
+	margin:0;
+}
 
 
 /* FlexSlider Default Theme
 *********************************/
-.flexslider {position: relative;}
+.flexslider {
+	position: relative;
+}
+
 .flexslider .slides  li {
-position: relative;
+	position: relative;
 }
 
 .slide1 {
-background: #679bcd;
+	background: #679bcd url('../img/slider-bottom-bg.png') repeat-x left bottom;
 }
 
 .slide2 {
-background: #95a739;
+	background: #95a739 url('../img/slider-bottom-bg.png') repeat-x left bottom;
 }
 
 .slide3 {
-background: #c4a41d
+	background: #c4a41d url('../img/slider-bottom-bg.png') repeat-x left bottom;
 }
 
 
@@ -53,12 +61,9 @@ background: #c4a41d
 .flex-caption {
 	width: 25.520833333333333%; /* 285px / 960px */
 	position: absolute;
-	top: 4.6875%;
+	top: 6%;
 	left: 70.3125%;
-	padding-left: 1.5625% /*15px / 960px */
-
-	
-	
+	padding-left: 1.5625% /*15px / 960px */	
 }
 
 .flex-caption h3 {
@@ -66,7 +71,6 @@ background: #c4a41d
 	line-height: 1.2em;
 	color:#fff;
 }
-
 
 .flex-direction-nav {
 	display: none;
@@ -77,17 +81,21 @@ background: #c4a41d
 .flex-direction-nav li a.prev {background-position: 0 0; left: -21px;} */
 
 /* Control Nav */
-.flex-control-nav {display:none;} 
-/* Containers */
-#slider-background {
-	width:100%;
-	background-color: #679bcd;
+.flex-control-nav {
+	display:none;
+} 
 
-}
+
+/* Containers */
+
 
 #slider-holder {
-margin: 0 auto;
+	margin: 0 auto;
 	display:block;
+	background: url('../img/contentmid-bg.png') repeat-x left top;
+	margin-top: -14px;
+	position: relative;
+	z-index:1;
 }
 
 .slide-holder {
@@ -101,39 +109,42 @@ margin: 0 auto;
 	margin:0;
 }
 
+/* Responsive Media Queries*/
+
 
 @media screen and (max-width: 820px) { 
-	/* Tablets/netbooks */
+
 	.flex-caption h3 {
-	font-size: 1.3em; 
-	line-height: 1.2em;
-}
-	
+		font-size: 1.3em; 
+		line-height: 1.2em;
 	}
+}
 	
 @media screen and (max-width: 730px) { 
 
 	.flex-caption h3 {
-	font-size: 1.18em; 
-	line-height: 1.1em;
-}
+		font-size: 1.18em; 
+		line-height: 1.1em;
+	}
 }
 
 
 @media screen and (max-width: 655px) { 
+	
 	a.button {
-	visibility: hidden;}
-
-
+		visibility: hidden;
+	}
 }
 
 @media screen and (max-width: 615px) { 
-.flex-caption h3 {
-	font-size: 1em; 
-}
+	
+	.flex-caption h3 {
+		font-size: 1em; 
+	}
 }
 
 @media screen and (max-width: 475px) {
 	.flex-caption {
-	visibility: hidden;}
+		visibility: hidden;
+	}
 } 

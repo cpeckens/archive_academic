@@ -1,7 +1,9 @@
 /* Media queries
 ---------------------------------------- */
-@media screen and (max-width: 320px) {
-
+@media screen and (max-width: 380px) {
+body {
+font-size:70%;
+}
 #blogtitle {
 font-size:75%;
 padding-top:15%;
@@ -13,9 +15,6 @@ padding-left:0;
 @media screen and (max-width: 400px) {
 	/*for mobile */
 
-body {
-font-size:80%;
-}
 
 #header-left {
 	width: 43.75%;
@@ -45,10 +44,6 @@ font-size:90%;
 	float:right;
 }
 
-#nav {
-padding-bottom: 5%;
-
-}
 
 	
 }/*End media query */

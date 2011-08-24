@@ -45,7 +45,7 @@
 					</div><!--End snippet -->
 					
 					<?php endwhile; ?>
-						<div class="pagination"><?php pagination('«', '»'); ?></div>
+						<div class="pagination"><?php ksas_pagination('«', '»'); ?></div>
 					<?php endif; ?>
 
 				
