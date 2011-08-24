@@ -168,7 +168,7 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 	list-style: none;
 	padding-left: 6.8181818181818%; /* 15px / 220px */
 	margin-top: 2.2727272727273%; /* 5px / 220px */
-	border-bottom: ridge 2px #fafafa;	
+	border-bottom: solid 1px #fafafa;	
 	font-weight: 600;
 	font-size: 1.25em;
 	font-family: 'PT Sans Narrow', sans-serif;
@@ -265,7 +265,7 @@ li.subnav-head {
 	padding-top: 2.272727272727273%; /* 15px /660px */
 }
 
-.snippet {
+#blogfeed .snippet {
 	padding-right: 6.060606060606061%; /* 40px / 660px */
 	margin-left: 3.03030303030303%; /* 20px / 660px */
 	padding-top: 2.272727272727273%; /* 15px /660px */
@@ -273,15 +273,39 @@ li.subnav-head {
 	border-bottom: ridge 5px #fafafa;
 }
 
-.entry img {
-	border: solid #f1f1f1 9px;
-	-webkit-box-shadow: -3px 3px 5px rgba(50, 50, 50, 0.5);
-	-moz-box-shadow:    -3px 3px 5px rgba(50, 50, 50, 0.5);
-	box-shadow:         -3px 3px 5px rgba(50, 50, 50, 0.5);
+#content .snippet {
+	margin-left: 5.4054054054054%; /* 40px / 740px */
+	padding-top: 2.272727272727273%; /* 15px /660px */
+	padding-bottom: 2.272727272727273%; /* 15px /660px */
+	border-bottom: ridge 5px #fafafa;
 }
 
 .thumbnail img {
 	max-width:75px;
 	margin-right: 2.1428571428571%;
+	border: solid #cad4d5 3px;
 }
+
+
+/* Pagination
+___________________________________________________________*/
+
+.pagination {
+	margin-left:50%;
+	padding-top: 2.272727272727273%; /* 15px /660px */
+	padding-bottom: 2.272727272727273%; /* 15px /660px */
+}
+
+.page-numbers { 
+	padding:3px;
+	-webkit-box-shadow: -2px 2px 2px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow:    -2px 2px 2px rgba(50, 50, 50, 0.5);
+	box-shadow:         -2px 2px 2px rgba(50, 50, 50, 0.5);
+}
+
+.page-numbers.current { 
+	color: #333; 
+}
+
+
 

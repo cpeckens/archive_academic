@@ -1,0 +1,96 @@
+/*
+ * jQuery FlexSlider v1.3
+ * http://flex.madebymufffin.com
+ *
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider {
+	width: 100%; 
+	margin: 0, auto; 
+	padding: 0;
+}
+
+.flexslider .slides li {
+	display: none;
+} /* Hide the slides before the JS is loaded. Avoids image jumping */
+
+.flexslider .slides img {
+	max-width: 100%; 
+	display: block;}
+ul.slides {
+	list-style: none;}
+.flexslider ul {
+	list-style: none;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {position: relative;}
+.flexslider .slides  li {
+position: relative;
+}
+
+.slide1 {
+background: #679bcd;
+}
+
+.slide2 {
+background: #95a739;
+}
+
+.slide3 {
+background: #c4a41d
+}
+
+
+/* Caption style */
+.flex-caption {
+	width: 18.5%; /* 285px / 960px */
+	max-width:235px;
+	padding-left: 68%;
+	position: absolute; 
+	left:0;
+	bottom:0
+	
+}
+
+.flex-caption h3 {
+	font-size: 1.45em; 
+	line-height: 1.2em;
+	color:#fff;
+}
+
+
+.flex-direction-nav {
+	display: none;
+}
+/* Direction Nav 
+.flex-direction-nav li a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url('../img//bg_direction_nav.png') no-repeat 0 0; position: absolute; top: 50%; cursor: pointer; text-indent: -9999px;} /* set negative margin-top equal to half the height on the directional-nav for perfect vertical centering 
+.flex-direction-nav li a.next {background-position: -52px 0; right: -21px;}
+.flex-direction-nav li a.prev {background-position: 0 0; left: -21px;} */
+
+/* Control Nav */
+.flex-control-nav {display:none;} 
+/* Containers */
+#slider-background {
+	width:100%;
+	background-color: #679bcd;
+
+}
+
+#slider-holder {
+margin: 0 auto;
+	display:block;
+}
+
+.slide-holder {
+	width:100%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+

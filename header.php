@@ -23,8 +23,15 @@
 		<script src="assets/js/respond.min.js"></script>
 		
 		<!--Wordpress Neccessities -->
-		<?php wp_enqueue_script('jquery'); ?> 
-		<?php wp_head(); ?>
+			<?php wp_enqueue_script('jquery'); ?> 
+			<?php wp_head(); ?>
+		
+		<!-- home specific scripts and css -->
+			<?php if (is_front_page()) { ?>
+			<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.flexslider-min.js"></script>
+			<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
+			<?php } ?>
+		<!-- end home specific scripts -->
 	</head>
 	
 	<body>

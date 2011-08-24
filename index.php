@@ -3,11 +3,32 @@
 		
 		
 		<div id="container-mid">
-			<div id="homepage">
+			<div id="main">
+				<div id="sidebar-left">
 				
+					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
+				<?php
 				
-		
-				<div id="blogfeed">
+							
+					$parent = 8;
+								
+									
+					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
+									
+					if ($children) { ?>
+						<ul id="subnav">
+							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo get_permalink($parent); ?>"><?php echo get_the_title($parent); ?></a></span></li>
+							<?php echo $children; ?>
+						</ul>			
+				<?php } ?> <!--End subnav -->
+
+						<!--End Subpage Navigation code -->
+				</div> <!--End sidebar-left -->
+				
+				<div id="content">
+					<div class="entry">
+					<h2>News Archive</h2>
+					</div>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 					
 					<div class="snippet">
@@ -16,27 +37,21 @@
 						<?php if ( has_post_thumbnail()) { ?> 
 						<div class="thumbnail"><img src="<?php $image_id = get_post_thumbnail_id();
 										$image_url = wp_get_attachment_image_src($image_id,’thumbnail’, true);
-										echo $image_url[0];  ?>" align="left" /></div>
+										echo $image_url[0];  ?>" align="left" height="75" /></div>
 						<?php	} ?>
 						
 						<?php the_excerpt() ?>
 			
 					</div><!--End snippet -->
 					
-					<?php endwhile; else: ?>
-						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+					<?php endwhile; ?>
+						<div class="pagination"><?php pagination('«', '»'); ?></div>
 					<?php endif; ?>
-				
-				<p><a href="/about/news-archive/">More News and Announcements</a></p>
-				</div> <!--End blogfeed -->	
-				
-				
-				<div id="sidebar-right">
-				<h3>Sidebar Right</h3>
 
-				</div> <!--End sidebar-right -->	
+				
+				</div> <!--End content -->		
 				<div class="clearboth"></div> <!--to have background work properly -->
-			</div> <!--End homepage -->
+			</div> <!--End main -->
 			
 		</div> <!--End container-mid -->
 	
