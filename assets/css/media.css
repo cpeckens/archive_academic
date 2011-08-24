@@ -74,6 +74,12 @@ padding-bottom: 5%;
 clear:both;
 padding-left: 2%;
 }
+
+.flex-caption h3 {
+	font-size: 1em; 
+	line-height: 1.2em;
+	color:#fff;
+}
 	
 	
 } /*End media query */

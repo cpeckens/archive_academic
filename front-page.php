@@ -1,8 +1,8 @@
 		
 	<?php get_header() ?>	
-		<div class="clearboth"></div>
+	
 
-	<!-- Hook up the FlexSlider -->
+		  <!-- Hook up the FlexSlider -->
 	<script type="text/javascript">
 		$(window).load(function() {
 			$('.flexslider').flexslider();
@@ -43,16 +43,20 @@
 	  </div>
 	  <div class="clearboth"></div> <!--to have background work properly -->
 	  </div>
-	  
+
 
 	
 			
 		<div id="container-mid">
 			<div id="homepage">
 				
-				
+				<div id="sidebar-right">
+				<h3>Sidebar Right</h3>
+
+				</div> <!--End sidebar-right -->
 		
 				<div id="blogfeed">
+					
 					<?php
     					$recentPosts = new WP_Query();
     					$recentPosts->query('showposts=3');
@@ -75,14 +79,11 @@
 					
 					<?php endwhile; ?>
 					
-					<p><a href="/about/news-archive/page/2/">More News and Announcements</a></
+					<p><a href="/about/news-archive/page/2/">More News and Announcements</a>
 				<div class="clearboth"></div>
 				</div> <!--End blogfeed -->	
 				
-				<div id="sidebar-right">
-				<h3>Sidebar Right</h3>
-
-				</div> <!--End sidebar-right -->	
+				
 				<div class="clearboth"></div> <!--to have background work properly -->
 			</div> <!--End homepage -->
 			

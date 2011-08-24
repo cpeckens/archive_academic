@@ -236,47 +236,47 @@ li.subnav-head {
 	box-shadow:         -3px 3px 5px rgba(50, 50, 50, 0.5);
 }
 
-/*Homepage/News Archive
+/*Homepage
 ----------------------------------*/
 #homepage {
 	width:100%;
 	max-width: 960px;
-	background: #e2e1df url("../img/home_bg.gif") repeat-y 31.25% 0; /* 300px / 960px */
+	background: #e2e1df url("../img/home_bg.gif") repeat-y 70.3125% 0; /* 675px / 960px */
 	margin: 0 auto;
 	display: block;
 	
 }
 
 #sidebar-right {
-	width: 31.25%; /* 300px / 960px */
+	width: 29.6875%; /* 285px / 960px */
 	float:right;
 }
 
 
 #blogfeed {
-	width: 68.75%; /* 660px / 960px */
+	width: 70.3125%; /* 675px / 960px */
 	float:left;
-	padding-top: 2.272727272727273%; /* 15px /660px */
-	padding-bottom: 5.303030303030303%; /* 35px /660px */
+	padding-bottom: 5.303030303030303%; /* 35px /675px */
 }
 
 #blogfeed p a{
-	margin-left: 3.03030303030303%; /* 20px / 660px */
-	padding-top: 2.272727272727273%; /* 15px /660px */
+	padding-top: 2.272727272727273%; /* 15px /675px */
 }
 
 #blogfeed .snippet {
-	padding-right: 6.060606060606061%; /* 40px / 660px */
-	margin-left: 3.03030303030303%; /* 20px / 660px */
-	padding-top: 2.272727272727273%; /* 15px /660px */
-	padding-bottom: 2.272727272727273%; /* 15px /660px */
+	margin-right: 6.060606060606061%; /* 40px / 675px */
+	padding-top: 2.272727272727273%; /* 15px /675px */
+	padding-bottom: 2.272727272727273%; /* 15px /675px */
+	margin-bottom: 2.272727272727273%; /* 15px /675px */
 	border-bottom: ridge 5px #fafafa;
 }
 
+/* News Archive
+----------------------------------*/
 #content .snippet {
 	margin-left: 5.4054054054054%; /* 40px / 740px */
-	padding-top: 2.272727272727273%; /* 15px /660px */
-	padding-bottom: 2.272727272727273%; /* 15px /660px */
+	padding-top: 2.272727272727273%; /* 15px /675px */
+	padding-bottom: 2.272727272727273%; /* 15px /675px */
 	border-bottom: ridge 5px #fafafa;
 }
 
@@ -292,8 +292,8 @@ ___________________________________________________________*/
 
 .pagination {
 	margin-left:50%;
-	padding-top: 2.272727272727273%; /* 15px /660px */
-	padding-bottom: 2.272727272727273%; /* 15px /660px */
+	padding-top: 2.272727272727273%; /* 15px /675px */
+	padding-bottom: 2.272727272727273%; /* 15px /675px */
 }
 
 .page-numbers { 

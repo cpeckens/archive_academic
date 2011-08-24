@@ -25,7 +25,8 @@
 ul.slides {
 	list-style: none;}
 .flexslider ul {
-	list-style: none;}
+	list-style: none;
+	margin:0;}
 
 
 /* FlexSlider Default Theme
@@ -50,12 +51,13 @@ background: #c4a41d
 
 /* Caption style */
 .flex-caption {
-	width: 18.5%; /* 285px / 960px */
-	max-width:235px;
-	padding-left: 68%;
-	position: absolute; 
-	left:0;
-	bottom:0
+	width: 25.520833333333333%; /* 285px / 960px */
+	position: absolute;
+	top: 4.6875%;
+	left: 70.3125%;
+	padding-left: 1.5625% /*15px / 960px */
+
+	
 	
 }
 
@@ -92,5 +94,46 @@ margin: 0 auto;
 	width:100%;
 	max-width: 960px;
 	margin: 0 auto;
+	position:relative;
 }
 
+.slide-holder img {
+	margin:0;
+}
+
+
+@media screen and (max-width: 820px) { 
+	/* Tablets/netbooks */
+	.flex-caption h3 {
+	font-size: 1.3em; 
+	line-height: 1.2em;
+}
+	
+	}
+	
+@media screen and (max-width: 730px) { 
+
+	.flex-caption h3 {
+	font-size: 1.18em; 
+	line-height: 1.1em;
+}
+}
+
+
+@media screen and (max-width: 655px) { 
+	a.button {
+	visibility: hidden;}
+
+
+}
+
+@media screen and (max-width: 615px) { 
+.flex-caption h3 {
+	font-size: 1em; 
+}
+}
+
+@media screen and (max-width: 475px) {
+	.flex-caption {
+	visibility: hidden;}
+} 
