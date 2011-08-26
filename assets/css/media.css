@@ -1,9 +1,9 @@
 /* Media queries
 ---------------------------------------- */
 @media screen and (max-width: 380px) {
-body {
-font-size:70%;
-}
+	body {
+	font-size:70%;
+	}
 #blogtitle {
 font-size:75%;
 padding-top:15%;
@@ -28,7 +28,7 @@ padding-left:0;
 #nav ul li {
 	letter-spacing: normal;
 	font-weight: 400;
-	margin-right:2.1666666666667%
+	margin-right:2.1666666666667%;
 	}
 
 	
@@ -53,7 +53,7 @@ font-size:90%;
 #nav ul li {
 	letter-spacing: normal;
 	font-weight: 400;
-	margin-right:2.1666666666667%
+	margin-right:2.1666666666667%;
 	}
 }
 

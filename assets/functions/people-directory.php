@@ -54,16 +54,6 @@ function create_meta_boxes(){
   add_meta_box("people_uploads", "Uploads", "people_uploads", "people", "side", "high");
 }
 
-add_action("admin_head", "ksas_admin_stylesheet");
-function ksas_admin_stylesheet () {
-
-
-echo '<link rel="stylesheet" href="'.get_bloginfo('template_url').'/assets/css/meta.css" type="text/css" media="screen" />';
-
-
-
-}
-
 
 
 
@@ -133,7 +123,7 @@ function people_uploads() {
   $cv = $custom["cv"][0];
   ?>
   
-<script src="<?php get_bloginfo('template_url'); ?>/assets/js/custom.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ajaxupload.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
 
@@ -275,9 +265,9 @@ function people_uploads() {
 
 
 // Save meta 
-add_action('save_post', 'save_details');
+add_action('save_post', 'people_save_details');
 //Save and update function
-function save_details(){
+function people_save_details(){
   global $post;
  
   update_post_meta($post->ID, "position", $_POST["position"]);
@@ -300,34 +290,6 @@ function save_details(){
 
 }
 	
-
-//Save image via AJAX
-add_action('wp_ajax_ksas_ajax_upload', 'ksas_ajax_upload'); //Add support for AJAX save
-
-function ksas_ajax_upload(){
-	
-	global $wpdb; //Now WP database can be accessed
-	
-	
-	$image_id=$_POST['data'];
-	$image_filename=$_FILES[$image_id];	
-	$override['test_form']=false; //see http://wordpress.org/support/topic/269518?replies=6
-	$override['action']='wp_handle_upload';    
-	
-	$uploaded_image = wp_handle_upload($image_filename,$override);
-	
-	if(!empty($uploaded_image['error'])){
-		echo 'Error: ' . $uploaded_image['error'];
-	}	
-	else{ 
-		update_option($image_id, $uploaded_image['url']);		 
-		echo $uploaded_image['url'];
-	}
-			
-	die();
-
-}
-
 
 //Configuring Admin Columns - in View all People
 add_action("manage_posts_custom_column",  "people_custom_columns");
@@ -358,9 +320,9 @@ function people_custom_columns($column){
   }
 }
 // Initiate flush rewrite rules
-register_activation_hook(__FILE__, 'my_rewrite_flush');
+register_activation_hook(__FILE__, 'people_rewrite_flush');
 //Flush rewrite rules
-function my_rewrite_flush() {
+function people_rewrite_flush() {
   people_directory_plugin();
   flush_rewrite_rules();
 }

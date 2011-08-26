@@ -75,6 +75,72 @@
 			'after_title'   => '</h2>' 
 			));
 }
-include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
+
+//Get page ID from Slug
+	function ksas_get_page_id($page_name){
+		global $wpdb;
+		$page_name = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$page_name."'");
+		return $page_name;
+	}
+
+// remove junk from head
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'feed_links', 2);
+	remove_action('wp_head', 'index_rel_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'feed_links_extra', 3);
+	remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+
+	// remove version info from head and feeds
+		function complete_version_removal() {
+			return '';
+		}
+		
+		add_filter('the_generator', 'complete_version_removal');
+
+// Add meta box stylesheet
+	add_action("admin_head", "ksas_admin_stylesheet");
+	
+	function ksas_admin_stylesheet () {
+		echo '<link rel="stylesheet" href="'.get_bloginfo('template_url').'/assets/css/meta.css" type="text/css" media="screen" />';
+	}
+
+//Add AJAX file upload capability
+//Save image via AJAX
+add_action('wp_ajax_ksas_ajax_upload', 'ksas_ajax_upload'); //Add support for AJAX save
+
+function ksas_ajax_upload(){
+	
+	global $wpdb; //Now WP database can be accessed
+	
+	
+	$image_id=$_POST['data'];
+	$image_filename=$_FILES[$image_id];	
+	$override['test_form']=false; //see http://wordpress.org/support/topic/269518?replies=6
+	$override['action']='wp_handle_upload';    
+	
+	$uploaded_image = wp_handle_upload($image_filename,$override);
+	
+	if(!empty($uploaded_image['error'])){
+		echo 'Error: ' . $uploaded_image['error'];
+	}	
+	else{ 
+		update_option($image_id, $uploaded_image['url']);		 
+		echo $uploaded_image['url'];
+	}
+			
+	die();
+
+}
+		
+// include People Directory and Profiles functionality
+	include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
+	include_once (TEMPLATEPATH . '/assets/functions/people-profiles.php');
+
+
+
 
 ?>

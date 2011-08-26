@@ -1,21 +1,17 @@
 		
 	<?php get_header() ?>	
-	
-
-		  <!-- Hook up the FlexSlider -->
-	<script type="text/javascript">
-		$(window).load(function() {
-			$('.flexslider').flexslider();
-		});
-	</script>
-
+					<!-- Hook up the FlexSlider -->
+<script type="text/javascript" charset="utf-8">
+  $('.flexslider').flexslider({
+      slideshowSpeed: 3000,
+      pauseOnHover:true
+    });
+</script>
 	
 		<div id="slider-holder">
 		
-		<!--=============================
-		Markup for FADE animation
-		=================================-->
 		<div class="flexslider">
+		
 	    <ul class="slides">
 	    	<li class="slide1">
 	    		<div class="slide-holder">
@@ -24,6 +20,7 @@
 			<p><a href="/undergraduate" class="button">Find Out More</a></p></div>
 			</div>
 	    	</li>
+	    	
 	    	<li class="slide2">
 	    	<div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-2.png" />
@@ -34,20 +31,19 @@
 	    	<li class="slide3">
 	    	<div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-3.png" />
-	    		<div class="flex-caption"><h3>Economics alumni from Johns Hopkins have become business leaders and financial innovators in a variety of places including investment firms, banks, and corporations all over the world.</p>
-			<p><a href="/undergraduate" class="button">Find Out More</a></h3></div>
+	    		<div class="flex-caption"><h3>Economics alumni from Johns Hopkins have become business leaders and financial innovators in a variety of places including investment firms, banks, and corporations all over the world.</h3>
+			<p><a href="/undergraduate" class="button">Find Out More</a></p></div>
 			</div>
 	    	</li>
 	    	
 	    </ul>
+	    <div class="clearboth"></div> <!--to have background work properly -->
 	  </div>
-	  <div class="clearboth"></div> <!--to have background work properly -->
-	  </div>
-
-
 	
-			
-		<div id="container-mid">
+	  </div>
+
+
+			<div id="container-mid">
 			<div id="homepage">
 				
 				<div id="sidebar-right">
@@ -80,7 +76,6 @@
 					<?php endwhile; ?>
 					
 					<p><a href="/about/news-archive/page/2/">More News and Announcements</a>
-				<div class="clearboth"></div>
 				</div> <!--End blogfeed -->	
 				
 				
@@ -88,6 +83,8 @@
 			</div> <!--End homepage -->
 			
 		</div> <!--End container-mid -->
+			
+
 
 	
 	

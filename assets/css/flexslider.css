@@ -38,6 +38,7 @@ ul.slides {
 *********************************/
 .flexslider {
 	position: relative;
+	min-height: inherit;
 }
 
 .flexslider .slides  li {

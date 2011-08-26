@@ -34,7 +34,12 @@ p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldse
 }
 
 .clearboth {
-	clear:both;
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;	
 }
 
 
@@ -207,7 +212,7 @@ li.subnav-head {
 #blogtitle {
 	padding-left: 5.4054054054054%; /* 40px / 740px */
 	padding-top: 4.7297297297297%; /* 35px /740px */
-	padding-bottom: 3.3783783783784% /*25px / 740px */
+	padding-bottom: 3.3783783783784%; /*25px / 740px */
 }
 
 #blogtitle h1 {
@@ -293,6 +298,45 @@ li.subnav-head {
 	border: solid #cad4d5 3px;
 }
 
+/* People
+___________________________________________________________*/
+
+.people-info {
+float: left;
+width: 30%
+
+}
+
+.people-info img {
+max-width:80%;
+}
+
+.people-info h2 {
+	margin-bottom: 0;
+}
+
+.people-info h3 {
+
+}
+
+.people-info p {
+
+}
+
+.people-info .label {
+font-weight: 700;
+}
+
+.people-tabs {
+float:right;
+width: 69%;
+border-left: #ddd solid 1px;
+
+}
+
+.people-tabs li {
+	padding-left:2%;
+}
 
 /* Pagination
 ___________________________________________________________*/

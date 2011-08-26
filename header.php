@@ -20,18 +20,23 @@
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<script src="assets/js/respond.min.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/respond.min.js"></script>
 		
 		<!--Wordpress Neccessities -->
-			<?php wp_enqueue_script('jquery'); ?> 
-			<?php wp_head(); ?>
+		<?php wp_enqueue_script('jquery'); ?> 
+		<?php wp_head(); ?>
 		
-		<!-- home specific scripts and css -->
-			<?php if (is_front_page()) { ?>
+		<!-- front-page specific scripts and css -->
+		<?php if (is_front_page()) { ?>
 			<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.flexslider-min.js"></script>
 			<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
-			<?php } ?>
-		<!-- end home specific scripts -->
+		<?php } ?>
+			
+		<!--people specific scripts -->
+		<?php if ( 'people' == get_post_type() ) { ?>
+			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
+		<?php } ?>
+	
 	</head>
 	
 	<body>
@@ -61,6 +66,7 @@
 			</div> <!-- End header -->
 			
 		</div> <!-- End container-head-->
+		
 		<div id="nav-break"></div>
 	
 		
