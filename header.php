@@ -23,11 +23,12 @@
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/respond.min.js"></script>
 		
 		<!--Wordpress Neccessities -->
-		<?php wp_enqueue_script('jquery'); ?> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		<?php wp_head(); ?>
 		
 		<!-- front-page specific scripts and css -->
 		<?php if (is_front_page()) { ?>
+			
 			<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.flexslider-min.js"></script>
 			<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
 		<?php } ?>
@@ -69,5 +70,4 @@
 		
 		<div id="nav-break"></div>
 	
-		
-		
+									

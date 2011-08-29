@@ -1,4 +1,8 @@
-		
+<?php
+/*
+Template Name: Directory
+*/
+?>		
 	<?php get_header() ?>	
 		
 		
@@ -50,14 +54,55 @@
 					
 					
 					
-					<?php if(is_page('faculty')){ ?>
+					<?php if(is_page('faculty')) : ?>
 					<tr><!--Insert Header Row --></tr>
 					
 					<!--Create query -->
 					<?php $my_query = new WP_Query('post-type=people&role=faculty&posts_per_page=25'); ?>
 					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					
-					<tr><!--Insert Faculty/Person Info--></tr>
+					<tr>
+						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
+						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+							<p><?php if ( get_post_meta($post->ID, 'position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'position', true); ?><?php endif; ?></p>
+							<p><?php if ( get_post_meta($post->ID, 'degrees', true) ) : ?>  <?php echo get_post_meta($post->ID, 'degrees', true); ?><?php endif; ?><br>
+							<?php if ( get_post_meta($post->ID, 'expertise', true) ) : ?>  <?php echo get_post_meta($post->ID, 'expertise', true); ?><?php endif; ?></p></td>
+						<td><p class="contact-info"><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'office', true) ) : ?> <?php echo get_post_meta($post->ID, 'office', true); ?><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'hours', true) ) : ?> <?php echo get_post_meta($post->ID, 'hours', true); ?><?php endif; ?></p></td>
+					</tr>
+					
+					<?php endwhile; ?>
+					
+					
+					
+					
+					<?php elseif(is_page('job-market-candidates')) :  ?>
+					
+					<tr>
+					<th colspan="2">Name</th>
+					<th>Thesis Title</th>
+					<th>Fields</th>
+					</tr>
+					
+					<!--Create query -->
+					<?php $my_query = new WP_Query('post-type=people&role=job-market-candidate&posts_per_page=25'); ?>
+					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+					
+					
+					<tr>
+						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
+						
+						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
+						<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><?php endif; ?></p></td>
+						
+						<td><p class="candidates"><?php if ( get_post_meta($post->ID, 'thesis', true) ) : ?><?php echo get_post_meta($post->ID, 'thesis', true); ?><?php endif; ?><?php if ( get_post_meta($post->ID, 'job_abstract', true) ) : ?>&nbsp;<a href="<?php echo get_post_meta($post->ID, 'job_abstract', true); ?>">Download Abstract (PDF)</a><?php endif; ?> </p></td>
+						
+						<td><p class="candidates"><?php if ( get_post_meta($post->ID, 'fields', true) ) : ?><?php echo get_post_meta($post->ID, 'fields', true); ?><?php endif; ?></td>
+							
+						
+					</tr>
 					
 					<?php endwhile; ?>
 					
@@ -65,37 +110,7 @@
 					
 					
 					
-					<?php elseif(is_page('graduate-students')){ ?>
-					<tr><!--Insert Header Row --></tr>
-					
-					<!--Create query -->
-					<?php $my_query = new WP_Query('post-type=people&role=faculty&posts_per_page=25'); ?>
-					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-					
-					<tr><!--Insert Faculty/Person Info--></tr>
-					
-					<?php endwhile; ?>
-					<?php } elseif ?>
-					
-					
-					
-					
-					<?php elseif(is_page('job-market-candidates')){ ?>
-					<tr><!--Insert Header Row --></tr>
-					
-					<!--Create query -->
-					<?php $my_query = new WP_Query('post-type=people&role=faculty&posts_per_page=25'); ?>
-					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-					
-					<tr><!--Insert Faculty/Person Info--></tr>
-					
-					<?php endwhile; ?>
-					
-					
-					
-					
-					
-					<?php elseif(is_page('staff')){ ?>
+					<?php elseif(is_page('staff')) :  ?>
 					<tr><!--Insert Header Row --></tr>
 					
 					<!--Create query -->
@@ -110,7 +125,7 @@
 				
 				
 				
-				<?php elseif(is_page('visiting-faculty')){ ?>
+				<?php elseif(is_page('visiting-faculty')) :  ?>
 					<tr><!--Insert Header Row --></tr>
 					
 					<!--Create query -->
@@ -120,10 +135,13 @@
 					<tr><!--Insert Faculty/Person Info--></tr>
 					
 					<?php endwhile; ?>
+
 					
 					
+										
 					
-					<?php } endif; ?>
+					
+					<?php endif; ?>
 					
 					
 					

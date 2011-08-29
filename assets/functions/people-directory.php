@@ -47,10 +47,11 @@ register_taxonomy("Department", array("people"), array("hierarchical" => true, "
 
 //Create Meta boxes
 // Intiate create meta boxes
-add_action("admin_init", "create_meta_boxes");
-function create_meta_boxes(){
+add_action("admin_init", "people_create_meta_boxes");
+function people_create_meta_boxes(){
 
   add_meta_box("people_details", "Personal Details", "people_details", "people", "normal", "low");
+  add_meta_box("job_candidate", "Job Candidate Details", "job_candidate", "people", "normal", "low");
   add_meta_box("people_uploads", "Uploads", "people_uploads", "people", "side", "high");
 }
 
@@ -95,7 +96,7 @@ function people_details() {
     <div class="meta-box"><strong>Personal Website:</strong><br>&nbsp;<input size="30" name="website" value="<?php echo $website; ?>"></input></div>
     </div>
     <div class="clear"></div>
-    <h3>Additional Details</h3>
+    <h3>Additional Details (For Faculty)</h3>
     <div class="divider"></div>
       <div class="meta-group">  
     <div class="meta-box meta-box-large"><strong>Bio:</strong><br><textarea name="bio" value="<?php echo $bio; ?>"><?php echo $bio; ?></textarea></div>
@@ -121,6 +122,7 @@ function people_uploads() {
   $custom = get_post_custom($post->ID);
   $people_photo = $custom["people_photo"][0];
   $cv = $custom["cv"][0];
+  $job_abstract = $custom["job_abstract"][0];
   ?>
   
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/ajaxupload.js" type="text/javascript" charset="utf-8"></script>
@@ -257,9 +259,111 @@ function people_uploads() {
 
 </p>
 
+<script type="text/javascript">
+
+    jQuery(document).ready(function() {
+
+        jQuery('#upload_job_abstract').each(function(){
+
+            var the_button = jQuery(this);
+            var image_input = jQuery('#job_abstract');
+            var image_id = jQuery(this).attr('id');
+
+            new AjaxUpload(image_id, {
+
+                action: ajaxurl,
+                name: image_id,
+
+                // Additional data
+                data: {
+                    action: 'ksas_ajax_upload',
+                    data: image_id
+                },
+
+                autoSubmit: true,
+                responseType: false,
+                onChange: function(file, extension){},
+                onSubmit: function(file, extension) {
+
+                    the_button.attr('disabled', 'disabled').val("Uploading...");
+
+                },
+
+                onComplete: function(file, response) {
+
+                    the_button.removeAttr('disabled').val("Upload Image");
+
+                    if(response.search("Error") > -1){
+
+                        alert("There was an error uploading:\n"+response);
+
+                    }
+
+                    else{
+
+                        image_input.val(response);
+
+                    }
+
+                }
+            });
+        });
+
+    });
+
+</script>
+<p>
+
+    <label for="job_abstract"><strong>Upload Abstract (for Job Candidates):</strong></label>
+    <input type="text" class="widefat" name="job_abstract" id="job_abstract" value="<?php echo $job_abstract; ?>" />
+
+    </p>
+
+<p style="text-align: right;">
+
+    <input type="button" name="" class="button-primary autowidth" id="upload_job_abstract" value="Upload Abstract" />
+
+</p>
+
    <?php
 }
 
+
+function job_candidate() {
+  global $post;
+  $custom = get_post_custom($post->ID);
+  $thesis = $custom["thesis"][0];
+  $fields = $custom["fields"][0];
+  $job_research = $custom["job_research"][0];
+  $job_teaching = $custom["job_teaching"][0];
+  $references = $custom["references"][0];
+  $job_extra_tab_title = $custom["job_extra_tab_title"][0];
+  $job_extra_tab = $custom["job_extra_tab"][0];
+
+  ?>
+  
+<div class="clear"></div>
+
+
+    <div class="meta-box"><strong>Thesis Title:</strong><br>
+  <textarea cols="50" rows="3" name="thesis" value="<?php echo $thesis; ?>"><?php echo $thesis; ?></textarea></div>
+  <div class="meta-box"><strong>Fields:</strong><br>
+  <textarea cols="50" rows="3" name="fields" value="<?php echo $fields; ?>"><?php echo $fields; ?></textarea></div>
+  </div>
+      <div class="meta-group">  
+    <div class="meta-box meta-box-large"><strong>Research:</strong><br><textarea name="job_research" value="<?php echo $job_research; ?>"><?php echo $job_research; ?></textarea></div>
+    <div class="divider"></div>
+    <div class="meta-box meta-box-large"><strong>Teaching:</strong><br>&nbsp;<textarea name="job_teaching" value="<?php echo $job_teaching; ?>"><?php echo $job_teaching; ?></textarea></div>
+    <div class="divider"></div>
+    <div class="meta-box meta-box-large"><strong>References:</strong><br>&nbsp;<textarea name="references" value="<?php echo $references; ?>"><?php echo $references; ?></textarea></div>
+    <div class="divider"></div>
+    <div class="meta-box"><strong>Extra Tab Title:</strong><br>&nbsp;<input size="30" name="job_extra_tab_title" value="<?php echo $job_extra_tab_title; ?>"></input></div>
+    <div class="meta-box meta-box-large"><strong>Extra Tab Content:</strong><br>&nbsp;<textarea name="job_extra_tab" value="<?php echo $job_extra_tab; ?>"><?php echo $job_extra_tab; ?></textarea></div>
+    </div>
+    <div class="clear"></div>
+
+  <?php
+}
 
 
 
@@ -286,6 +390,14 @@ function people_save_details(){
   update_post_meta($post->ID, "extra_tab", $_POST["extra_tab"]);
   update_post_meta($post->ID, "people_photo", $_POST["people_photo"]);
   update_post_meta($post->ID, "cv", $_POST["cv"]);
+  update_post_meta($post->ID, "thesis", $_POST["thesis"]);
+  update_post_meta($post->ID, "fields", $_POST["fields"]);
+  update_post_meta($post->ID, "job_research", $_POST["job_research"]);
+  update_post_meta($post->ID, "job_teaching", $_POST["job_teaching"]);
+  update_post_meta($post->ID, "references", $_POST["references"]);
+  update_post_meta($post->ID, "job_extra_tab_title", $_POST["job_extra_tab_title"]);
+  update_post_meta($post->ID, "job_extra_tab", $_POST["job_extra_tab"]);
+  update_post_meta($post->ID, "job_abstract", $_POST["job_abstract"]);
 
 
 }

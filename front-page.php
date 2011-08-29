@@ -1,17 +1,15 @@
 		
 	<?php get_header() ?>	
-					<!-- Hook up the FlexSlider -->
-<script type="text/javascript" charset="utf-8">
-  $('.flexslider').flexslider({
-      slideshowSpeed: 3000,
-      pauseOnHover:true
-    });
-</script>
+<!-- Hook up the FlexSlider -->
+	<script type="text/javascript">
+		$(window).load(function() {
+			$('.flexslider').flexslider();
+		});
+	</script>
 	
-		<div id="slider-holder">
+					<div id="slider-holder">
 		
 		<div class="flexslider">
-		
 	    <ul class="slides">
 	    	<li class="slide1">
 	    		<div class="slide-holder">
@@ -39,12 +37,14 @@
 	    </ul>
 	    <div class="clearboth"></div> <!--to have background work properly -->
 	  </div>
-	
+	<div class="clearboth"></div> <!--to have background work properly -->
 	  </div>
+
+			
 
 
 			<div id="container-mid">
-			<div id="homepage">
+<div id="homepage">
 				
 				<div id="sidebar-right">
 				<h3>Sidebar Right</h3>

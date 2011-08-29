@@ -315,14 +315,6 @@ max-width:80%;
 	margin-bottom: 0;
 }
 
-.people-info h3 {
-
-}
-
-.people-info p {
-
-}
-
 .people-info .label {
 font-weight: 700;
 }
@@ -358,5 +350,25 @@ ___________________________________________________________*/
 	color: #333; 
 }
 
+/* Directory
+___________________________________________________________*/
 
 
+.directory-table img {
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.directory-table h4 {
+	margin:0;
+}
+
+.directory-table td {
+	vertical-align: top;
+}
+
+p.candidates {
+font-size: 80%;}
+p.contact-info {
+	margin-top: 25px;
+}

@@ -144,7 +144,10 @@ th {
 }
 
 tr, th, td {
-	padding-right: 1.625em;
+	padding-right: 2em;
+}
+tr:nth-child(odd) {
+	background-color: #ededed;
 }
 
 /* Forms
@@ -344,6 +347,7 @@ a:hover, a:active {
 		display: block;
 		margin: 0;
 		padding: 0;
+		width:100%;
 		border-bottom: solid 1px #ddd; }
 	ul.tabs li {
 		display: block;

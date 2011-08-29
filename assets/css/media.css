@@ -1,52 +1,35 @@
 /* Media queries
 ---------------------------------------- */
-@media screen and (max-width: 380px) {
-	body {
-	font-size:70%;
-	}
-#blogtitle {
-font-size:75%;
-padding-top:15%;
-padding-left:0;
-}
-
-
-}
-@media screen and (max-width: 400px) {
-	/*for mobile */
-
-
-#header-left {
-	width: 43.75%;
-}
+@media screen and (max-width: 875px) { 
+	/* Tablets/netbooks */
 
 #header-right {
-	width: 50.25%;
-	float:right;
-}
-
-#nav ul li {
-	letter-spacing: normal;
-	font-weight: 400;
-	margin-right:2.1666666666667%;
+	float:left;
+	width:50%;
 	}
 
+#nav {
+	clear:both;
+	padding-left: 2%;
+	}
+
+.flex-caption h3 {
+	font-size: 1em; 
+	line-height: 1.2em;
+	color:#fff;
+	}
 	
-}/*End media query */
-
-@media screen and (max-width: 520px) {
-	/* Wide mobile and tablets portrait */
-body {
-font-size:90%;
-}
-
-#header-right {
-	float:right;
-}
-
-
 	
-}/*End media query */
+} /*End 875px media query */
+
+
+@media screen and (max-width: 750px) {
+
+.directory-table img {
+	display:none;
+	}
+} /*End 750px media query */
+
 
 @media screen and (max-width: 650px) {
 
@@ -55,35 +38,108 @@ font-size:90%;
 	font-weight: 400;
 	margin-right:2.1666666666667%;
 	}
-}
+	
+.people-info {
+	float:none;
+	width: 100%;
+	clear: both;
+	}
+	
+.people-tabs {
+	float:none;
+	clear: both;
+	width: 100%;
+	}
+	
+.people-picture {
+	float:left; 
+	width:35%;
+	}
 
-@media screen and (max-width: 875px) { 
-	/* Tablets/netbooks */
+.people-picture img {
+	max-width: 90%;
+	}
+
+.people-contact {
+	float:right;
+	width: 55%;
+	}
+
+} /*End 650px media query */
+
+
+
+@media screen and (max-width: 520px) {
+	/* Wide mobile and tablets portrait */
+body {
+	font-size:90%;
+	}
 
 #header-right {
+	float:right;
+	}
+
+}/*End 520px media query */
+
+
+
+
+@media screen and (max-width: 400px) {
+	/*for mobile */
+
+
+#header-left {
+	width: 43.75%;
+	}
+
+#header-right {
+	width: 50.25%;
+	float:right;
+	}
+
+#nav ul li {
+	letter-spacing: normal;
+	font-weight: 400;
+	margin-right:2.1666666666667%;
+	}
+	
+.people-picture {
+	display: none; 
+	float:none; 
+	width:0%;
+	}
+
+.people-contact {
 	float:left;
-	width:50%;
-}
+	width:100%;
+	}
 
-#nav {
-clear:both;
-padding-left: 2%;
-}
+}/*End 400px media query */
 
-.flex-caption h3 {
-	font-size: 1em; 
-	line-height: 1.2em;
-	color:#fff;
-}
+
+
+@media screen and (max-width: 380px) {
+body {
+	font-size:70%;
+	}
+
+#blogtitle {
+	font-size:75%;
+	padding-top:15%;
+	padding-left:0;
+	}
+
+
+} /*End 380 pxmedia query */
+
+
+
+
 	
-	
-} /*End media query */
 
-@media screen and (max-width: 960px) { 
-	/* Tablets/netbooks */
 
-	
-} /*End media query */
+
+
 
 
 /* Print styles
