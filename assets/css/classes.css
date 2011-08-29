@@ -253,20 +253,20 @@ li.subnav-head {
 #homepage {
 	width:100%;
 	max-width: 960px;
-	background: #e2e1df url("../img/home_bg.gif") repeat-y 70.3125% 0; /* 675px / 960px */
+	background: #e2e1df url("../img/home_bg.gif") repeat-y 69.791666666666667% 0; /* 675px / 960px */
 	margin: 0 auto;
 	display: block;
 	
 }
 
 #sidebar-right {
-	width: 29.6875%; /* 285px / 960px */
+	width: 30.208333333333333%; /* 290px / 960px */
 	float:right;
 }
 
 
 #blogfeed {
-	width: 70.3125%; /* 675px / 960px */
+	width: 69.791666666666667%; /* 670px / 960px */
 	float:left;
 	padding-bottom: 5.303030303030303%; /* 35px /675px */
 }
