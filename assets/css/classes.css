@@ -372,3 +372,31 @@ font-size: 80%;}
 p.contact-info {
 	margin-top: 25px;
 }
+
+/* Mini-Home
+___________________________________________________________*/
+
+
+.entry-text {
+	width: 65%;
+	margin-right: 3.571428571428571%;
+	float: left;
+}
+
+#sidebar-right {
+	width: 31.428571428571429%;
+	background-color: #ededed;
+	float:right;
+	}
+	
+/* Widgets
+___________________________________________________________*/
+
+#undergrad-sidebar .profile-box {
+	background-color: #ffd245;
+}
+
+.profile-image {
+	border:none;
+	max-width: 35%;
+}

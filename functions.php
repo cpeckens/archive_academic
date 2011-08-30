@@ -63,18 +63,37 @@
 
 
 //register sidebars
-	function ksas_register_sidebars() {
 	
+	if ( function_exists('register_sidebar') )
 		register_sidebar(array(
 			'name'          => 'Homepage Sidebar',
-			'id'            => 'homepage-sidebar',
+			'id'            => 'homepage-sb',
 			'description'   => '',
 			'before_widget' => '<li id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</li>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>' 
 			));
-}
+	if ( function_exists('register_sidebar') )
+		register_sidebar(array(
+			'name'          => 'Graduate Sidebar',
+			'id'            => 'graduate-sb',
+			'description'   => '',
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>' 
+			));
+	if ( function_exists('register_sidebar') )
+		register_sidebar(array(
+			'name'          => 'Undergrad Sidebar',
+			'id'            => 'undergrad-sb',
+			'description'   => '',
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>'
+			));
 
 //Get page ID from Slug
 	function ksas_get_page_id($page_name){
@@ -139,6 +158,7 @@ function ksas_ajax_upload(){
 // include People Directory and Profiles functionality
 	include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
 	include_once (TEMPLATEPATH . '/assets/functions/people-profiles.php');
+	include_once (TEMPLATEPATH . '/assets/functions/widget-profiles.php');
 
 
 

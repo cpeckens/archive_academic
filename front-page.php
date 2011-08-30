@@ -47,7 +47,8 @@
 <div id="homepage">
 				
 				<div id="sidebar-right">
-				<h3>Sidebar Right</h3>
+				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('homepage-sidebar') ) : ?>
+				<?php endif; ?>
 
 				</div> <!--End sidebar-right -->
 		

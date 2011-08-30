@@ -180,10 +180,10 @@ function profile_custom_columns($column){
  
   switch ($column) {
   case "academic_area":
-      echo get_the_term_list($post->ID, 'Academic Areas', '', ', ','');
+      echo get_the_term_list($post->ID, 'academic_area', '', ', ','');
       break;
   case "profile_type":
-      echo get_the_term_list($post->ID, 'Profile Type', '', ', ','');
+      echo get_the_term_list($post->ID, 'profile_type', '', ', ','');
       break;
     
   }

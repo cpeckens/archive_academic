@@ -111,35 +111,28 @@ Template Name: Directory
 					
 					
 					<?php elseif(is_page('staff')) :  ?>
-					<tr><!--Insert Header Row --></tr>
+					<tr>
+					<th>Name</th>
+					<th>Title</th>
+					<th>Office</th>
+					<th>Phone</th>
+					<th>Email</th></tr>
 					
 					<!--Create query -->
-					<?php $my_query = new WP_Query('post-type=people&role=faculty&posts_per_page=25'); ?>
+					<?php $my_query = new WP_Query('post-type=people&role=staff&posts_per_page=25'); ?>
 					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					
-					<tr><!--Insert Faculty/Person Info--></tr>
+					<tr>
+					<td><?php the_title() ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'position', true); ?><?php endif; ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'office', true) ) : ?>  <?php echo get_post_meta($post->ID, 'office', true); ?><?php endif; ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?>  <?php echo get_post_meta($post->ID, 'phone', true); ?><?php endif; ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><?php endif; ?></td>
+					</tr>
 					
 					<?php endwhile; ?>
 					
-					
-				
-				
-				
-				<?php elseif(is_page('visiting-faculty')) :  ?>
-					<tr><!--Insert Header Row --></tr>
-					
-					<!--Create query -->
-					<?php $my_query = new WP_Query('post-type=people&role=faculty&posts_per_page=25'); ?>
-					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-					
-					<tr><!--Insert Faculty/Person Info--></tr>
-					
-					<?php endwhile; ?>
-
-					
-					
-										
-					
+			
 					
 					<?php endif; ?>
 					
