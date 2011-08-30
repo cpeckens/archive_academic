@@ -56,8 +56,8 @@ Template Name: Mini-Home
 						<?php if(is_page('undergraduate')) : ?>
 							<?php get_sidebar('undergrad-sb'); ?>
 						<?php elseif(is_page('graduate')) :  ?>
-							<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('graduate-sb') ) : ?>
-							<?php endif; ?>
+							<?php get_sidebar('graduate-sb'); ?>
+							
 						<?php endif; ?>
 						</div>
 			

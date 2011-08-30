@@ -69,8 +69,8 @@
 			'name'          => 'Homepage Sidebar',
 			'id'            => 'homepage-sb',
 			'description'   => '',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
+			'before_widget' => '<div id="homepage-widget" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>' 
 			));
@@ -79,8 +79,8 @@
 			'name'          => 'Graduate Sidebar',
 			'id'            => 'graduate-sb',
 			'description'   => '',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
+			'before_widget' => '<div id="grad-widget" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>' 
 			));
@@ -89,8 +89,8 @@
 			'name'          => 'Undergrad Sidebar',
 			'id'            => 'undergrad-sb',
 			'description'   => '',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
+			'before_widget' => '<div id="undergrad-widget" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>'
 			));
@@ -159,6 +159,7 @@ function ksas_ajax_upload(){
 	include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
 	include_once (TEMPLATEPATH . '/assets/functions/people-profiles.php');
 	include_once (TEMPLATEPATH . '/assets/functions/widget-profiles.php');
+	include_once (TEMPLATEPATH . '/assets/functions/courses-directory.php');
 
 
 

@@ -392,11 +392,35 @@ ___________________________________________________________*/
 /* Widgets
 ___________________________________________________________*/
 
-#undergrad-sidebar .profile-box {
+#undergrad-widget .profile_box {
 	background-color: #ffd245;
 }
 
-.profile-image {
+#undergrad-widget .profile_box img {
 	border:none;
+	background-color: #ffd245;
 	max-width: 35%;
+	max-height:85px;
+	float:left;
+	margin-right:10px;
+	margin-bottom:0;
+
+	
+}
+
+#undergrad-widget .profile_box h4 {
+	text-transform: none;
+	font-weight: 700;
+	font-size: 1.25em;
+	margin-bottom: 1em;
+	padding-top:5px;
+
+
+}
+
+#undergrad-widget .profile_box p {
+	font-size: 0.8em;
+	padding-right:10px;
+	
+
 }
