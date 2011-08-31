@@ -21,6 +21,7 @@
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/respond.min.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_custom.js"></script>
 		
 		<!--Wordpress Neccessities -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -38,23 +39,11 @@
 			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
 		<?php } ?>
 		
-		<!--Suckerfish drop down -->
-		<script type="text/javascript">
- 
-sfHover = function() {
-	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
-	for (var i=0; i<sfEls.length; i++) {
-		sfEls[i].onmouseover=function() {
-			this.className+=" sfhover";
-		}
-		sfEls[i].onmouseout=function() {
-			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-		}
-	}
-}
-if (window.attachEvent) window.attachEvent("onload", sfHover);
- 
-</script> 
+		<!--courses specific scripts -->
+		<?php if (is_page_template('courses-directory.php')) { ?>
+			<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_accordion.js"></script>
+		<?php } ?>
+
 
 
 	</head>

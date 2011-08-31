@@ -49,7 +49,7 @@ register_taxonomy("academic_department", array("course"), array("hierarchical" =
 // Intiate create meta boxes
 add_action("admin_init", "create_course_meta_boxes");
 function create_course_meta_boxes(){
-	add_meta_box("course_details", "Pull Quote", "course_details", "course", "normal", "high");
+	add_meta_box("course_details", "Course Details", "course_details", "course", "normal", "high");
 	
 }
 
@@ -73,7 +73,6 @@ function course_details() {
   <textarea cols="30" rows="3" name="prereqs" value="<?php echo $prereqs; ?>"><?php echo $prereqs; ?></textarea></div>
   </div>
 <div class="clear"></div>
-<h3>Contact Information</h3>
 <div class="divider"></div>
   <div class="meta-group">  
     <div class="meta-box"><strong>Course Website:</strong><br>&nbsp;<input size="30" name="course_website" value="<?php echo $course_website; ?>"></input></div>
@@ -92,13 +91,16 @@ function course_details() {
 add_action('save_post', 'course_save_details');
 //Save and update function
 function course_save_details(){
-  global $post;
-  update_post_meta($post->ID, "credits", $_POST["credits"]);
-  update_post_meta($post->ID, "instructor", $_POST["instructor"]);
-  update_post_meta($post->ID, "prereqs", $_POST["prereqs"]);
-  update_post_meta($post->ID, "course_website", $_POST["course_website"]);
-  update_post_meta($post->ID, "course_times", $_POST["course_times"]);
-  update_post_meta($post->ID, "class_limit", $_POST["class_limit"]);
+	if ( 'course' == get_post_type() ) {  
+		global $post;
+  			update_post_meta($post->ID, "credits", $_POST["credits"]);
+  			update_post_meta($post->ID, "instructor", $_POST["instructor"]);
+  			update_post_meta($post->ID, "prereqs", $_POST["prereqs"]);
+  			update_post_meta($post->ID, "course_website", $_POST["course_website"]);
+  			update_post_meta($post->ID, "course_times", $_POST["course_times"]);
+  			update_post_meta($post->ID, "class_limit", $_POST["class_limit"]);
+}
+
 }
 	
 

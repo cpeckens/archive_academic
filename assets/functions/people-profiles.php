@@ -154,11 +154,12 @@ function profile_uploads() {
 add_action('save_post', 'profile_save_details');
 //Save and update function
 function profile_save_details(){
+	if ( 'profile' == get_post_type() ) {  
   global $post;
   update_post_meta($post->ID, "profile_photo", $_POST["profile_photo"]);
   update_post_meta($post->ID, "pull_quote", $_POST["pull_quote"]);
 }
-	
+}
 
 
 //Configuring Admin Columns - in View all profile

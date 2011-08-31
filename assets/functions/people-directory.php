@@ -372,6 +372,7 @@ function job_candidate() {
 add_action('save_post', 'people_save_details');
 //Save and update function
 function people_save_details(){
+	if ( 'people' == get_post_type() ) {  
   global $post;
  
   update_post_meta($post->ID, "position", $_POST["position"]);
@@ -401,7 +402,7 @@ function people_save_details(){
 
 
 }
-	
+}	
 
 //Configuring Admin Columns - in View all People
 add_action("manage_posts_custom_column",  "people_custom_columns");

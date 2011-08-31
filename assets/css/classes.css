@@ -54,6 +54,14 @@ ___________________________________________________________*/
   height: 0;	
 }
 
+.label {
+font-weight: 700;
+}
+
+.floatleft {
+float:left;
+}
+
 /* Containers
 ----------------------------------- */
 
@@ -140,10 +148,20 @@ ___________________________________________________________*/
 	padding-top: 5.2083333333333%; /* 50px / 960px */
 }
 
+#footer p {
+	margin:0;
+}
+
+#footer p a {
+	color: #444;
+	font-size:.8em;
+	}
+	
 #footer-left {
 	width: 77.0833333333333%; /* 740px / 960px */
 	float: left;
 }
+
 
 #footer-right {
 	width: 22.9166666666667%; /* 220px / 960px */
@@ -210,31 +228,90 @@ ___________________________________________________________*/
 	
 }
 
-#nav ul {
-	padding-bottom: 12px;
-	margin-bottom:0;
+#nav a {
+	color:#CCC;
 }
 
-#nav ul li{
-	display:inline;
-	margin-right: 4.1666666666667%; /* 40px / 960px */
-	padding-bottom: 14px; /* 15px / 960px */
+#nav ul { /* all lists */
+	padding: 0;
+	margin: 0;
 	font-weight: 600;
 	font-size: 1.25em;
 	font-family: 'PT Sans Narrow', sans-serif;
 	letter-spacing: 0.1em;
-
+	list-style: none;
+	line-height: 1;
 }
 
+#nav ul li {
+margin-right: 4.1666666666667%; /* 40px / 960px */
+	padding-bottom: 14px; /* 15px / 960px */
+}
+ 
 #nav ul li a {
-	color:#CCC;
+	display: block;
+
+}
+ 
+#nav li { /* all list items */
+	float: left;
 }
 
 #nav li.current_page_item {
 	background: url('../img/nav-current.gif') no-repeat center bottom;
-	
-
 }
+
+#nav li:hover {
+	background: url('../img/nav-hover.gif') no-repeat center bottom;
+}
+#nav .sub-menu { /* second-level lists */
+	position: absolute;
+	background: #679bcd;
+	margin-top: 14px;
+	font-weight: 400;
+	font-size: 1em;
+	color: #FFFFFF;
+	letter-spacing: 0;
+	width:8em;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+	z-index: 100;
+}
+
+#nav .sub-menu li {
+	width:8em;
+	padding-top:7px;
+	padding-bottom: 7px;
+	border-bottom: solid 1px #CCC;
+	
+}
+
+#nav .sub-menu li.current_page_item {
+	background: none;
+}
+
+#nav .sub-menu a {
+	padding-left:5px;
+	color: #FFFFFF;
+}
+#nav .sub-menu li:hover {
+	background:#38638e;
+	}
+ 
+#nav .sub-menu .sub-menu { /* third-and-above-level lists */
+	margin-top: -14px;
+	margin-left:8em;
+	}
+ 
+#nav li:hover ul ul, #nav li.sfhover ul ul {
+	left: -999em;
+}
+ 
+#nav li:hover ul, #nav li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+
+
+
 
 
 
@@ -314,6 +391,7 @@ li.subnav-head {
 	-webkit-box-shadow: -3px 3px 5px rgba(50, 50, 50, 0.5);
 	-moz-box-shadow:    -3px 3px 5px rgba(50, 50, 50, 0.5);
 	box-shadow:         -3px 3px 5px rgba(50, 50, 50, 0.5);
+	margin-right:10px;
 }
 
 /*Homepage
@@ -527,3 +605,29 @@ ___________________________________________________________*/
 	margin:0;
 }
 
+/* Courses
+___________________________________________________________*/
+
+h3.acc_trigger {
+	padding: 4px;	margin: 0 0 5px 0;
+	background: #f0f0f0;
+	border: 1px solid #d6d6d6;
+	-webkit-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-radius: 5px;
+
+}
+
+
+.acc_container {
+	margin: 0 0 5px; padding: 0;
+	overflow: hidden;
+	clear: both;
+
+}
+.acc_container .course {
+	padding: 20px;
+}

@@ -165,6 +165,27 @@ function ksas_ajax_upload(){
 
 }
 
+//check course type
+function has_course_type( $the_course, $_post = null ) {
+	if ( empty( $the_course ) )
+		return false;
+
+	if ( $_post )
+		$_post = get_post( $_post );
+	else
+		$_post =& $GLOBALS['post'];
+
+	if ( !$_post )
+		return false;
+
+	$course_answer = is_object_in_term( $_post->ID, 'course_type', $the_course );
+
+	if ( is_wp_error( $r ) )
+		return false;
+
+	return $course_answer;
+}
+
 //Change Excerpt Length -- Add to functions.php
 function ksas_new_excerpt_length($length) {
 	return 35; //Change word count
