@@ -47,12 +47,13 @@
 <div id="homepage">
 				
 				<div id="sidebar-right">
-				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('homepage-sidebar') ) : ?>
-				<?php endif; ?>
+				<?php get_sidebar('homepage-sb'); ?>
 
 				</div> <!--End sidebar-right -->
 		
 				<div id="blogfeed">
+				
+				<h2>Department <span class="altcolorblack">News and Announcements</span></h2>
 					
 					<?php
     					$recentPosts = new WP_Query();
@@ -65,18 +66,18 @@
 						
 						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 						<?php if ( has_post_thumbnail()) { ?> 
-						<div class="thumbnail"><img src="<?php $image_id = get_post_thumbnail_id();
+						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><div class="thumbnail"><img src="<?php $image_id = get_post_thumbnail_id();
 										$image_url = wp_get_attachment_image_src($image_id,’thumbnail’, true);
 										echo $image_url[0];  ?>" align="left" height="75" /></div>
-						<?php	} ?>
+						<?php	} ?></a>
 						
-						<?php the_excerpt() ?>
+						<p><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_excerpt() ?></a></p>
 			
 					</div><!--End snippet -->
 					
 					<?php endwhile; ?>
 					
-					<p><a href="/about/news-archive/page/2/">More News and Announcements</a>
+					<div class="morenews"><p><a href="/about/news-archive/page/2/">More News and Announcements &gt;&gt;</a></div>
 				</div> <!--End blogfeed -->	
 				
 				

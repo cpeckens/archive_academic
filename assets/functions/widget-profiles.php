@@ -1,6 +1,3 @@
-
-
-
 <?php 
 
 //Register all of the widgets
@@ -11,11 +8,7 @@ add_action('widgets_init', 'ksas_register_widgets');
 		register_widget('job_candidate_Widget');
 	}
 
-?>
 
-
-
-<?php 
 // Define undergrad student profile widget
 class Undergrad_Profile_Widget extends WP_Widget {
 
@@ -70,9 +63,6 @@ class Undergrad_Profile_Widget extends WP_Widget {
 
 
 ?>
-
-
-
 <?php 
 
 // Define graduate student profile widget
@@ -131,9 +121,6 @@ class Graduate_Profile_Widget extends WP_Widget {
 
 
 ?>
-
-
-
 <?php 
 
 // Define job candidate widget

@@ -94,6 +94,16 @@
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>'
 			));
+	if ( function_exists('register_sidebar') )
+		register_sidebar(array(
+			'name'          => 'Department Address',
+			'id'            => 'address-sb',
+			'description'   => '',
+			'before_widget' => '<div id="address-widget" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>'
+			));	
 
 //Get page ID from Slug
 	function ksas_get_page_id($page_name){
@@ -154,6 +164,12 @@ function ksas_ajax_upload(){
 	die();
 
 }
+
+//Change Excerpt Length -- Add to functions.php
+function ksas_new_excerpt_length($length) {
+	return 35; //Change word count
+}
+add_filter('excerpt_length', 'ksas_new_excerpt_length');
 		
 // include People Directory and Profiles functionality
 	include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');

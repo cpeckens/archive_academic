@@ -27,6 +27,8 @@
 				<?php } ?> <!--End subnav -->
 
 						<!--End Subpage Navigation code -->
+						
+				<div id="address"><?php get_sidebar('address-sb'); ?></div>
 				</div> <!--End sidebar-left -->
 				
 		
