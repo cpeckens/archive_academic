@@ -332,6 +332,14 @@ margin-right: 4.1666666666667%; /* 40px / 960px */
 	padding-left: 9.0909090909091%; /* 20px / 220px */
 	}
 
+#subnav li ul li.current_page_item {
+	background: none;
+	list-style: circle;
+	list-style-position: inside;
+	margin-left: 0;
+	}
+	
+	
 li.subnav-head {
 	color: #a6a6a6;
 }

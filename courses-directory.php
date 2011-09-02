@@ -24,7 +24,7 @@ Template Name: Courses
 									
 					if ($children) { ?>
 						<ul id="subnav">
-							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo home_url(); ?>/people">People</a></span></li>
+							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo get_permalink($parent); ?>"><?php echo get_the_title($parent); ?></a></span></li>
 							<?php echo $children; ?>
 						</ul>			
 				<?php } ?> <!--End subnav -->
@@ -68,11 +68,11 @@ Template Name: Courses
 				
 				<?php elseif(is_page('graduate-courses')) :  ?>
 				
-					<?php $ksas_course_query = new WP_Query('post-type=course&course_type=graduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
-					<?php while ($ksas_course_query->have_posts()) : $ksas_course_query->the_post(); ?>
+					<?php $ksas_gradcourse_query = new WP_Query('post-type=course&course_type=graduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					<?php while ($ksas_gradcourse_query->have_posts()) : $ksas_gradcourse_query->the_post(); ?>
 					
 						
-							<h3 class="acc_container"><a href="#"><?php the_title(); ?><?php if ( get_post_meta($post->ID, 'credits', true) ) : ?>(<?php echo get_post_meta($post->ID, 'office', true); ?> Credits)<?php endif; ?></a></h3>
+							<h3 class="acc_trigger"><a href="#"><?php the_title(); ?><?php if ( get_post_meta($post->ID, 'credits', true) ) : ?>(<?php echo get_post_meta($post->ID, 'office', true); ?> Credits)<?php endif; ?></a></h3>
 							<div class="acc_container">
 								<div class="course">
 								<?php the_content()?>
