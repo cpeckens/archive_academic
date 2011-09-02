@@ -17,7 +17,7 @@
 						$parent = $post->ID;
 					}				
 									
-					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
+					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=2");
 									
 					if ($children) { ?>
 						<ul id="subnav">

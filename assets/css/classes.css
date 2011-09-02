@@ -137,6 +137,11 @@ ul.tabs-content li {
 	float:right;
 }
 
+#footer #address-widget {
+	font-size: 0.75em;
+	line-height: 1em;
+}
+
 #social-media {
 	list-style:none;
 	display:inline;
@@ -303,7 +308,7 @@ margin-right: 4.1666666666667%; /* 40px / 960px */
 }
 
 #subnav li a {
-	color:#5998c9;
+	color:#487ca3;
 }
 
 #subnav li.current_page_item {
@@ -313,7 +318,7 @@ margin-right: 4.1666666666667%; /* 40px / 960px */
 	}
 
 li.subnav-head {
-	color: #ccc;
+	color: #a6a6a6;
 }
 
 #subnav li .highlight a {
