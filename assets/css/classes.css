@@ -311,8 +311,23 @@ margin-right: 4.1666666666667%; /* 40px / 960px */
 	color:#487ca3;
 }
 
+#subnav li ul {
+	margin-left:10px;}
+
+#subnav li ul li {
+	font-weight: 400;
+	font-size: .85em;
+	letter-spacing: 0.1em;
+	line-height: 1.5em;
+	border-bottom: none;
+	padding-left: 4.545454545454545%; /* 10px / 220px */
+}
+#subnav li ul li a {
+	color:#386180;
+	}
+	
 #subnav li.current_page_item {
-	background: url('../img/subnav-current.gif') no-repeat left center;
+	background: url('../img/subnav-current.gif') no-repeat 0% .4em;
 	margin-left: 5.4545454545455%; /* 12px / 220px */
 	padding-left: 9.0909090909091%; /* 20px / 220px */
 	}
