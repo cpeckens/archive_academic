@@ -114,7 +114,7 @@ ul.tabs-content li {
 	margin: 0 auto;
 	display: block;
 	clear: both;
-	padding-top: 5.2083333333333%; /* 50px / 960px */
+	padding-top: 10.2083333333333%; /* 50px / 960px */
 }
 
 #footer p {
@@ -129,6 +129,8 @@ ul.tabs-content li {
 #footer-left {
 	width: 77.0833333333333%; /* 740px / 960px */
 	float: left;
+padding-bottom: 5%;
+
 }
 
 
@@ -139,7 +141,7 @@ ul.tabs-content li {
 
 #footer #address-widget {
 	font-size: 0.75em;
-	line-height: 1em;
+	line-height: 1.6em;
 }
 
 #social-media {
@@ -468,6 +470,10 @@ li.subnav-head {
 	border: solid #cad4d5 3px;
 }
 
+.news-item img {
+	float:left;
+}
+
 /* People
 ___________________________________________________________*/
 
@@ -525,7 +531,7 @@ ___________________________________________________________*/
 
 
 .directory-table img {
-	max-height: 115px;
+	max-height: 175px;
 	margin-left:10px;
 	border-width: 3px;
 }
