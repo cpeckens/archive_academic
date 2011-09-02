@@ -39,6 +39,10 @@
 			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
 		<?php } ?>
 		
+		<?php if ( is_page('recent-placements') ) { ?>
+			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
+		<?php } ?>
+		
 		<!--courses specific scripts -->
 		<?php if (is_page_template('courses-directory.php')) { ?>
 			<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_accordion.js"></script>

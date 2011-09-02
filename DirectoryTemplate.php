@@ -55,7 +55,6 @@ Template Name: Directory
 					
 					
 					<?php if(is_page('faculty')) : ?>
-					<tr><!--Insert Header Row --></tr>
 					
 					<!--Create query -->
 					<?php $my_query = new WP_Query('post-type=people&role=faculty&posts_per_page=25'); ?>
@@ -121,7 +120,7 @@ Template Name: Directory
 					<!--Create query -->
 					<?php $my_query = new WP_Query('post-type=people&role=staff&posts_per_page=25'); ?>
 					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-					
+					<div class="staff">
 					<tr>
 					<td><?php the_title() ?></td>
 					<td><?php if ( get_post_meta($post->ID, 'position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'position', true); ?><?php endif; ?></td>
@@ -129,7 +128,7 @@ Template Name: Directory
 					<td><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?>  <?php echo get_post_meta($post->ID, 'phone', true); ?><?php endif; ?></td>
 					<td><?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><?php endif; ?></td>
 					</tr>
-					
+					</div>
 					<?php endwhile; ?>
 					
 			

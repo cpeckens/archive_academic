@@ -46,26 +46,28 @@ audio[controls], canvas, video {
 */
 html {
 	height: 100%;
-	font-size: 87.5%;
+	font-size: 85%;
 	overflow-y: scroll; /* Force a scrollbar in non-IE */
-	-webkit-text-size-adjust: 87.5%; /* Prevent iOS text size adjust on orientation change without disabling user zoom */
-	-ms-text-size-adjust: 87.5%;
+	-webkit-text-size-adjust: 85%; /* Prevent iOS text size adjust on orientation change without disabling user zoom */
+	-ms-text-size-adjust: 85%;
 }
 
 body {
 	margin: 0 auto;
 	min-height: 100%;
+	background-color:#e2e1df;
 }
 
 /* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
 body, button, input, select, textarea {
-	font: 1em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 1em/1.5 "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #444; /* Black on white is too much contrast, #333 is a lot better */
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 }
 
+
 /* Add and/or remove tags as your baseline grid needs */
-p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, h4, h5, h6, img, figure, figcaption, button, hr {
+p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, img, figure, figcaption, button, hr {
 	margin: 0 0 1.625em;
 }
 
@@ -106,7 +108,7 @@ h3 {
 }
 
 h4 {
-	font-size: 1.625em; /* 26px */
+	font-size: 1.3em; /* 26px */
 	line-height: 1em;
 	margin: 0 0 1em;
 	text-transform:uppercase;

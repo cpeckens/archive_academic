@@ -1,38 +1,3 @@
-/* Base structure
----------------------------------------- */
-
-/*
-	* The body will work like a 'div#wrapper' (for this to work, the 'body' needs to have a set width)
-
-	* To add a background to the PAGE, set it in the 'html' element
-	* To add a background to the WRAPPER, set it in the 'body' element
-*/
-html {
-	height: 100%;
-	font-size: 90%;
-	overflow-y: scroll; /* Force a scrollbar in non-IE */
-	-webkit-text-size-adjust: 90%; /* Prevent iOS text size adjust on orientation change without disabling user zoom */
-	-ms-text-size-adjust: 90%;
-}
-
-body {
-	margin: 0 auto;
-	min-height: 100%;
-	background-color:#e2e1df;
-}
-
-/* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
-body, button, input, select, textarea {
-	font: 1em/1.5 "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #444; /* Black on white is too much contrast, #333 is a lot better */
-	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-}
-
-/* Add and/or remove tags as your baseline grid needs */
-p, blockquote, q, pre, address, hr, code, samp, dl, ol, ul, form, table, fieldset, menu, h4, h5, h6, img, figure, figcaption, button, hr {
-	margin: 0 0 1.625em;
-}
-
 
 
 /* Special Classes
@@ -60,6 +25,10 @@ font-weight: 700;
 
 .floatleft {
 float:left;
+}
+
+ul.tabs-content li {
+	padding-left: 10px;
 }
 
 /* Containers
@@ -235,7 +204,7 @@ float:left;
 #nav ul { /* all lists */
 	padding: 0;
 	margin: 0;
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 1.25em;
 	font-family: 'PT Sans Narrow', sans-serif;
 	letter-spacing: 0.1em;
@@ -326,7 +295,7 @@ margin-right: 4.1666666666667%; /* 40px / 960px */
 	padding-left: 6.8181818181818%; /* 15px / 220px */
 	margin-top: 2.2727272727273%; /* 5px / 220px */
 	border-bottom: solid 1px #fafafa;	
-	font-weight: 600;
+	font-weight: 400;
 	font-size: 1.25em;
 	font-family: 'PT Sans Narrow', sans-serif;
 	letter-spacing: 0.1em;
@@ -412,7 +381,7 @@ li.subnav-head {
 }
 
 #homepage h3  {
- 	font-weight: 700;
+
  	
 }
 
@@ -433,8 +402,13 @@ li.subnav-head {
 
 #blogfeed h2 {
 	font-weight: 700;
+	font-size:1.3em;
 	text-transform: uppercase;
 	color: #999999;
+	padding-top: 1em;
+	border-bottom: ridge 5px #fafafa;
+	margin-right: 6.060606060606061%; /* 40px / 675px */
+	padding-bottom: 2.272727272727273%; /* 15px /675px */
 }
 
 #blogfeed p a{
@@ -523,22 +497,29 @@ ___________________________________________________________*/
 
 
 .directory-table img {
-	max-width: 100px;
-	max-height: 100px;
+	max-height: 115px;
+	margin-left:10px;
+	border-width: 3px;
 }
 
 .directory-table h4 {
+	font-size: 1.625em;
 	margin:0;
 }
 
 .directory-table td {
 	vertical-align: top;
+		padding-top:1em;
 }
 
 p.candidates {
 font-size: 80%;}
 p.contact-info {
 	margin-top: 25px;
+}
+
+.directory-table .staff {
+font-size: 90%;
 }
 
 /* Mini-Home
