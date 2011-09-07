@@ -14,7 +14,10 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
-
+		<!--Wordpress Neccessities -->
+		<?php wp_enqueue_script('jquery'); ?> 
+		<?php wp_head(); ?>
+		
 		<!-- JavaScript -->
 		<!--[if IE]><![endif]-->
 		<!--[if lt IE 9]>
@@ -23,9 +26,6 @@
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/respond.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_custom.js"></script>
 		
-		<!--Wordpress Neccessities -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-		<?php wp_head(); ?>
 		
 		<!-- front-page specific scripts and css -->
 		<?php if (is_front_page()) { ?>

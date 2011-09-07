@@ -57,8 +57,15 @@ Template Name: Directory
 					<?php if(is_page('faculty')) : ?>
 					
 					<!--Create query -->
-					<?php $my_query = new WP_Query('post-type=people&role=faculty&posts_per_page=25'); ?>
-					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+					<?php $my_faculty_query = new WP_Query(array(
+					'post-type' => 'people',
+					'role' => 'faculty',
+					'meta_key' => 'people_alpha',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+					'posts_per_page' => '25')); ?>
+					
+					<?php while ($my_faculty_query->have_posts()) : $my_faculty_query->the_post(); ?>
 					
 					<tr>
 						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
@@ -69,11 +76,10 @@ Template Name: Directory
 						<td><p class="contact-info"><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
 							<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><br><?php endif; ?>
 							<?php if ( get_post_meta($post->ID, 'office', true) ) : ?> <?php echo get_post_meta($post->ID, 'office', true); ?><br><?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'hours', true) ) : ?> <?php echo get_post_meta($post->ID, 'hours', true); ?><?php endif; ?></p></td>
+							</p></td>
 					</tr>
 					
 					<?php endwhile; ?>
-					
 					
 					
 					
@@ -86,8 +92,14 @@ Template Name: Directory
 					</tr>
 					
 					<!--Create query -->
-					<?php $my_query = new WP_Query('post-type=people&role=job-market-candidate&posts_per_page=25'); ?>
-					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+					<?php $my_candidate_query = new WP_Query(array(
+					'post-type' => 'people',
+					'role' => 'job-market-candidate',
+					'meta_key' => 'people_alpha',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+					'posts_per_page' => '25')); ?>
+					<?php while ($my_candidate_query->have_posts()) : $my_candidate_query->the_post(); ?>
 					
 					
 					<tr>
@@ -118,8 +130,14 @@ Template Name: Directory
 					<th>Email</th></tr>
 					
 					<!--Create query -->
-					<?php $my_query = new WP_Query('post-type=people&role=staff&posts_per_page=25'); ?>
-					<?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+					<?php $my_staff_query = new WP_Query(array(
+					'post-type' => 'people',
+					'role' => 'staff',
+					'meta_key' => 'people_alpha',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+					'posts_per_page' => '25')); ?>
+					<?php while ($my_staff_query->have_posts()) : $my_staff_query->the_post(); ?>
 					<div class="staff">
 					<tr>
 					<td><?php the_title() ?></td>
@@ -146,7 +164,11 @@ Template Name: Directory
 				
 				
 				
-				
+				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+					<?php the_content(); ?>
+					<?php endwhile; ?>
+					<?php endif; ?>
+					
 				
 				
 

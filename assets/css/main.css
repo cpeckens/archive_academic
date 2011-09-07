@@ -148,7 +148,7 @@ th {
 tr, th, td {
 	padding-right: 2em;
 }
-tr:nth-child(odd) {
+tr:nth-child(even) {
 	background-color: #ededed;
 }
 
@@ -313,7 +313,7 @@ blockquote > p {
 ul, ol {
 	list-style: square;
 	list-style-position: outside;
-	margin-left:20px;
+	margin-left:50px;
 	padding: 0;
 }
 

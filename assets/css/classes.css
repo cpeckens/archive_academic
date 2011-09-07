@@ -577,6 +577,7 @@ ___________________________________________________________*/
 
 #undergrad-widget .profile_box {
 	background-color: #ffd245;
+	padding-bottom:1px;
 }
 
 #undergrad-widget .profile_box img {
@@ -620,6 +621,12 @@ ___________________________________________________________*/
 	margin:0;
 }
 
+.widget_calendar_upcoming h2 {
+	font-weight: 700;
+	font-size:1.3em;
+	text-transform: uppercase;
+	color: #999999;
+}
 /* Courses
 ___________________________________________________________*/
 

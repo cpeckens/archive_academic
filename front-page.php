@@ -2,8 +2,9 @@
 	<?php get_header() ?>	
 <!-- Hook up the FlexSlider -->
 	<script type="text/javascript">
-		$(window).load(function() {
-			$('.flexslider').flexslider();
+	var $j = jQuery.noConflict();
+		$j(window).load(function() {
+			$j('.flexslider').flexslider();
 		});
 	</script>
 	
@@ -12,26 +13,26 @@
 		<div class="flexslider">
 	    <ul class="slides">
 	    	<li class="slide1">
-	    		<div class="slide-holder">
+	    		<a href="/client/econ/undergraduate"><div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-1.png" />
 	    		<div class="flex-caption"><h3>At Johns Hopkins, the study of economics offers students dynamic classroom interactions combined with hands-on experience, including the chance to participate in an annual networking trip to firms on Wall Street</h3>
-			<p><a href="/undergraduate" class="button">Find Out More</a></p></div>
-			</div>
+			<p><a href="/client/econ/undergraduate" class="button">Find Out More</a></p></div>
+			</div></a>
 	    	</li>
 	    	
 	    	<li class="slide2">
-	    	<div class="slide-holder">
+	    	<a href="/client/econ/graduate"><div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-2.png" />
 	    		<div class="flex-caption"><h3>With its world-class faculty, individualized attention, and small classes the doctoral program is the centerpiece of the department.  From complex financial research graduate students in economics are prepared to be leaders in the field.</h3>
-			<p><a href="/undergraduate" class="button">Find Out More</a></p></div>
-			</div>
+			<p><a href="/client/econ/graduate" class="button">Find Out More</a></p></div>
+			</div></a>
 	    	</li>
 	    	<li class="slide3">
-	    	<div class="slide-holder">
+	    	<a href="/client/econ/graduate/recent-placements"><div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-3.png" />
 	    		<div class="flex-caption"><h3>Economics alumni from Johns Hopkins have become business leaders and financial innovators in a variety of places including investment firms, banks, and corporations all over the world.</h3>
-			<p><a href="/undergraduate" class="button">Find Out More</a></p></div>
-			</div>
+			<p><a href="/client/econ/graduate/recent-placements" class="button">Find Out More</a></p></div>
+			</div></a>
 	    	</li>
 	    	
 	    </ul>

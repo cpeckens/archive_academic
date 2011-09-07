@@ -17,6 +17,8 @@ Template Name: Courses
 					 $parent = ksas_get_page_id('undergraduate');
 				elseif(is_page('graduate-courses')) :
 					 $parent = ksas_get_page_id('graduate');
+				elseif(is_page('faq')) :
+					 $parent = ksas_get_page_id('graduate');
 				endif;
 								
 									

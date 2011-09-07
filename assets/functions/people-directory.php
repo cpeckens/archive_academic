@@ -62,6 +62,7 @@ function people_create_meta_boxes(){
 function people_details() {
   global $post;
   $custom = get_post_custom($post->ID);
+  $people_alpha = $custom["people_alpha"][0];
   $position = $custom["position"][0];
   $degrees = $custom["degrees"][0];
   $expertise = $custom["expertise"][0];
@@ -80,6 +81,8 @@ function people_details() {
   ?>
   <div class="meta-group">  
   <div class="meta-box"><strong>Title/Position:</strong><br><input size="30" name="position" value="<?php echo $position; ?>"></input></div>
+    <div class="meta-box"><strong>Last Name (For Indexing):</strong><br><input size="30" name="people_alpha" value="<?php echo $people_alpha; ?>"></input></div>
+<div class="clear"></div>
   <div class="meta-box"><strong>Degrees:</strong><br>
   <textarea cols="30" rows="3" name="degrees" value="<?php echo $degrees; ?>"><?php echo $degrees; ?></textarea></div>
   <div class="meta-box"><strong>Expertise/Research Interests:</strong><br>
@@ -375,6 +378,7 @@ function people_save_details(){
 	if ( 'people' == get_post_type() ) {  
   global $post;
  
+  update_post_meta($post->ID, "people_alpha", $_POST["people_alpha"]);  
   update_post_meta($post->ID, "position", $_POST["position"]);
   update_post_meta($post->ID, "degrees", $_POST["degrees"]);
   update_post_meta($post->ID, "expertise", $_POST["expertise"]);

@@ -35,6 +35,8 @@
 				<div id="content">
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 					
+					<?php if ( get_post_meta($post->ID, 'extra_javascript', true) ) : ?><?php echo get_post_meta($post->ID, 'extra_javascript', true); ?><?php endif; ?>
+					
 					<div class="entry">
 						
 						<?php if ( has_post_thumbnail()) { ?> 
