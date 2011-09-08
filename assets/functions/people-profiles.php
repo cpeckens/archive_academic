@@ -61,7 +61,7 @@ function profile_details() {
   
   ?>
   <div class="meta-group">  
-  <div class="meta-box meta-box-large"><strong>Pull Quote:</strong><br><textarea name="pull_quote" value="<?php echo $pull_quote; ?>"><?php echo $pull_quote; ?></textarea></div>
+  <div class="meta-box meta-box-large"><strong>Pull Quote:</strong><br><textarea name="pull_quote"><?php echo $pull_quote; ?></textarea></div>
   </div>
     <div class="clear"></div>
 

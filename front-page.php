@@ -13,25 +13,25 @@
 		<div class="flexslider">
 	    <ul class="slides">
 	    	<li class="slide1">
-	    		<a href="/client/econ/undergraduate"><div class="slide-holder">
+	    		<a href="/economics/undergraduate"><div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-1.png" />
 	    		<div class="flex-caption"><h3>At Johns Hopkins, the study of economics offers students dynamic classroom interactions combined with hands-on experience, including the chance to participate in an annual networking trip to firms on Wall Street</h3>
-			<p><a href="/client/econ/undergraduate" class="button">Find Out More</a></p></div>
+			<p><a href="/economics/undergraduate" class="button">Find Out More</a></p></div>
 			</div></a>
 	    	</li>
 	    	
 	    	<li class="slide2">
-	    	<a href="/client/econ/graduate"><div class="slide-holder">
+	    	<a href="/economics/graduate"><div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-2.png" />
 	    		<div class="flex-caption"><h3>With its world-class faculty, individualized attention, and small classes the doctoral program is the centerpiece of the department.  From complex financial research graduate students in economics are prepared to be leaders in the field.</h3>
-			<p><a href="/client/econ/graduate" class="button">Find Out More</a></p></div>
+			<p><a href="/economics/graduate" class="button">Find Out More</a></p></div>
 			</div></a>
 	    	</li>
 	    	<li class="slide3">
-	    	<a href="/client/econ/graduate/recent-placements"><div class="slide-holder">
+	    	<a href="/economics/graduate/recent-placements"><div class="slide-holder">
 	    		<img src="<?php bloginfo('template_url'); ?>/assets/img/home-3.png" />
 	    		<div class="flex-caption"><h3>Economics alumni from Johns Hopkins have become business leaders and financial innovators in a variety of places including investment firms, banks, and corporations all over the world.</h3>
-			<p><a href="/client/econ/graduate/recent-placements" class="button">Find Out More</a></p></div>
+			<p><a href="/economics/graduate/recent-placements" class="button">Find Out More</a></p></div>
 			</div></a>
 	    	</li>
 	    	
@@ -78,7 +78,7 @@
 					
 					<?php endwhile; ?>
 					
-					<div class="morenews"><p><a href="/client/econ/about/news-archive/">More News and Announcements &gt;&gt;</a></div>
+					<div class="morenews"><p><a href="/economics/about/news-archive/">More News and Announcements &gt;&gt;</a></div>
 				</div> <!--End blogfeed -->	
 				
 				

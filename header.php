@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		
-		<title></title>
+		<title><?php if ( is_front_page() ) { ?><? bloginfo('name'); ?> - <?php bloginfo('description'); } else { wp_title(''); } ?></title>
 
 		<!-- Meta tags -->
 		<meta name="description" content="" />

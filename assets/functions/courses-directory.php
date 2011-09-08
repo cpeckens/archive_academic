@@ -70,7 +70,7 @@ function course_details() {
   <div class="meta-box"><strong>Credits:</strong><br><input size="30" name="credits" value="<?php echo $credits; ?>"></input></div>
   <div class="meta-box"><strong>Instructor:</strong><br><input size="30" name="instructor" value="<?php echo $instructor; ?>"></input></div>
   <div class="meta-box"><strong>Prerequisites:</strong><br>
-  <textarea cols="30" rows="3" name="prereqs" value="<?php echo $prereqs; ?>"><?php echo $prereqs; ?></textarea></div>
+  <textarea cols="30" rows="3" name="prereqs"><?php echo $prereqs; ?></textarea></div>
   </div>
 <div class="clear"></div>
 <div class="divider"></div>

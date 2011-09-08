@@ -102,19 +102,19 @@ function people_details() {
     <h3>Additional Details (For Faculty)</h3>
     <div class="divider"></div>
       <div class="meta-group">  
-    <div class="meta-box meta-box-large"><strong>Bio:</strong><br><textarea name="bio" value="<?php echo $bio; ?>"><?php echo $bio; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Bio:</strong><br><textarea name="bio"><?php echo $bio; ?></textarea></div>
     <div class="divider"></div>
-    <div class="meta-box meta-box-large"><strong>Research:</strong><br>&nbsp;<textarea name="research" value="<?php echo $research; ?>"><?php echo $research; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Research:</strong><br>&nbsp;<textarea name="research"><?php echo $research; ?></textarea></div>
     <div class="divider"></div>
-    <div class="meta-box meta-box-large"><strong>Teaching:</strong><br>&nbsp;<textarea name="teaching" value="<?php echo $teaching; ?>"><?php echo $teaching; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Teaching:</strong><br>&nbsp;<textarea name="teaching"><?php echo $teaching; ?></textarea></div>
     <div class="divider"></div>
-    <div class="meta-box meta-box-large"><strong>Publications:</strong><br>&nbsp;<textarea name="publications" value="<?php echo $publications; ?>"><?php echo $publications; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Publications:</strong><br>&nbsp;<textarea name="publications"><?php echo $publications; ?></textarea></div>
     <div class="divider"></div>
     <div class="meta-box"><strong>Extra Tab Title:</strong><br>&nbsp;<input size="30" name="extra_tab_title" value="<?php echo $extra_tab_title; ?>"></input></div>
-    <div class="meta-box meta-box-large"><strong>Extra Tab Content:</strong><br>&nbsp;<textarea name="extra_tab" value="<?php echo $extra_tab; ?>"><?php echo $extra_tab; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Extra Tab Content:</strong><br>&nbsp;<textarea name="extra_tab"><?php echo $extra_tab; ?></textarea></div>
     </div>
     <div class="clear"></div>
-
+	<div class="clear"></div>
   <?php
 }
 	
@@ -354,15 +354,16 @@ function job_candidate() {
   <textarea cols="50" rows="3" name="fields" value="<?php echo $fields; ?>"><?php echo $fields; ?></textarea></div>
   </div>
       <div class="meta-group">  
-    <div class="meta-box meta-box-large"><strong>Research:</strong><br><textarea name="job_research" value="<?php echo $job_research; ?>"><?php echo $job_research; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Research:</strong><br><textarea name="job_research"><?php echo $job_research; ?></textarea></div>
     <div class="divider"></div>
-    <div class="meta-box meta-box-large"><strong>Teaching:</strong><br>&nbsp;<textarea name="job_teaching" value="<?php echo $job_teaching; ?>"><?php echo $job_teaching; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Teaching:</strong><br>&nbsp;<textarea name="job_teaching"><?php echo $job_teaching; ?></textarea></div>
     <div class="divider"></div>
-    <div class="meta-box meta-box-large"><strong>References:</strong><br>&nbsp;<textarea name="references" value="<?php echo $references; ?>"><?php echo $references; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>References:</strong><br>&nbsp;<textarea name="references"><?php echo $references; ?></textarea></div>
     <div class="divider"></div>
     <div class="meta-box"><strong>Extra Tab Title:</strong><br>&nbsp;<input size="30" name="job_extra_tab_title" value="<?php echo $job_extra_tab_title; ?>"></input></div>
-    <div class="meta-box meta-box-large"><strong>Extra Tab Content:</strong><br>&nbsp;<textarea name="job_extra_tab" value="<?php echo $job_extra_tab; ?>"><?php echo $job_extra_tab; ?></textarea></div>
+    <div class="meta-box meta-box-large"><strong>Extra Tab Content:</strong><br>&nbsp;<textarea name="job_extra_tab"><?php echo $job_extra_tab; ?></textarea></div>
     </div>
+    <div class="clear"></div>
     <div class="clear"></div>
 
   <?php
