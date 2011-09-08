@@ -21,7 +21,45 @@
 				<?php } ?> <!--End subnav -->
 
 						<!--End Subpage Navigation code -->
-				</div> <!--End sidebar-left -->
+		<!--Begin Jump to faculty code -->				
+		
+				<?php 
+
+	$args=array(
+	  'post_type' => 'people',
+	  'role' => 'faculty',
+	  'meta_key' => 'people_alpha',
+	  'orderby' => 'meta_value',
+	  'order' => 'ASC',
+	  'post_status' => 'publish',
+	  'posts_per_page' => -1,
+	  'caller_get_posts'=> 1
+	);
+	$my_query = null;
+	$my_query = new WP_Query($args);
+	if( $my_query->have_posts() ) {
+?>
+	<div class="jumpmenu"><form name="jump">
+		<select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+		<option>Jump to faculty member</option>
+			<?php
+			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+				<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
+				<?php
+
+			  endwhile;
+			}
+			?>
+		</select>
+	</form>
+</div>
+<?php
+	wp_reset_query();
+?>
+	<!--End jump-menu -->			
+	</div><!--End sidebar-left --> 
+				
+				
 				
 		
 				<div id="content">
