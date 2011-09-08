@@ -30,7 +30,7 @@ register_post_type('people', array(
 	'hierarchical' => false,
 	'rewrite' => array("slug" => "directory"), // Permalinks format
 	'query_var' => "people", // This goes to the WP_Query schema
-	'supports' => array('title', 'revisions', 'custom-fields'),
+	'supports' => array('title'),
 	'can_export' => true,
 ));
 

@@ -75,7 +75,7 @@ Template Name: Courses
 					<?php while ($ksas_gradcourse_query->have_posts()) : $ksas_gradcourse_query->the_post(); ?>
 					
 						
-							<h3 class="acc_trigger"><a href="#"><?php the_title(); ?><?php if ( get_post_meta($post->ID, 'credits', true) ) : ?>(<?php echo get_post_meta($post->ID, 'office', true); ?> Credits)<?php endif; ?></a></h3>
+							<h3 class="acc_trigger"><a href="#"><?php the_title(); ?></a></h3>
 							<div class="acc_container">
 								<div class="course">
 								<?php the_content()?>

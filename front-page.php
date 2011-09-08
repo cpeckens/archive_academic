@@ -78,7 +78,7 @@
 					
 					<?php endwhile; ?>
 					
-					<div class="morenews"><p><a href="/about/news-archive/">More News and Announcements &gt;&gt;</a></div>
+					<div class="morenews"><p><a href="/client/econ/about/news-archive/">More News and Announcements &gt;&gt;</a></div>
 				</div> <!--End blogfeed -->	
 				
 				

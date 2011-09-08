@@ -142,6 +142,7 @@ padding-bottom: 5%;
 #footer #address-widget {
 	font-size: 0.75em;
 	line-height: 1.6em;
+	border-bottom:none;
 }
 
 #social-media {
@@ -289,7 +290,9 @@ margin-right: 4.1666666666667%; /* 40px / 960px */
 
 
 
-
+ul#subnav {
+	margin-left:0;
+	}
 
 #subnav {
 	
@@ -575,6 +578,10 @@ ___________________________________________________________*/
 /* Widgets
 ___________________________________________________________*/
 
+.widget {
+	border-bottom: solid 1px #d3d2d0;
+}
+
 #undergrad-widget .profile_box {
 	background-color: #ffd245;
 	padding-bottom:1px;
@@ -627,7 +634,7 @@ ___________________________________________________________*/
 	text-transform: uppercase;
 	color: #999999;
 }
-/* Courses
+/* Courses and Accordion
 ___________________________________________________________*/
 
 h3.acc_trigger {
@@ -653,3 +660,116 @@ h3.acc_trigger {
 .acc_container .course {
 	padding: 20px;
 }
+
+/* Calendar
+___________________________________________________________*/
+
+div .fc-event.category-17, div .fc-event.category-17 a { 
+	background-color: #679bcd; 
+	border-color: #679bcd; 
+}
+
+div .fc-event.category-18, div .fc-event.category-18 a { 
+	background-color: #95a739; 
+	border-color: #95a739; 
+}
+
+div .fc-event.category-19, div .fc-event.category-19 a { 
+	background-color: #c4a41d; 
+	border-color: #c4a41d; 
+}
+
+.macro {
+	background-color: #c4a41d;
+	display: inline;
+	padding-top: 7px;
+	padding-bottom:8px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.micro {
+	background-color: #95a739;
+	display: inline;
+	padding-top: 7px;
+	padding-bottom:8px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.theory {
+	background-color: #679bcd;
+	display: inline;
+	padding-top: 7px;
+	padding-bottom:8px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.WPCalendarSimple {
+	padding:5%;
+}
+
+.WPCalendarSimple h2 {
+	font-weight: 700;
+	font-size:1.3em;
+	text-transform: uppercase;
+	color: #333333;
+}
+
+.WPCalendarSimple p {
+	font-size: 0.8em;
+}
+
+.WPCalendarSimple h4 {
+	margin-bottom: 0;
+	font-size:1em;
+	font-weight: 700;
+}
+
+#homepage-widget .WPCalendarSimple {
+	background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.26, rgb(230,229,227)),
+    color-stop(0.63, rgb(211,211,209)),
+    color-stop(0.82, rgb(198,197,195))
+);
+	background-image: -moz-linear-gradient(
+    center top,
+    rgb(230,229,227) 26%,
+    rgb(211,211,209) 63%,
+    rgb(198,197,195) 82%
+);
+}
+
+#homepage-widget.WPCalendarSimple {
+	background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.26, rgb(230,229,227)),
+    color-stop(0.63, rgb(211,211,209)),
+    color-stop(0.82, rgb(198,197,195))
+);
+	background-image: -moz-linear-gradient(
+    center top,
+    rgb(230,229,227) 26%,
+    rgb(211,211,209) 63%,
+    rgb(198,197,195) 82%
+);
+}
+h2.fc-header-title {
+	font-size: 1.3em; /* 26px */
+	line-height: 1em;
+	margin: 0 0 1em;
+	text-transform:uppercase;
+}
+
+table.fc-header {
+	margin-bottom:0;
+	}

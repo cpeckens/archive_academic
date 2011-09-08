@@ -4,7 +4,7 @@ $j(document).ready(function() {
 	
 	//Set default open/close settings
 $j('.acc_container').hide(); //Hide/close all containers
-$j('.acc_trigger:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+/* $j('.acc_trigger:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container */
 
 //On Click
 $j('.acc_trigger').click(function(){
