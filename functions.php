@@ -191,6 +191,29 @@ function ksas_new_excerpt_length($length) {
 	return 35; //Change word count
 }
 add_filter('excerpt_length', 'ksas_new_excerpt_length');
+
+add_filter('wp_list_pages_excludes', 'remove_others_children');
+function remove_others_children($excludes = array()) {
+  $all_pages = get_pages();
+  $all_children = (array) get_page_children(true, $all_pages);
+  foreach ( $all_children as $child )
+    $excludes[] = $child->ID;
+
+  if ( ! is_page() )
+    return $excludes;
+
+  global $post;
+
+  $this_heirarchy = (array) $post->ancestors;
+  $this_children = (array) get_page_children($post->ID, $all_pages);
+  foreach ( $this_heirarchy as $ancestor )
+    $this_children = array_merge($this_children, (array) get_page_children($ancestor, $all_pages));
+
+  foreach ($this_children as $child)
+    $this_heirarchy[] = $child->ID;
+
+  return array_diff($excludes, $this_heirarchy);
+}
 		
 // include People Directory and Profiles functionality
 	include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
