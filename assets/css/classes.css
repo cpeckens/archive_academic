@@ -749,7 +749,8 @@ ___________________________________________________________*/
 /* 13.0 Courses and Accordion
 ___________________________________________________________*/
 h3.acc_trigger {
-	padding: 4px;	margin: 0 0 5px 0;
+	padding: 4px;	
+	margin: 0 0 10px 0;
 	background: #f0f0f0;
 	border: 1px solid #d6d6d6;
 	-webkit-border-radius: 5px;
@@ -758,6 +759,7 @@ h3.acc_trigger {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	border-radius: 5px;
+	font-size: 1.25em;
 }
 
 .acc_container {
