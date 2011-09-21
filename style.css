@@ -6,7 +6,8 @@ Author: Cara Peckens
 Author URI: http://www.cpeckens.com
 */
 
-@import url("/wp-content/themes/academic/assets/css/main.css");
-@import url("/wp-content/themes/academic/assets/css/classes.css");
-@import url("/wp-content/themes/academic/assets/css/media.css");
+@import url("/economics/wp-content/themes/academic/assets/css/main.css");
+@import url("/economics/wp-content/themes/academic/assets/css/classes.css");
+@import url("/economics/wp-content/themes/academic/assets/css/media.css");
 @import url("http://fonts.googleapis.com/css?family=PT+Sans+Narrow");
+

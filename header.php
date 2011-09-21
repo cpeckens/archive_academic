@@ -14,42 +14,19 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
+		<!--[if lte IE 8]>
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
+		<![endif]-->
+	<?php if (is_front_page()) { ?>
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
+	<?php } ?>
 		<!--Wordpress Neccessities -->
 		<?php wp_enqueue_script('jquery'); ?> 
 		<?php wp_head(); ?>
-		
 		<!-- JavaScript -->
-		<!--[if IE]><![endif]-->
 		<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<script src="<?php bloginfo('template_url'); ?>/assets/js/respond.min.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_custom.js"></script>
-		
-		
-		<!-- front-page specific scripts and css -->
-		<?php if (is_front_page()) { ?>
-			
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.flexslider-min.js"></script>
-			<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
-		<?php } ?>
-			
-		<!--people specific scripts -->
-		<?php if ( 'people' == get_post_type() ) { ?>
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
-		<?php } ?>
-		
-		<?php if ( is_page('recent-placements') ) { ?>
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
-		<?php } ?>
-		
-		<!--courses specific scripts -->
-		<?php if (is_page_template('courses-directory.php')) { ?>
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_accordion.js"></script>
-		<?php } ?>
-
-
-
 	</head>
 	
 	<body>
@@ -58,7 +35,7 @@
 			<div id="header">
 				
 				<div id="header-left">
-				<div id="logo"><a href="http://krieger.jhu.edu"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.gif" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
+				<div id="logo"><a href="http://krieger.jhu.edu"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="header-right">

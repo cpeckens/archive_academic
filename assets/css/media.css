@@ -10,7 +10,7 @@
 
 #nav {
 	clear:both;
-	padding-left: 2%;
+	margin-left: 2%;
 	}
 
 .flex-caption h3 {
@@ -125,8 +125,8 @@ body {
 
 #blogtitle {
 	font-size:75%;
-	padding-top:15%;
-	padding-left:0;
+	margin-top:15%;
+	margin-left:0;
 	}
 
 

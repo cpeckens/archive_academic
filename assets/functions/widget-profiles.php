@@ -6,6 +6,7 @@ add_action('widgets_init', 'ksas_register_widgets');
 		register_widget('Undergrad_Profile_Widget');
 		register_widget('Graduate_Profile_Widget');
 		register_widget('job_candidate_Widget');
+		register_widget('Spotlight_Widget');
 	}
 
 
@@ -150,6 +151,66 @@ class job_candidate_Widget extends WP_Widget {
 		<a href="<?php bloginfo('url'); ?>/people/job-market-candidates/"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a>
     	<h4><a href="<?php bloginfo('url'); ?>/people/job-market-candidates/"><?php the_title(); ?></a></h4>
     	<p>This is the generic language for the job-candidate widget.</p>
+    	</div>
+	
+	
+	<?php endwhile; ?>
+
+
+
+<?php echo $after_widget;
+
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '') );
+		$title = $instance['title'];
+?>
+		
+<?php
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$new_instance = wp_parse_args((array) $new_instance, array( 'title' => ''));
+		$instance['title'] = strip_tags($new_instance['title']);
+		return $instance;
+	}
+
+}
+
+
+?>
+
+<?php 
+
+// Define graduate student profile widget
+class Spotlight_Widget extends WP_Widget {
+
+	function Spotlight_Widget() {
+		$widget_ops = array('classname' => 'widget_spotlight', 'description' => __( "Spotlight Widget") );
+		$this->WP_Widget('spotlight-widget', 'Spotlight Widget', $widget_ops);
+	}
+
+	function widget( $args, $instance ) {
+		extract($args);
+		$title = apply_filters('widget_title', $instance['title'], $instance, $this->id_base);
+
+		echo $before_widget;
+		if ( $title )
+			echo $before_title . $title . $after_title;                     
+	
+
+		global $post; ?>
+		<?php $spotlight_query = new WP_Query('post-type=profile&profile_type=spotlight&orderby=rand&posts_per_page=1'); ?>
+					<?php while ($spotlight_query->have_posts()) : $spotlight_query->the_post(); ?>
+         <?php // get_the_ID(); ?>
+         <?php //$profileid = $post->ID; ?>               
+    	<div class="profile_box">
+    	<div class="spotlight"></div>
+		<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'profile_photo', true); ?>" /></a>
+    	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+    	<p><?php echo get_post_meta($post->ID, 'pull_quote', true); ?></p>
     	</div>
 	
 	

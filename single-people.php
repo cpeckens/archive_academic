@@ -6,26 +6,23 @@
 				<div id="sidebar-left">
 				
 					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
-			<?php
-			
-					 $parent = ksas_get_page_id('people');
+				<?php
+				
+							
+					$parent = ksas_get_page_id('people');;
 								
 									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
 									
 					if ($children) { ?>
 						<ul id="subnav">
-							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo home_url(); ?>/people">People</a></span></li>
+							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo get_permalink($parent); ?>"><?php echo get_the_title($parent); ?></a></span></li>
 							<?php echo $children; ?>
 						</ul>			
 				<?php } ?> <!--End subnav -->
-
-						<!--End Subpage Navigation code -->
-		<!--Begin Jump to faculty code -->				
-		
-				<?php 
-
-	$args=array(
+<!--Begin Jump to faculty code -->				
+		<?php 
+			$args=array(
 	  'post_type' => 'people',
 	  'role' => 'faculty',
 	  'meta_key' => 'people_alpha',
@@ -56,10 +53,15 @@
 <?php
 	wp_reset_query();
 ?>
-	<!--End jump-menu -->			
-	</div><!--End sidebar-left --> 
+
+	<!--End jump-menu -->	
+
+						<!--End Subpage Navigation code -->
+				<div id="address"><?php get_sidebar('address-sb'); ?></div>
+
+				</div> <!--End sidebar-left -->
 				
-				
+
 				
 		
 				<div id="content">
@@ -70,7 +72,7 @@
 					<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 					
 						<div class="entry">
-							
+																				
 							<div class="people-info">
 							
 								<div class="people-picture"><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /><?php endif; ?></div>

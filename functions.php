@@ -192,27 +192,39 @@ function ksas_new_excerpt_length($length) {
 }
 add_filter('excerpt_length', 'ksas_new_excerpt_length');
 
-add_filter('wp_list_pages_excludes', 'remove_others_children');
-function remove_others_children($excludes = array()) {
-  $all_pages = get_pages();
-  $all_children = (array) get_page_children(true, $all_pages);
-  foreach ( $all_children as $child )
-    $excludes[] = $child->ID;
-
-  if ( ! is_page() )
-    return $excludes;
-
-  global $post;
-
-  $this_heirarchy = (array) $post->ancestors;
-  $this_children = (array) get_page_children($post->ID, $all_pages);
-  foreach ( $this_heirarchy as $ancestor )
-    $this_children = array_merge($this_children, (array) get_page_children($ancestor, $all_pages));
-
-  foreach ($this_children as $child)
-    $this_heirarchy[] = $child->ID;
-
-  return array_diff($excludes, $this_heirarchy);
+//Add iframe shortcode
+if ( !function_exists( 'iframe_embed_shortcode' ) ) {
+	function iframe_embed_shortcode($atts, $content = null) {
+		extract(shortcode_atts(array(
+			'width' => '100%',
+			'height' => '480',
+			'src' => '',
+			'frameborder' => '0',
+			'scrolling' => 'no',
+			'marginheight' => '0',
+			'marginwidth' => '0',
+			'allowtransparency' => 'true',
+			'id' => '',
+			'class' => 'iframe-class',
+			'same_height_as' => ''
+		), $atts));
+		$src_cut = substr($src, 0, 35);
+		if(strpos($src_cut, 'maps.google' )){
+			$google_map_fix = '&output=embed';
+		}else{
+			$google_map_fix = '';
+		}
+		$return = '';
+		if( $id != '' ){
+			$id_text = 'id="'.$id.'" ';
+		}else{
+			$id_text = '';
+		}
+		$return .= '<div class="video-container"><iframe '.$id_text.'class="'.$class.'" width="'.$width.'" height="'.$height.'" src="'.$src.$google_map_fix.'" frameborder="'.$frameborder.'" scrolling="'.$scrolling.'" marginheight="'.$marginheight.'" marginwidth="'.$marginwidth.'" allowtransparency="'.$allowtransparency.'" webkitAllowFullScreen allowFullScreen></iframe></div>';
+		// &amp;output=embed
+		return $return;
+	}
+	add_shortcode('iframe', 'iframe_embed_shortcode');
 }
 		
 // include People Directory and Profiles functionality
