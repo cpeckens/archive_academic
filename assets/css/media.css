@@ -157,7 +157,7 @@ body {
 	}
 
 	a, a:visited {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 
 	a[href]:after {
@@ -193,5 +193,98 @@ body {
 
 	h2, h3 {
 		page-break-after: avoid;
+	}
+	
+	#sidebar-left {
+	display:none;
+	}
+	
+	#sidebar-right {
+	display:none;
+	}
+	
+	#nav {
+	display: none;
+	}
+	
+	#logo img {
+		display: none;
+		}
+	#logo a[href]:after {
+		content: " " attr(title) "";
+	}
+	
+	#blogtitle {
+	margin-top: 0;
+	}
+	
+	#social-media {
+	display: none;
+	}
+	
+	#content {
+	float: left;
+	width: 95%;
+	}
+	
+	.flexslider {
+	display:none;
+	}
+	
+	#homepage a[href]:after {
+		content: none;
+	}
+	
+	#blogfeed {
+		width:95%;
+	}
+	#homepage .snippet h3{
+		content: " (" attr(href) ")";
+	}
+	
+	.entry {
+	width: 95%;
+	}
+	
+	.entry img {
+	display: none;
+	}
+	
+	.directory-table img {
+	display:block;
+	}
+	
+	.directory-table a[href]:after {
+		content: none;
+	}
+	
+	ul.tabs {
+		display:none;
+	}
+	
+	ul.tabs-content > li {
+		display: block;
+	}
+	
+	ul.tabs-content > li:before {
+		content: " " attr(id) ":"}
+		
+	.people-info {
+	float:none;
+	width:95%
+	}
+	
+	.people-tabs {
+	float:none;
+	width:95%;
+	border:none;
+	}
+	
+	.people-info a[href]:after {
+		content: none;
+	}
+	
+	.people-tabs a[href]:after {
+		content: none;
 	}
 }

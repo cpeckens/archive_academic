@@ -35,7 +35,7 @@
 			<div id="header">
 				
 				<div id="header-left">
-				<div id="logo"><a href="http://krieger.jhu.edu"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
+				<div id="logo"><a href="http://krieger.jhu.edu" title="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="header-right">
