@@ -14,21 +14,21 @@
 	   		 <ul class="slides">
 	   		 	<li class="slide1">
 	   		 		<div class="slide-holder">
-	   		 		<a href="/economics/graduate"><img src="<?php bloginfo('template_url'); ?>/assets/img/home-1.png" /></a>
+	   		 		<a href="/economics/graduate"><img src="<?php bloginfo('template_url'); ?>/assets/img/home-1.jpg" /></a>
 	   		 		<div class="flex-caption"><h3>Featuring a world-class faculty and individualized attention, the doctoral program is the centerpiece of the department. Students share academic and collegial connections with their professors, who guide them through thought-provoking research and an intense curriculum. </h3>
 	   				<p><a href="/economics/graduate" class="button">Find Out More</a></p></div>
 	   				</div>
 	   		 	</li>
 	   		 	<li class="slide3">
 	   		 	<div class="slide-holder">
-	   		 		<a href="/economics/undergraduate"><img src="<?php bloginfo('template_url'); ?>/assets/img/home-3.png" /></a>
+	   		 		<a href="/economics/undergraduate"><img src="<?php bloginfo('template_url'); ?>/assets/img/home-3.jpg" /></a>
 	   		 		<div class="flex-caption"><h3>At Johns Hopkins, the undergraduate study of economics offers students dynamic classroom interactions that explore important economic problems and provide the tools needed to address them&mdash;in theory and in practice. </h3>
 	   				<p><a href="/economics/undergraduate" class="button">Find Out More</a></p></div>
 	   				</div>
 	   		 	</li>
 	   		 	<li class="slide2">
 	   		 	<div class="slide-holder">
-	   		 		<a href="/economics/graduate/recent-placements"><img src="<?php bloginfo('template_url'); ?>/assets/img/home-2.png" /></a>
+	   		 		<a href="/economics/graduate/recent-placements"><img src="<?php bloginfo('template_url'); ?>/assets/img/home-2.jpg" /></a>
 	   		 		<div class="flex-caption"><h3>Department of Economics alumni are leaders in their fields. Students are frequently appointed to esteemed academic institutions, think tanks, government research positions, and investment banks around the world. </h3>
 	   				<p><a href="/economics/graduate/recent-placements" class="button">Find Out More</a></p></div>
 	   				</div>

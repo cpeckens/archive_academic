@@ -207,27 +207,10 @@ ___________________________________________________________*/
 	width:35px;
 }
 
-#social-media .facebook:hover {
-	background-position: 0 -32px;}
-
-#social-media .facebook span {
-	position: absolute;
-  	top: -999em;
-}
-
 #social-media .youtube {
 	background: url('../img/youtube.png') no-repeat 0 0;
 	height:31px;
 	width:35px;
-}
-
-#social-media .youtube:hover {
-	background-position: 0 -32px;
-}
-
-#social-media .youtube span {
-	position: absolute;
-  	top: -999em;
 }
 
 #social-media .rss {
@@ -236,12 +219,17 @@ ___________________________________________________________*/
 	width:35px;
 }
 
+#social-media .facebook:hover,
+#social-media .youtube:hover,
 #social-media .rss:hover {
-	background-position: 0 -32px;}
+	background-position:0 -32px;
+}
 
+#social-media .facebook span,
+#social-media .youtube span,
 #social-media .rss span {
-	position: absolute;
-  	top: -999em;
+	position:absolute;
+	top:-999em;
 }
 
 /* 4.0 Nav
@@ -284,11 +272,8 @@ ___________________________________________________________*/
 	float: left;
 }
 
-#nav li.current_page_item {
-	background: url('../img/nav-current.gif') no-repeat center bottom;
-}
-
-#nav li.current_page_ancestor {
+#nav li.current_page_item,
+#nav li.current-page-ancestor {
 	background: url('../img/nav-current.gif') no-repeat center bottom;
 }
 
@@ -316,10 +301,7 @@ ___________________________________________________________*/
 	border-bottom: solid 1px #CCC;
 }
 
-#nav .sub-menu li.current_page_item {
-	background: none;
-}
-
+#nav .sub-menu li.current_page_item,
 #nav .sub-menu li.current-page-ancestor {
 	background: none;
 }
@@ -388,29 +370,23 @@ ul#subnav {
 	color:#386180;
 }
 	
-#subnav li.current_page_item {
-	background: url('../img/subnav-current.png') no-repeat 0% .4em;
-	margin-left: 5.4545454545455%; /* 12px / 220px */
-	padding-left: 9.0909090909091%; /* 20px / 220px */
+#subnav li.current_page_item, 
+#subnav li.current_page_ancestor {
+	background: url('../img/subnav-current.png') no-repeat 5.4545454545455% .4em;
+	padding-left: 14.5454545454546%; /* 20px / 220px */
 }
 
-#subnav li.current_page_parent {
-	background: url('../img/subnav-current.png') no-repeat 0% .4em;
-	margin-left: 5.4545454545455%; /* 12px / 220px */
-	padding-left: 9.0909090909091%; /* 20px / 220px */
-}
-
-#subnav li ul li.current_page_item {
+#subnav li ul li.current_page_item,
+#subnav li ul li.current_page_parent {
 	background: none;
-	list-style: circle;
-	list-style-position: inside;
-	margin-left: 0;
-}
-	
-#subnav li.current_page_item ul.children {
-	display: block;
+	list-style-image:url('../img/tert_nav.png');
+	list-style-position: outside;
+	margin-left: 5px;
+	padding-left: 0;
 }
 
+#subnav li.current_page_ancestor ul.children, 
+#subnav li.current_page_item ul.children,
 #subnav li.current_page_parent ul.children {
 	display: block;
 }

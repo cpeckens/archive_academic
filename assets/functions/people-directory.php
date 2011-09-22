@@ -79,14 +79,20 @@ function people_details() {
   $extra_tab = $custom["extra_tab"][0];
 
   ?>
+  <script language="javascript" type="text/javascript">
+tinyMCE.init({
+        theme : "advanced",
+        mode : "textareas"
+});
+</script>
   <div class="meta-group">  
   <div class="meta-box"><strong>Title/Position:</strong><br><input size="30" name="position" value="<?php echo $position; ?>"></input></div>
     <div class="meta-box"><strong>Last Name (For Indexing):</strong><br><input size="30" name="people_alpha" value="<?php echo $people_alpha; ?>"></input></div>
 <div class="clear"></div>
   <div class="meta-box"><strong>Degrees:</strong><br>
-  <textarea cols="30" rows="3" name="degrees" value="<?php echo $degrees; ?>"><?php echo $degrees; ?></textarea></div>
+  <input cols="30" rows="3" name="degrees" value="<?php echo $degrees; ?>"></input></div>
   <div class="meta-box"><strong>Expertise/Research Interests:</strong><br>
-  <textarea cols="30" rows="3" name="expertise" value="<?php echo $expertise; ?>"><?php echo $expertise; ?></textarea></div>
+  <input cols="30" rows="3" name="expertise" value="<?php echo $expertise; ?>"></input></div>
   </div>
 <div class="clear"></div>
 <h3>Contact Information</h3>
@@ -349,9 +355,9 @@ function job_candidate() {
 
 
     <div class="meta-box"><strong>Thesis Title:</strong><br>
-  <textarea cols="50" rows="3" name="thesis" value="<?php echo $thesis; ?>"><?php echo $thesis; ?></textarea></div>
+  <input cols="50" rows="3" name="thesis" value="<?php echo $thesis; ?>"></input></div>
   <div class="meta-box"><strong>Fields:</strong><br>
-  <textarea cols="50" rows="3" name="fields" value="<?php echo $fields; ?>"><?php echo $fields; ?></textarea></div>
+  <input cols="50" rows="3" name="fields" value="<?php echo $fields; ?>"></input></div>
   </div>
       <div class="meta-group">  
     <div class="meta-box meta-box-large"><strong>Research:</strong><br><textarea name="job_research"><?php echo $job_research; ?></textarea></div>

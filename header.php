@@ -45,6 +45,10 @@
 					<h1><?php bloginfo('name'); ?></h1>
 					</div>
 					
+					<div id="searchbar">
+					<?php include (TEMPLATEPATH . ‘/searchform.php’); ?>
+					</div>
+					
 					
 					
 				</div><!-- End header-right -->

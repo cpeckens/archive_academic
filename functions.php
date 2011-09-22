@@ -130,11 +130,12 @@
 		
 		add_filter('the_generator', 'complete_version_removal');
 
-// Add meta box stylesheet
+// Add meta box stylesheet and WYSIWYG JAvascript
 	add_action("admin_head", "ksas_admin_stylesheet");
 	
 	function ksas_admin_stylesheet () {
 		echo '<link rel="stylesheet" href="'.get_bloginfo('template_url').'/assets/css/meta.css" type="text/css" media="screen" />';
+		echo '<script language="javascript" type="text/javascript" src="'.get_bloginfo('template_url').'/assets/js/tiny_mce/tiny_mce.js"></script>';
 	}
 
 //Add AJAX file upload capability

@@ -1,25 +1,28 @@
 /* Meta Group */
 .meta-group {
-float: left;
-width: 100%;
+	float: left;
+	width: 100%;
 }
+
 .meta-group {
-border-bottom: 3px solid #ddd;
-padding-bottom: 10px;
-margin: 5px 0 20px 0;
+	border-bottom: 3px solid #ddd;
+	padding-bottom: 10px;
+	margin: 5px 0 20px 0;
 }
+
 .meta-group h3 {
-font-size: 14px !important;
-background: none !important;
-padding: 0 0 10px 0 !important;
-margin: 0 0 15px 0 !important;
+	font-size: 14px !important;
+	background: none !important;
+	padding: 0 0 10px 0 !important;
+	margin: 0 0 15px 0 !important;
 }
+
 .group-desc {
-font-size: 10px;
-color: #808080;
-line-height: 16px;
-margin-top: -10px;
-padding-bottom: 10px;
+	font-size: 10px;
+	color: #808080;
+	line-height: 16px;
+	margin-top: -10px;
+	padding-bottom: 10px;
 }
 
 /* Meta Box */

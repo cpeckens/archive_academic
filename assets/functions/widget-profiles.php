@@ -180,9 +180,6 @@ class job_candidate_Widget extends WP_Widget {
 }
 
 
-?>
-
-<?php 
 
 // Define graduate student profile widget
 class Spotlight_Widget extends WP_Widget {
