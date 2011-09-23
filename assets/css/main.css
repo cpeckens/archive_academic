@@ -418,7 +418,7 @@ a:hover, a:active {
 		-webkit-border-top-right-radius: 2px;
 		border-top-right-radius: 2px; }
 
-	ul.tabs-content { margin: 0; display: block; }
+	ul.tabs-content { margin: 0; display: block; list-style:none; }
 	ul.tabs-content > li { display:none; }
 	ul.tabs-content > li.active { display: block; 
 	padding-top:20px;

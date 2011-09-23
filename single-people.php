@@ -110,26 +110,26 @@
 								<!-- Standard <ul> with class of "tabs-content" -->
 								<ul class="tabs-content">
 								  <!-- Give ID that matches HREF+Tab of above anchors -->
-								  <?php if ( get_post_meta($post->ID, 'bio', true) ) : ?><li class="active" id="bioTab"><?php echo get_post_meta($post->ID, 'bio', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'bio', true) ) : ?><li class="active" id="bio"><?php echo get_post_meta($post->ID, 'bio', true); ?></li><?php endif; ?>
 								
-								  <?php if ( get_post_meta($post->ID, 'research', true) ) : ?><li id="researchTab"><?php echo get_post_meta($post->ID, 'research', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'research', true) ) : ?><li id="research"><?php echo get_post_meta($post->ID, 'research', true); ?></li><?php endif; ?>
 								
-								  <?php if ( get_post_meta($post->ID, 'teaching', true) ) : ?><li id="teachingTab"><?php echo get_post_meta($post->ID, 'teaching', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'teaching', true) ) : ?><li id="teaching"><?php echo get_post_meta($post->ID, 'teaching', true); ?></li><?php endif; ?>
 								
-								  <?php if ( get_post_meta($post->ID, 'publications', true) ) : ?><li id="publicationsTab"><?php echo get_post_meta($post->ID, 'publications', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'publications', true) ) : ?><li id="publications"><?php echo get_post_meta($post->ID, 'publications', true); ?></li><?php endif; ?>
 								
-								  <?php if ( get_post_meta($post->ID, 'extra_tab', true) ) : ?><li id="extraTab"><?php echo get_post_meta($post->ID, 'extra_tab', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'extra_tab', true) ) : ?><li id="extra"><?php echo get_post_meta($post->ID, 'extra_tab', true); ?></li><?php endif; ?>
 								  
-								  <?php if ( get_post_meta($post->ID, 'job_research', true) ) : ?><li class="active" id="job_researchTab">
+								  <?php if ( get_post_meta($post->ID, 'job_research', true) ) : ?><li class="active" id="job_research">
 								  <p><strong>Thesis Title:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'thesis', true); ?>&nbsp;<?php if ( get_post_meta($post->ID, 'job_abstract', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'job_abstract', true); ?>">Download Abstract</a> (PDF)<?php endif; ?></p>
 								  <p><strong>Fields:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'fields', true); ?></p>
 								  <?php echo get_post_meta($post->ID, 'job_research', true); ?></li><?php endif; ?>
 								  
-								  <?php if ( get_post_meta($post->ID, 'job_teaching', true) ) : ?><li id="job_teachingTab"><?php echo get_post_meta($post->ID, 'job_teaching', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'job_teaching', true) ) : ?><li id="job_teaching"><?php echo get_post_meta($post->ID, 'job_teaching', true); ?></li><?php endif; ?>
 								  
-								  <?php if ( get_post_meta($post->ID, 'job_extra_tab', true) ) : ?><li id="job_extraTab"><?php echo get_post_meta($post->ID, 'job_extra_tab', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'job_extra_tab', true) ) : ?><li id="job_extra"><?php echo get_post_meta($post->ID, 'job_extra_tab', true); ?></li><?php endif; ?>
 								  
-								  <?php if ( get_post_meta($post->ID, 'references', true) ) : ?><li id="referencesTab"><?php echo get_post_meta($post->ID, 'references', true); ?></li><?php endif; ?>
+								  <?php if ( get_post_meta($post->ID, 'references', true) ) : ?><li id="references"><?php echo get_post_meta($post->ID, 'references', true); ?></li><?php endif; ?>
 								</ul>
 							</div>
 						

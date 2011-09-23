@@ -11,7 +11,9 @@
 	4.0 Navigation
 		4.1 Main Menu
 		4.2 Left Side Nav
-	5.0 Header Content - Logo and Title
+	5.0 Header Content
+		5.1 Logo and Title
+		5.2 Search Bar
 	6.0 Content - Entry
 	7.0 Homepage
 	8.0 News Archive
@@ -68,7 +70,7 @@ ___________________________________________________________*/
 
 .video-container iframe,  
 .video-container object,  
-.video-container embed {
+.video-container embed, {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -138,6 +140,7 @@ ___________________________________________________________*/
 	padding-top: 22.727272727272727%; /* 50px / 220px */
 	font-size: 0.75em;
 }
+
 
 /* 2.3 Footer Container
 ----------------------------------- */
@@ -405,10 +408,13 @@ li.subnav-head {
 
 /* 5.0 Header Content - Logo and Title
 ---------------------------------------------*/
+/* 5.1 Logo and Title
+---------------------------------------------*/
 #blogtitle {
 	margin-left: 5.4054054054054%; /* 40px / 740px */
 	margin-top: 4.7297297297297%; /* 35px /740px */
 	margin-bottom: 3.3783783783784%; /*25px / 740px */
+	float:left;
 }
 
 #blogtitle h1 {
@@ -427,6 +433,48 @@ li.subnav-head {
 #logo {
 	min-width: 175px;
 }
+
+/* 5.2 Search Bar and Search Results
+___________________________________________________________*/
+#searchbar {
+	float:right;
+	position:relative;
+	width: 220px;
+	margin-top: 2.027027027027027%; /* 15px /740px */
+
+}
+#searchbar input {
+	background-color: #686868;
+	border-color: #343434;
+	color: #999999;
+}
+
+#searchbar input[type="submit"] {
+	background: url('../img/search.png');
+	border:none;
+	padding:0;
+	margin:0;
+	position:absolute;
+	right:3px;
+	top:3px;
+	height:25px;
+	width: 25px;
+	text-indent: -9999px;
+	}
+
+#searchresults {
+	width:100%;
+	max-width: 960px;
+	background: #e2e1df;
+	margin: 40px auto;
+	display: block;
+}
+
+#searchresults h3 {
+	margin-bottom: 0;
+	margin-top:10px;
+}
+
 
 /* 6.0 Entry
 ----------------------------------*/
@@ -805,3 +853,4 @@ h2.fc-header-title {
 table.fc-header {
 	margin-bottom:0;
 }
+

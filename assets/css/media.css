@@ -5,7 +5,7 @@
 
 #header-right {
 	float:left;
-	width:50%;
+	width:70%;
 	}
 
 #nav {
@@ -25,14 +25,39 @@
 
 @media screen and (max-width: 750px) {
 
+#header-right {
+	width:65%;
+	}
+
 .directory-table img {
 	display:none;
 	}
 } /*End 750px media query */
 
+@media screen and (max-width: 700px) {
+
+#header-right {
+	width:57%;
+	}
+
+.directory-table img {
+	display:none;
+	}
+} /*End 700px media query */
+
 
 @media screen and (max-width: 650px) {
 
+#header-right: {
+	width:50%;
+	float:right;
+	}
+	
+#searchbar {
+	float:none;
+	padding-left:5.4054054054054%;
+	}
+	
 #nav ul li {
 	letter-spacing: normal;
 	font-weight: 400;
@@ -75,9 +100,7 @@ body {
 	font-size:90%;
 	}
 
-#header-right {
-	float:right;
-	}
+
 
 }/*End 520px media query */
 
