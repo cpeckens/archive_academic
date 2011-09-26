@@ -9,7 +9,7 @@
 				<?php
 				
 							
-					$parent = ksas_get_page_id('people');;
+					$parent = ksas_get_page_id('directoryindex');;
 								
 									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
@@ -109,7 +109,7 @@
 								
 								<!-- Standard <ul> with class of "tabs-content" -->
 								<ul class="tabs-content">
-								  <!-- Give ID that matches HREF+Tab of above anchors -->
+								  <!-- Give ID that matches HREF of above anchors -->
 								  <?php if ( get_post_meta($post->ID, 'bio', true) ) : ?><li class="active" id="bio"><?php echo get_post_meta($post->ID, 'bio', true); ?></li><?php endif; ?>
 								
 								  <?php if ( get_post_meta($post->ID, 'research', true) ) : ?><li id="research"><?php echo get_post_meta($post->ID, 'research', true); ?></li><?php endif; ?>

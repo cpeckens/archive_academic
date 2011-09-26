@@ -14,7 +14,7 @@ Template Name: Directory
 				<?php
 				
 							
-					$parent = ksas_get_page_id('people');;
+					$parent = ksas_get_page_id('directoryindex');;
 								
 									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
