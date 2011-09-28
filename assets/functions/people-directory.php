@@ -3,7 +3,6 @@
 add_action("init", "people_directory_plugin");
 
 function people_directory_plugin() {
-
 //Create labels
 $labels = array(
 		'name' => _x('People', 'post type general name'),
@@ -20,7 +19,6 @@ $labels = array(
 	);
 
 //Register custom post type
-
 register_post_type('people', array(
 	'labels' => $labels,
 	'public' => true,
@@ -34,29 +32,19 @@ register_post_type('people', array(
 	'can_export' => true,
 ));
 
-
-
-
 //add taxonomies for Department and Role (faculty, staff, graduate student, etc.)
 register_taxonomy("Role", array("people"), array("hierarchical" => true, "label" => "Roles", "singular_label" => "Role", "rewrite" => true));
 register_taxonomy("Department", array("people"), array("hierarchical" => true, "label" => "Departments", "singular_label" => "Department", "rewrite" => true));
-
 }
-
-
 
 //Create Meta boxes
 // Intiate create meta boxes
 add_action("admin_init", "people_create_meta_boxes");
 function people_create_meta_boxes(){
-
   add_meta_box("people_details", "Personal Details", "people_details", "people", "normal", "low");
   add_meta_box("job_candidate", "Job Candidate Details", "job_candidate", "people", "normal", "low");
   add_meta_box("people_uploads", "Uploads", "people_uploads", "people", "side", "high");
 }
-
-
-
 
 //Style and label meta boxes	
 function people_details() {

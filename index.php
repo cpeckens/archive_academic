@@ -37,7 +37,7 @@
 						<?php if ( has_post_thumbnail()) { ?> 
 						<div class="thumbnail"><img src="<?php $image_id = get_post_thumbnail_id();
 										$image_url = wp_get_attachment_image_src($image_id,’thumbnail’, true);
-										echo $image_url[0];  ?>" align="left" height="75" /></div>
+										echo $image_url[0];  ?>" align="left" height="75" width="75" /></div>
 						<?php	} ?>
 						
 						<?php the_excerpt() ?>

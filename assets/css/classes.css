@@ -679,6 +679,18 @@ ___________________________________________________________*/
 ___________________________________________________________*/
 /* 12.1 Text Widgets
 ___________________________________________________________*/
+h2.widgettitle {
+	font-weight: 700;
+	font-size:1.3em;
+	text-transform: uppercase;
+	color: #333333;
+	padding-top: 6.8181818181818%; /* 15px / 220px */
+	padding-left: 6.8181818181818%; /* 15px / 220px */
+	margin-bottom:0;
+}
+
+
+
 .textwidget {
 	padding: 6.8181818181818%; /* 15px / 220px */
 }
@@ -691,6 +703,31 @@ ___________________________________________________________*/
 	float:left;
 	padding-right:10px;
 	margin:0;
+}
+
+#undergrad-widget {
+	background: rgb(237,237,237); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(198,197,195,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(198,197,195,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#c6c5c3',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* W3C */
+	padding-bottom:10px;
+}
+
+#undergrad-widget .textwidget h4 {
+	color:#00337f;
+	font-weight: 700;
+	font-size:1.3em;
+	text-transform: uppercase;
+	margin-bottom:0;
+}
+
+#undergrad-widget .textwidget {
+	font-size: 0.8em;
+	padding-right:10px;
 }
 
 /* 12.2 Profile/Spotlight Widgets
@@ -758,6 +795,7 @@ ___________________________________________________________*/
 	font-size:1.3em;
 	text-transform: uppercase;
 	color: #333333;
+	padding-left: 0;
 }
 
 .WPCalendarSimple p {
@@ -798,23 +836,34 @@ h3.acc_trigger {
 
 /* 14.0 Calendar
 ___________________________________________________________*/
-div .fc-event.category-17, div .fc-event.category-17 a { 
+div .fc-event.category-17, div .fc-event.category-17 a { /* Theory Events */
 	background-color: #679bcd; 
 	border-color: #679bcd; 
 }
 
-div .fc-event.category-18, div .fc-event.category-18 a { 
+div .fc-event.category-18, div .fc-event.category-18 a { /* Micro Events */
 	background-color: #95a739; 
 	border-color: #95a739; 
 }
 
-div .fc-event.category-19, div .fc-event.category-19 a { 
+div .fc-event.category-19, div .fc-event.category-19 a { /* Macro Events */
 	background-color: #c4a41d; 
 	border-color: #c4a41d; 
 }
 
+div .fc-event.category-24, div .fc-event.category-24 a { /* Lunch Seminar Events */
+	background-color: #c4691d; 
+	border-color: #c4691d; 
+}
+
+div .fc-event.category-23, div .fc-event.category-23 a { /* 2nd Year Seminar Events */
+	background-color: #a64938; 
+	border-color: #a64938; 
+}
+
 .macro {
 	background-color: #c4a41d;
+	color:#FFFFFF;
 	display: inline;
 	padding-top: 7px;
 	padding-bottom:8px;
@@ -825,6 +874,7 @@ div .fc-event.category-19, div .fc-event.category-19 a {
 
 .micro {
 	background-color: #95a739;
+	color:#FFFFFF;
 	display: inline;
 	padding-top: 7px;
 	padding-bottom:8px;
@@ -835,6 +885,29 @@ div .fc-event.category-19, div .fc-event.category-19 a {
 
 .theory {
 	background-color: #679bcd;
+	color:#FFFFFF;
+	display: inline;
+	padding-top: 7px;
+	padding-bottom:8px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.lunch {
+	background-color: #c4691d;
+	color:#FFFFFF;
+	display: inline;
+	padding-top: 7px;
+	padding-bottom:8px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.practicum {
+	background-color: #a64938;
+	color:#FFFFFF;
 	display: inline;
 	padding-top: 7px;
 	padding-bottom:8px;

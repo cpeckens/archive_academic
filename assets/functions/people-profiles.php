@@ -30,7 +30,7 @@ register_post_type('profile', array(
 	'hierarchical' => false,
 	'rewrite' => array("slug" => "profiles"), // Permalinks format
 	'query_var' => "profiles", // This goes to the WP_Query schema
-	'supports' => array('title', 'editor', 'revisions', 'custom-fields'),
+	'supports' => array('title', 'editor'),
 	'can_export' => true,
 ));
 

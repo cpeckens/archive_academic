@@ -28,7 +28,7 @@ class Undergrad_Profile_Widget extends WP_Widget {
 	
 
 		global $post; ?>
-		<?php $undergrad_profile_query = new WP_Query('post-type=profile&profile_type=undergraduate&orderby=rand&posts_per_page=1'); ?>
+		<?php $undergrad_profile_query = new WP_Query('post-type=profiles&profile_type=undergraduate&orderby=rand&posts_per_page=1'); ?>
 					<?php while ($undergrad_profile_query->have_posts()) : $undergrad_profile_query->the_post(); ?>           
     	<div class="profile_box">
     	<div class="spotlight"></div>
