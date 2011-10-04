@@ -1,0 +1,10 @@
+This is a responsive Wordpress theme that is being developed with higher education and academic departments in mind.
+
+The theme includes custom post types for:
+	-Student/Faculty Profiles
+	-Course Listings
+	-People Directory
+
+Future developments include:
+	-Theme Options page with CSS options, homepage slider administration
+	-Mobile specific navigation style
