@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <!-- Insert them single.php container code below -->
 		<div id="container-mid">
 			<div id="main">

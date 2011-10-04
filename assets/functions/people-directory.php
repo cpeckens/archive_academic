@@ -33,8 +33,8 @@ register_post_type('people', array(
 ));
 
 //add taxonomies for Department and Role (faculty, staff, graduate student, etc.)
-register_taxonomy("Role", array("people"), array("hierarchical" => true, "label" => "Roles", "singular_label" => "Role", "rewrite" => true));
-register_taxonomy("Department", array("people"), array("hierarchical" => true, "label" => "Departments", "singular_label" => "Department", "rewrite" => true));
+register_taxonomy("Role", array("people"), array("hierarchical" => true, "label" => "Roles", "singular_label" => "Role", 'show_ui' => true, "rewrite" => true));
+register_taxonomy("Department", array("people"), array("hierarchical" => true, "label" => "Departments", "singular_label" => "Department", 'show_ui' => true, "rewrite" => true));
 }
 
 //Create Meta boxes
@@ -70,7 +70,8 @@ function people_details() {
   <script language="javascript" type="text/javascript">
 tinyMCE.init({
         theme : "advanced",
-        mode : "textareas"
+        mode : "textareas",
+        relative_urls : false
 });
 </script>
   <div class="meta-group">  

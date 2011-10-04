@@ -28,7 +28,7 @@ register_post_type('course', array(
 	'_builtin' => false, // It's a custom post type, not built in!
 	'capability_type' => 'post',
 	'hierarchical' => false,
-	'rewrite' => array("slug" => "courses"), // Permalinks format
+	'rewrite' => array("slug" => "courseindex"), // Permalinks format
 	'query_var' => "courses", // This goes to the WP_Query schema
 	'supports' => array('title', 'editor', 'revisions'),
 	'can_export' => true,

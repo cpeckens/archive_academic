@@ -13,3 +13,9 @@
 }
 if (window.attachEvent) window.attachEvent("onload", sfHover);
  
+
+//PDF open in new window
+var $j = jQuery.noConflict();
+$j(document).ready(function(){
+  $j("a[href$='pdf']").attr('target','_blank');
+});

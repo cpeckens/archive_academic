@@ -4,7 +4,7 @@ Template Name: Directory
 */
 ?>		
 	<?php get_header() ?>	
-		
+
 		
 		<div id="container-mid">
 			<div id="main">
@@ -82,10 +82,47 @@ Template Name: Directory
 					</tr>
 					
 					<?php endwhile; ?>
+					<?php endif; ?>
 					
+					<?php if(is_page('faculty')) : ?>
+					<?php $my_emeriti_query = new WP_Query(array(
+					'post-type' => 'people',
+					'role' => 'professor-emeriti',
+					'meta_key' => 'people_alpha',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+					'posts_per_page' => '25')); ?>
+					<?php if ($my_emeriti_query->have_posts()) : ?>
+					</table>
+					<h2>Professor Emeriti</h2>
+					<table>
+					<?php endif; ?>
 					
+					<?php $my_emeriti_query = new WP_Query(array(
+					'post-type' => 'people',
+					'role' => 'professor-emeriti',
+					'meta_key' => 'people_alpha',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+					'posts_per_page' => '25')); ?>
+					<?php while ($my_emeriti_query->have_posts()) : $my_emeriti_query->the_post(); ?>
 					
-					<?php elseif(is_page('job-market-candidates')) :  ?>
+					<tr>
+						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
+						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
+							<p><?php if ( get_post_meta($post->ID, 'position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'position', true); ?><?php endif; ?></p>
+							<p><?php if ( get_post_meta($post->ID, 'degrees', true) ) : ?>  <?php echo get_post_meta($post->ID, 'degrees', true); ?><?php endif; ?><br>
+							<?php if ( get_post_meta($post->ID, 'expertise', true) ) : ?>  <?php echo get_post_meta($post->ID, 'expertise', true); ?><?php endif; ?></p></td>
+						<td><p class="contact-info"><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'office', true) ) : ?> <?php echo get_post_meta($post->ID, 'office', true); ?><br><?php endif; ?>
+							</p></td>
+					</tr>
+					
+					<?php endwhile; ?>
+					<?php endif; ?>
+					
+					<?php if(is_page('job-market-candidates')) :  ?>
 					
 					<tr>
 					<th colspan="2">Name</th>
