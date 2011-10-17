@@ -144,19 +144,18 @@ class job_candidate_Widget extends WP_Widget {
 	
 
 		global $post; ?>
-		<?php $job_candidate_query = new WP_Query('post-type=people&orderby=rand&posts_per_page=1'); ?>
+		<?php $job_candidate_query = new WP_Query('post-type=people&role=job-market-candidate&orderby=rand&posts_per_page=1'); ?>
 					<?php while ($job_candidate_query->have_posts()) : $job_candidate_query->the_post(); ?>            
     	<div class="profile_box">
     	
-		<a href="<?php bloginfo('url'); ?>/people/job-market-candidates/"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a>
-    	<h4><a href="<?php bloginfo('url'); ?>/people/job-market-candidates/"><?php the_title(); ?></a></h4>
-    	<p>This is the generic language for the job-candidate widget.</p>
+		<a href="http://econ.jhu.edu/directoryindex/job-market/"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a>
+    	<h4><a href="http://econ.jhu.edu/directoryindex/job-market/"><?php the_title(); ?></a></h4>
+    	<p><strong>Thesis:</strong> <?php echo get_post_meta($post->ID, 'thesis', true); ?></p>
+    	<p><a href="http://econ.jhu.edu/directoryindex/job-market/">Click here</a> to view all of our 2011-2012 job market candidates.</p>
     	</div>
 	
 	
 	<?php endwhile; ?>
-
-
 
 <?php echo $after_widget;
 

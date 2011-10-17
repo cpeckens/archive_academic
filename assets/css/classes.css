@@ -60,6 +60,12 @@ ___________________________________________________________*/
 	float:right;
 }
 
+hr {
+	color: #CCC;
+	background-color: #CCC;
+	height: 3px;
+}
+
 .video-container { /* Wrap around iFrame and SWF embeds for responsive sizing */
 	position: relative;
 	padding-bottom: 56.25%;
@@ -719,10 +725,11 @@ h2.widgettitle {
 
 #undergrad-widget .textwidget h4 {
 	color:#00337f;
+	text-transform: none;
 	font-weight: 700;
-	font-size:1.3em;
-	text-transform: uppercase;
-	margin-bottom:0;
+	font-size: 1.25em;
+	margin-bottom: 1em;
+	padding-top:5px;
 }
 
 #undergrad-widget .textwidget {

@@ -19,7 +19,9 @@
 							<?php echo $children; ?>
 						</ul>			
 				<?php } ?> <!--End subnav -->
-<!--Begin Jump to faculty code -->				
+<!--Begin Jump to faculty code -->
+
+<?php if ( has_role( 'faculty' ) ) : ?>				
 		<?php 
 			$args=array(
 	  'post_type' => 'people',
@@ -52,7 +54,7 @@
 <?php
 	wp_reset_query();
 ?>
-
+<?php endif; ?>
 	<!--End jump-menu -->	
 
 						<!--End Subpage Navigation code -->
@@ -120,7 +122,7 @@
 								  <?php if ( get_post_meta($post->ID, 'extra_tab', true) ) : ?><li id="extra"><?php echo get_post_meta($post->ID, 'extra_tab', true); ?></li><?php endif; ?>
 								  
 								  <?php if ( get_post_meta($post->ID, 'job_research', true) ) : ?><li class="active" id="job_research">
-								  <p><strong>Thesis Title:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'thesis', true); ?>&nbsp;<?php if ( get_post_meta($post->ID, 'job_abstract', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'job_abstract', true); ?>">Download Abstract</a> (PDF)<?php endif; ?></p>
+								  <p><strong>Thesis Title:</strong>&nbsp;<?php if ( get_post_meta($post->ID, 'thesis', true) ) : ?><?php echo get_post_meta($post->ID, 'thesis', true); ?><?php endif; ?>&nbsp;<?php if ( get_post_meta($post->ID, 'job_abstract', true) ) : ?>- <a href="<?php echo get_post_meta($post->ID, 'job_abstract', true); ?>">Download Abstract</a> (PDF)<?php endif; ?></p>
 								  <p><strong>Fields:</strong>&nbsp;<?php echo get_post_meta($post->ID, 'fields', true); ?></p>
 								  <?php echo get_post_meta($post->ID, 'job_research', true); ?></li><?php endif; ?>
 								  

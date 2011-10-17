@@ -227,6 +227,22 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 	}
 	add_shortcode('iframe', 'iframe_embed_shortcode');
 }
+
+// Add conditional statement for people type
+	function has_role( $Role, $_post = null ) {
+	if ( empty( $Role ) )
+		return false;
+	if ( $_post )
+		$_post = get_post( $_post );
+	else
+		$_post =& $GLOBALS['post'];
+	if ( !$_post )
+		return false;
+	$r = is_object_in_term( $_post->ID, 'Role', $Role );
+	if ( is_wp_error( $r ) )
+		return false;
+	return $r;
+}
 		
 // include People Directory and Profiles functionality
 	include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
