@@ -147,7 +147,7 @@ class job_candidate_Widget extends WP_Widget {
 		<?php $job_candidate_query = new WP_Query('post-type=people&role=job-market-candidate&orderby=rand&posts_per_page=1'); ?>
 					<?php while ($job_candidate_query->have_posts()) : $job_candidate_query->the_post(); ?>            
     	<div class="profile_box">
-    	
+    	<div class="jobmarket"></div>
 		<a href="http://econ.jhu.edu/directoryindex/job-market/"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a>
     	<h4><a href="http://econ.jhu.edu/directoryindex/job-market/"><?php the_title(); ?></a></h4>
     	<p><strong>Thesis:</strong> <?php echo get_post_meta($post->ID, 'thesis', true); ?></p>

@@ -60,10 +60,12 @@ ___________________________________________________________*/
 	float:right;
 }
 
-hr {
-	color: #CCC;
-	background-color: #CCC;
-	height: 3px;
+.divider {
+	width:100%;
+	height:3px;
+	margin-bottom: 1.6em;
+	border-bottom: ridge 5px #fafafa;
+
 }
 
 .video-container { /* Wrap around iFrame and SWF embeds for responsive sizing */
@@ -555,9 +557,11 @@ ___________________________________________________________*/
 	margin-right: 6.060606060606061%; /* 40px / 675px */
 	padding-top: 2.272727272727273%; /* 15px /675px */
 	padding-bottom: 2.272727272727273%; /* 15px /675px */
-	margin-bottom: 2.272727272727273%; /* 15px /675px */
 	border-bottom: ridge 5px #fafafa;
 }
+
+.snippet p {
+	margin-bottom: 3em;}
 
 /* 8.0 News Archive
 ----------------------------------*/
@@ -605,6 +609,11 @@ ___________________________________________________________*/
 	border-left: #ddd solid 1px;
 }
 
+.people-tabs h4 {
+	font-weight: 700;
+	color:#00337F;
+}
+
 .people-tabs li {
 	padding-left:2%;
 }
@@ -637,7 +646,8 @@ ___________________________________________________________*/
 }
 
 p.candidates {
-	font-size: 80%;
+	font-size: 85%;
+	margin-bottom:10px;
 }
 
 p.contact-info {
@@ -756,6 +766,11 @@ ___________________________________________________________*/
 	height: 35px;
 }
 
+.profile_box .jobmarket {
+	background: #c4a41d url(../img/jobmarket.gif) no-repeat top left;
+	height: 35px;
+}
+
 .profile_box img {
 	border:none;
 	background-color: transparent;
@@ -763,6 +778,7 @@ ___________________________________________________________*/
 	-moz-box-shadow:none;
 	box-shadow:none;
 	max-width: 35%;
+	max-height:130px;
 	float:left;
 	margin-right:10px;
 	margin-bottom:0;

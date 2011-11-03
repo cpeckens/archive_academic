@@ -52,7 +52,7 @@
 	    				
 	    				<?php //limit posts to 3 and start the loop
         					$recentPosts = new WP_Query();
-        					$recentPosts->query('showposts=4');
+        					$recentPosts->query('showposts=6');
 	    					while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?> 
 	    				
 	    			<div class="snippet">

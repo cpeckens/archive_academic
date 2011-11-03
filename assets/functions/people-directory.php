@@ -332,6 +332,7 @@ function job_candidate() {
   $custom = get_post_custom($post->ID);
   $thesis = $custom["thesis"][0];
   $fields = $custom["fields"][0];
+  $advisor = $custom["advisor"][0];
   $job_research = $custom["job_research"][0];
   $job_teaching = $custom["job_teaching"][0];
   $references = $custom["references"][0];
@@ -343,11 +344,12 @@ function job_candidate() {
 <div class="clear"></div>
 
 
-    <div class="meta-box"><strong>Thesis Title:</strong><br>
-  <input cols="50" rows="3" name="thesis" value="<?php echo $thesis; ?>"></input></div>
+<div class="meta-box"><strong>Thesis Title:</strong>&nbsp;<input size="100" maxlength="200" name="thesis" value="<?php echo $thesis; ?>"></input></div>
+    <div class="divider"></div>
   <div class="meta-box"><strong>Fields:</strong><br>
-  <input cols="50" rows="3" name="fields" value="<?php echo $fields; ?>"></input></div>
-  </div>
+  <input cols="50" name="fields" value="<?php echo $fields; ?>"></input></div>
+<div class="meta-box"><strong>Main Advisor:</strong><br>&nbsp;<input size="30" name="advisor" value="<?php echo $advisor; ?>"></input></div>
+ <div class="divider"></div>
       <div class="meta-group">  
     <div class="meta-box meta-box-large"><strong>Research:</strong><br><textarea name="job_research"><?php echo $job_research; ?></textarea></div>
     <div class="divider"></div>
@@ -393,6 +395,7 @@ function people_save_details(){
   update_post_meta($post->ID, "cv", $_POST["cv"]);
   update_post_meta($post->ID, "thesis", $_POST["thesis"]);
   update_post_meta($post->ID, "fields", $_POST["fields"]);
+  update_post_meta($post->ID, "advisor", $_POST["advisor"]);
   update_post_meta($post->ID, "job_research", $_POST["job_research"]);
   update_post_meta($post->ID, "job_teaching", $_POST["job_teaching"]);
   update_post_meta($post->ID, "references", $_POST["references"]);
