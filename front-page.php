@@ -59,7 +59,7 @@
 	    			    	<div class="thumbnail">
 	    			    		<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
 	    			    		<img src="<?php $image_id = get_post_thumbnail_id();
-	    			    						$image_url = wp_get_attachment_image_src($image_id,’thumbnail’, true);
+	    			    						$image_url = wp_get_attachment_image_src($image_id,'thumbnail', true);
 	    			    						echo $image_url[0];  ?>" align="left" height="75" /></a>
 	    			    	</div> <!--end thumbnail-->
 	    			    <?php	} ?>
@@ -70,7 +70,7 @@
 	    				
 	    			<?php endwhile; //End loop ?>
 	    				
-	    			<div class="morenews"><p><a href="/economics/about/news-archive/">More News and Announcements &gt;&gt;</a></div>
+	    			<div class="morenews"><p><a href="<?php bloginfo('url'); ?>/about/news-archive/">More News and Announcements &gt;&gt;</a></div>
 	    		
 	    		</div> <!--End blogfeed -->	
 	    		

@@ -41,8 +41,8 @@
 				<div id="header-right">
 					
 					<div id="blogtitle">
-					<h1 class="little">Department of</h1>
-					<h1><?php bloginfo('name'); ?></h1>
+					<a href="<?php bloginfo('url'); ?>"><h1 class="little">Department of</h1>
+					<h1><?php bloginfo('name'); ?></h1></a>
 					</div>
 					
 					<div id="searchbar">

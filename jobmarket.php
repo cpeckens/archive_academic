@@ -70,14 +70,14 @@ Template Name: Job Market
 					
 					
 					<tr>
-						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
+						<td><?php if ( get_post_meta($post->ID, 'ecpt_people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_people_photo', true); ?>" /></a><?php endif; ?></td>
 						
-						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
-						<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><?php endif; ?></p>
+						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4><?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><br><?php endif; ?>
+						<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a><?php endif; ?></p>
 						<div class="divider"></div>
-						<p class="candidates"><?php if ( get_post_meta($post->ID, 'thesis', true) ) : ?><strong>Thesis Title: </strong>"<?php echo get_post_meta($post->ID, 'thesis', true); ?>"<?php endif; ?><?php if ( get_post_meta($post->ID, 'job_abstract', true) ) : ?>&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'job_abstract', true); ?>">Download Abstract (PDF)</a><?php endif; ?> </p>
-						<p class="candidates"><?php if ( get_post_meta($post->ID, 'advisor', true) ) : ?><strong>Main Advisor: </strong><?php echo get_post_meta($post->ID, 'advisor', true); ?><?php endif; ?></p>
-						<p class="candidates"><?php if ( get_post_meta($post->ID, 'fields', true) ) : ?><strong>Fields: </strong><?php echo get_post_meta($post->ID, 'fields', true); ?><?php endif; ?></p>
+						<p class="candidates"><?php if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) : ?><strong>Thesis Title: </strong>"<?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?>"<?php endif; ?><?php if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) : ?>&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract (PDF)</a><?php endif; ?> </p>
+						<p class="candidates"><?php if ( get_post_meta($post->ID, 'ecpt_advisor', true) ) : ?><strong>Main Advisor: </strong><?php echo get_post_meta($post->ID, 'ecpt_advisor', true); ?><?php endif; ?></p>
+						<p class="candidates"><?php if ( get_post_meta($post->ID, 'ecpt_fields', true) ) : ?><strong>Fields: </strong><?php echo get_post_meta($post->ID, 'ecpt_fields', true); ?><?php endif; ?></p>
 						
 						</td>
 												

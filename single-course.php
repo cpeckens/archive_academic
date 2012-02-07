@@ -39,14 +39,14 @@
 						<h3><?php the_title() ?></h3>
 						
 						<?php the_content()?>
-								<?php if ( get_post_meta($post->ID, 'prereqs', true) ) : ?><p><span class="label">Prerequisites:</span> <?php echo get_post_meta($post->ID, 'prereqs', true); ?></p><?php endif; ?>
-								<p><?php if ( get_post_meta($post->ID, 'instructor', true) ) : ?><span class="label">Instructor:</span> <?php echo get_post_meta($post->ID, 'instructor', true); ?><br><?php endif; ?>
+								<?php if ( get_post_meta($post->ID, 'ecpt_prereqs', true) ) : ?><p><span class="label">Prerequisites:</span> <?php echo get_post_meta($post->ID, 'ecpt_prereqs', true); ?></p><?php endif; ?>
+								<p><?php if ( get_post_meta($post->ID, 'ecpt_instructor', true) ) : ?><span class="label">Instructor:</span> <?php echo get_post_meta($post->ID, 'ecpt_instructor', true); ?><br><?php endif; ?>
 									
-									<?php if ( get_post_meta($post->ID, 'course_times', true) ) : ?><span class="label">Course Times:</span> <?php echo get_post_meta($post->ID, 'course_times', true); ?><br><?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_course_times', true) ) : ?><span class="label">Course Times:</span> <?php echo get_post_meta($post->ID, 'ecpt_course_times', true); ?><br><?php endif; ?>
 									
-									<?php if ( get_post_meta($post->ID, 'course_limit', true) ) : ?><span class="label">Course Limit:</span> <?php echo get_post_meta($post->ID, 'course_limit', true); ?><br><?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_course_limit', true) ) : ?><span class="label">Course Limit:</span> <?php echo get_post_meta($post->ID, 'ecpt_course_limit', true); ?><br><?php endif; ?>
 									
-									<?php if ( get_post_meta($post->ID, 'course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'course_website', true); ?>" target="_blank">View course website</a><?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website</a><?php endif; ?>
 			
 					</div><!--End entry -->
 					

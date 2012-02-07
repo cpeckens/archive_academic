@@ -35,7 +35,7 @@
 						
 						
 						<h2><?php the_title() ?></h2>
-						<img src="<?php echo get_post_meta($post->ID, 'profile_photo', true); ?>" class="floatleft" />
+						<img src="<?php echo get_post_meta($post->ID, 'ecpt_profile_photo', true); ?>" class="floatleft" />
 						<?php the_content()?>
 								
 			

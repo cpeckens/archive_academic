@@ -70,14 +70,14 @@ Template Name: Directory
 					<?php while ($my_faculty_query->have_posts()) : $my_faculty_query->the_post(); ?>
 					
 					<tr>
-						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
+						<td><?php if ( get_post_meta($post->ID, 'ecpt_people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_people_photo', true); ?>" /></a><?php endif; ?></td>
 						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-							<p><?php if ( get_post_meta($post->ID, 'position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'position', true); ?><?php endif; ?></p>
-							<p><?php if ( get_post_meta($post->ID, 'degrees', true) ) : ?>  <?php echo get_post_meta($post->ID, 'degrees', true); ?><?php endif; ?><br>
-							<?php if ( get_post_meta($post->ID, 'expertise', true) ) : ?>  <?php echo get_post_meta($post->ID, 'expertise', true); ?><?php endif; ?></p></td>
-						<td><p class="contact-info"><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><br><?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'office', true) ) : ?> <?php echo get_post_meta($post->ID, 'office', true); ?><br><?php endif; ?>
+							<p><?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_position', true); ?><?php endif; ?></p>
+							<p><?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?><?php endif; ?><br>
+							<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?><?php endif; ?></p></td>
+						<td><p class="contact-info"><?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br><?php endif; ?>
 							</p></td>
 					</tr>
 					
@@ -108,14 +108,14 @@ Template Name: Directory
 					<?php while ($my_emeriti_query->have_posts()) : $my_emeriti_query->the_post(); ?>
 					
 					<tr>
-						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
+						<td><?php if ( get_post_meta($post->ID, 'ecpt_people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_people_photo', true); ?>" /></a><?php endif; ?></td>
 						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4>
-							<p><?php if ( get_post_meta($post->ID, 'position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'position', true); ?><?php endif; ?></p>
-							<p><?php if ( get_post_meta($post->ID, 'degrees', true) ) : ?>  <?php echo get_post_meta($post->ID, 'degrees', true); ?><?php endif; ?><br>
-							<?php if ( get_post_meta($post->ID, 'expertise', true) ) : ?>  <?php echo get_post_meta($post->ID, 'expertise', true); ?><?php endif; ?></p></td>
-						<td><p class="contact-info"><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><br><?php endif; ?>
-							<?php if ( get_post_meta($post->ID, 'office', true) ) : ?> <?php echo get_post_meta($post->ID, 'office', true); ?><br><?php endif; ?>
+							<p><?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_position', true); ?><?php endif; ?></p>
+							<p><?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?><?php endif; ?><br>
+							<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?><?php endif; ?></p></td>
+						<td><p class="contact-info"><?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a><br><?php endif; ?>
+							<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br><?php endif; ?>
 							</p></td>
 					</tr>
 					
@@ -142,14 +142,14 @@ Template Name: Directory
 					
 					
 					<tr>
-						<td><?php if ( get_post_meta($post->ID, 'people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a><?php endif; ?></td>
+						<td><?php if ( get_post_meta($post->ID, 'ecpt_people_photo', true) ) : ?><a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_people_photo', true); ?>" /></a><?php endif; ?></td>
 						
-						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'phone', true); ?><br><?php endif; ?>
-						<?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><?php endif; ?></p></td>
+						<td><h4><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h4><?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><br><?php endif; ?>
+						<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a><?php endif; ?></p></td>
 						
-						<td><p class="candidates"><?php if ( get_post_meta($post->ID, 'thesis', true) ) : ?><?php echo get_post_meta($post->ID, 'thesis', true); ?><?php endif; ?><?php if ( get_post_meta($post->ID, 'job_abstract', true) ) : ?>&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'job_abstract', true); ?>">Download Abstract (PDF)</a><?php endif; ?> </p></td>
+						<td><p class="candidates"><?php if ( get_post_meta($post->ID, 'ecpt_thesis', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?><?php endif; ?><?php if ( get_post_meta($post->ID, 'ecpt_job_abstract', true) ) : ?>&nbsp;- <a href="<?php echo get_post_meta($post->ID, 'ecpt_job_abstract', true); ?>">Download Abstract (PDF)</a><?php endif; ?> </p></td>
 						
-						<td><p class="candidates"><?php if ( get_post_meta($post->ID, 'fields', true) ) : ?><?php echo get_post_meta($post->ID, 'fields', true); ?><?php endif; ?></td>
+						<td><p class="candidates"><?php if ( get_post_meta($post->ID, 'ecpt_fields', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_fields', true); ?><?php endif; ?></td>
 							
 						
 					</tr>
@@ -180,10 +180,10 @@ Template Name: Directory
 					<div class="staff">
 					<tr>
 					<td><?php the_title() ?></td>
-					<td><?php if ( get_post_meta($post->ID, 'position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'position', true); ?><?php endif; ?></td>
-					<td><?php if ( get_post_meta($post->ID, 'office', true) ) : ?>  <?php echo get_post_meta($post->ID, 'office', true); ?><?php endif; ?></td>
-					<td><?php if ( get_post_meta($post->ID, 'phone', true) ) : ?>  <?php echo get_post_meta($post->ID, 'phone', true); ?><?php endif; ?></td>
-					<td><?php if ( get_post_meta($post->ID, 'email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'email', true); ?>"> <?php echo get_post_meta($post->ID, 'email', true); ?></a><?php endif; ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_position', true); ?><?php endif; ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><?php endif; ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>  <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?><?php endif; ?></td>
+					<td><?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?><a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"> <?php echo get_post_meta($post->ID, 'ecpt_email', true); ?></a><?php endif; ?></td>
 					</tr>
 					</div>
 					<?php endwhile; ?>
