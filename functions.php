@@ -13,15 +13,12 @@
 	// initiate register menus
 		add_action( 'init', 'ksas_register_my_menus' );
 
-
-
 //register thumbnail/featured image support
 	add_theme_support( 'post-thumbnails' );
 
 	// name of the thumbnail, width, height, crop mode
 		add_image_size( 'page-image', 678, 204, true );
 		add_image_size( 'thumbnail', 75, 75, true );
-
 
 //pagination function
 	function ksas_pagination($prev = '«', $next = '»') {
@@ -45,7 +42,7 @@
     	echo paginate_links( $pagination );
 	};		
 
-// addd is subpage of conditional statement
+// add is subpage of conditional statement
 	function ksas_is_subpage_of( $parentpage = '' ) {
 	
 		$posts = $GLOBALS['posts'];
@@ -60,7 +57,6 @@
 			return false;
 		}
 	}
-
 
 //register sidebars
 	
@@ -130,42 +126,6 @@
 		
 		add_filter('the_generator', 'complete_version_removal');
 
-// Add meta box stylesheet and WYSIWYG JAvascript
-	add_action("admin_head", "ksas_admin_stylesheet");
-	
-	function ksas_admin_stylesheet () {
-		echo '<link rel="stylesheet" href="'.get_bloginfo('template_url').'/assets/css/meta.css" type="text/css" media="screen" />';
-		echo '<script language="javascript" type="text/javascript" src="'.get_bloginfo('template_url').'/assets/js/tiny_mce/tiny_mce.js"></script>';
-	}
-
-//Add AJAX file upload capability
-//Save image via AJAX
-add_action('wp_ajax_ksas_ajax_upload', 'ksas_ajax_upload'); //Add support for AJAX save
-
-function ksas_ajax_upload(){
-	
-	global $wpdb; //Now WP database can be accessed
-	
-	
-	$image_id=$_POST['data'];
-	$image_filename=$_FILES[$image_id];	
-	$override['test_form']=false; //see http://wordpress.org/support/topic/269518?replies=6
-	$override['action']='wp_handle_upload';    
-	
-	$uploaded_image = wp_handle_upload($image_filename,$override);
-	
-	if(!empty($uploaded_image['error'])){
-		echo 'Error: ' . $uploaded_image['error'];
-	}	
-	else{ 
-		update_option($image_id, $uploaded_image['url']);		 
-		echo $uploaded_image['url'];
-	}
-			
-	die();
-
-}
-
 //check course type
 function has_course_type( $the_course, $_post = null ) {
 	if ( empty( $the_course ) )
@@ -179,7 +139,7 @@ function has_course_type( $the_course, $_post = null ) {
 	if ( !$_post )
 		return false;
 
-	$course_answer = is_object_in_term( $_post->ID, 'course_type', $the_course );
+	$course_answer = is_object_in_term( $_post->ID, 'coursetype', $the_course );
 
 	if ( is_wp_error( $r ) )
 		return false;
@@ -229,8 +189,8 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 }
 
 // Add conditional statement for people type
-	function has_role( $Role, $_post = null ) {
-	if ( empty( $Role ) )
+	function has_role( $role, $_post = null ) {
+	if ( empty( $role ) )
 		return false;
 	if ( $_post )
 		$_post = get_post( $_post );
@@ -238,19 +198,13 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 		$_post =& $GLOBALS['post'];
 	if ( !$_post )
 		return false;
-	$r = is_object_in_term( $_post->ID, 'Role', $Role );
+	$r = is_object_in_term( $_post->ID, 'role', $role );
 	if ( is_wp_error( $r ) )
 		return false;
 	return $r;
 }
 		
-// include People Directory and Profiles functionality
-	include_once (TEMPLATEPATH . '/assets/functions/people-directory.php');
-	include_once (TEMPLATEPATH . '/assets/functions/people-profiles.php');
+// include custom widget functionality
 	include_once (TEMPLATEPATH . '/assets/functions/widget-profiles.php');
-	include_once (TEMPLATEPATH . '/assets/functions/courses-directory.php');
-
-
-
 
 ?>

@@ -57,15 +57,15 @@ ul.slides {
 /* FlexSlider Default Theme
 *********************************/
 
-.slide1 {
+.blueslide {
 	background: #679bcd url('../img/slider-bottom-bg.png') repeat-x left bottom;
 }
 
-.slide2 {
+.greenslide {
 	background: #95a739 url('../img/slider-bottom-bg.png') repeat-x left bottom;
 }
 
-.slide3 {
+.yellowslide {
 	background: #c4a41d url('../img/slider-bottom-bg.png') repeat-x left bottom;
 }
 

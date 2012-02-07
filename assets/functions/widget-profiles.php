@@ -32,9 +32,9 @@ class Undergrad_Profile_Widget extends WP_Widget {
 					<?php while ($undergrad_profile_query->have_posts()) : $undergrad_profile_query->the_post(); ?>           
     	<div class="profile_box">
     	<div class="spotlight"></div>
-		<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'profile_photo', true); ?>" /></a>
+		<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_profile_photo', true); ?>" /></a>
     	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-    	<p><?php echo get_post_meta($post->ID, 'pull_quote', true); ?></p>
+    	<p><?php echo get_post_meta($post->ID, 'ecpt_pull_quote', true); ?></p>
     	</div>
 	
 	
@@ -91,9 +91,9 @@ class Graduate_Profile_Widget extends WP_Widget {
          <?php //$profileid = $post->ID; ?>               
     	<div class="profile_box">
     	<div class="spotlight"></div>
-		<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'profile_photo', true); ?>" /></a>
+		<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_profile_photo', true); ?>" /></a>
     	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-    	<p><?php echo get_post_meta($post->ID, 'pull_quote', true); ?></p>
+    	<p><?php echo get_post_meta($post->ID, 'ecpt_pull_quote', true); ?></p>
     	</div>
 	
 	
@@ -148,10 +148,10 @@ class job_candidate_Widget extends WP_Widget {
 					<?php while ($job_candidate_query->have_posts()) : $job_candidate_query->the_post(); ?>            
     	<div class="profile_box">
     	<div class="jobmarket"></div>
-		<a href="http://econ.jhu.edu/directoryindex/job-market/"><img src="<?php echo get_post_meta($post->ID, 'people_photo', true); ?>" /></a>
-    	<h4><a href="http://econ.jhu.edu/directoryindex/job-market/"><?php the_title(); ?></a></h4>
-    	<p><strong>Thesis:</strong> <?php echo get_post_meta($post->ID, 'thesis', true); ?></p>
-    	<p><a href="http://econ.jhu.edu/directoryindex/job-market/">Click here</a> to view all of our 2011-2012 job market candidates.</p>
+		<a href="<?php bloginfo('url'); ?>/directoryindex/job-market/"><img src="<?php echo get_post_meta($post->ID, 'ecpt_people_photo', true); ?>" /></a>
+    	<h4><a href="<?php bloginfo('url'); ?>/directoryindex/job-market/"><?php the_title(); ?></a></h4>
+    	<p><strong>Thesis:</strong> <?php echo get_post_meta($post->ID, 'ecpt_thesis', true); ?></p>
+    	<p><a href="<?php bloginfo('url'); ?>/directoryindex/job-market/">Click here</a> to view all of our 2011-2012 job market candidates.</p>
     	</div>
 	
 	
@@ -204,9 +204,9 @@ class Spotlight_Widget extends WP_Widget {
          <?php //$profileid = $post->ID; ?>               
     	<div class="profile_box">
     	<div class="spotlight"></div>
-		<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'profile_photo', true); ?>" /></a>
+		<a href="<?php the_permalink() ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_profile_photo', true); ?>" /></a>
     	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-    	<p><?php echo get_post_meta($post->ID, 'pull_quote', true); ?></p>
+    	<p><?php echo get_post_meta($post->ID, 'ecpt_pull_quote', true); ?></p>
     	</div>
 	
 	
