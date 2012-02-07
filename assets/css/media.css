@@ -105,8 +105,12 @@ body {
 }/*End 520px media query */
 
 
-
-
+@media screen and (max-width: 480px) {
+#sidebar-right { display:none;}
+#blogfeed {
+	width:100%;
+}
+}
 @media screen and (max-width: 400px) {
 	/*for mobile */
 

@@ -11,9 +11,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- Don't forget to update the bookmark icons (favicon.ico and apple-touch-icons) in the root: http://mathiasbynens.be/notes/touch-icons -->
+		<?php $ksasaca_option = ksasaca_get_global_options(); ?>
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
+
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
 		<![endif]-->

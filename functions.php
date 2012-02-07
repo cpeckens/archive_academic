@@ -206,5 +206,36 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 		
 // include custom widget functionality
 	include_once (TEMPLATEPATH . '/assets/functions/widget-profiles.php');
+	
+//include theme settings page
+	
+//require only in admin!
+if(is_admin()){	
+	require_once('assets/functions/ksasaca-theme-settings-basic.php');
+}
 
+ /**
+ * Collects our theme options
+ *
+ * @return array
+ */
+function ksasaca_get_global_options(){
+	
+	$ksasaca_option = array();
+
+	$ksasaca_option 	= get_option('ksasaca_options');
+	
+return $ksasaca_option;
+}
+
+ /**
+ * Call the function and collect in variable
+ *
+ * Should be used in template files like this:
+ * <?php echo $ksasaca_option['ksasaca_txt_input']; ?>
+ *
+ * Note: Should you notice that the variable ($ksasaca_option) is empty when used in certain templates such as header.php, sidebar.php and footer.php
+ * you will need to call the function (copy the line below and paste it) at the top of those documents (within php tags)!
+ */ 
+$ksasaca_option = ksasaca_get_global_options();
 ?>

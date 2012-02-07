@@ -31,13 +31,6 @@
 
 /* 1.0 Special Classes
 ___________________________________________________________*/
-.altcolorblack {
-	color:#333333;
-}
-	
-.altcolorblue {
-	color:#00337F;
-}
 
 .label { 
 	font-weight: 700;
@@ -188,7 +181,6 @@ hr {
 }
 
 #footer p a {
-	color: #444;
 	font-size:.8em;
 }
 	
@@ -252,10 +244,6 @@ hr {
 	margin-left: 27.0833333333333%; /* 260px / 960px */
 }
 
-#nav a {
-	color:#CCC;
-}
-
 #nav ul { /* all lists */
 	padding: 0;
 	margin: 0;
@@ -295,11 +283,9 @@ hr {
 
 #nav .sub-menu { /* second-level lists */
 	position: absolute;
-	background: #679bcd;
 	margin-top: 14px;
 	font-weight: 400;
 	font-size: 1em;
-	color: #FFFFFF;
 	letter-spacing: 0;
 	width:8em;
 	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
@@ -320,8 +306,8 @@ hr {
 
 #nav .sub-menu a {
 	padding-left:5px;
-	color: #FFFFFF;
 }
+
 #nav .sub-menu li:hover {
 	background:#38638e;
 }
@@ -361,10 +347,6 @@ ul#subnav {
 	line-height: 1.75em;
 }
 
-#subnav li a {
-	color:#487ca3;
-}
-
 #subnav li ul {
 	margin-left:10px;
 }
@@ -376,10 +358,6 @@ ul#subnav {
 	line-height: 1.5em;
 	border-bottom: none;
 	padding-left: 4.545454545454545%; /* 10px / 220px */
-}
-
-#subnav li ul li a {
-	color:#386180;
 }
 	
 #subnav li.current_page_item, 
@@ -407,14 +385,6 @@ ul#subnav {
 	display:none;
 }
 
-li.subnav-head {
-	color: #a6a6a6;
-}
-
-#subnav li .highlight a {
-	color: #333;
-}
-
 /* 5.0 Header Content - Logo and Title
 ---------------------------------------------*/
 /* 5.1 Logo and Title
@@ -426,7 +396,8 @@ li.subnav-head {
 	float:left;
 }
 
-#blogtitle h1 {
+#blogtitle h1,
+#blogtitle h1 a {
 	color:#FFF;
 	text-transform: uppercase;
 	font-size: 3em;
@@ -506,7 +477,6 @@ ___________________________________________________________*/
 #homepage {
 	width:100%;
 	max-width: 960px;
-	background: #e2e1df url("../img/home_bg.png") repeat-y 69.791666666666667% 0; /* 675px / 960px */
 	margin: 0 auto;
 	display: block;
 	
@@ -520,16 +490,7 @@ ___________________________________________________________*/
 	margin:0;
 }
 
-#homepage a p{
- 	color: #333333;
-}
-
-#homepage p a{
- 	color: #333333;
-}
-
 #homepage .morenews p a {
-	color:#00337F;
 	font-weight: 700;
 }
 
@@ -543,7 +504,6 @@ ___________________________________________________________*/
 	font-weight: 700;
 	font-size:1.3em;
 	text-transform: uppercase;
-	color: #999999;
 	padding-top: 1em;
 	border-bottom: ridge 5px #fafafa;
 	margin-right: 6.060606060606061%; /* 40px / 675px */
@@ -612,7 +572,6 @@ ___________________________________________________________*/
 
 .people-tabs h4 {
 	font-weight: 700;
-	color:#00337F;
 }
 
 .people-tabs li {
@@ -674,10 +633,6 @@ ___________________________________________________________*/
 	box-shadow:         -2px 2px 2px rgba(50, 50, 50, 0.5);
 }
 
-.page-numbers.current { 
-	color: #333; 
-}
-
 /* 11.0 Mini-Home - Graduate/Undergraduate - 2 Sidebar
 ___________________________________________________________*/
 .entry-text {
@@ -688,7 +643,6 @@ ___________________________________________________________*/
 
 #sidebar-right {
 	width: 31.428571428571429%;
-	background-color: #ededed;
 	float:right;
 }
 	
@@ -700,7 +654,6 @@ h2.widgettitle {
 	font-weight: 700;
 	font-size:1.3em;
 	text-transform: uppercase;
-	color: #333333;
 	padding-top: 6.8181818181818%; /* 15px / 220px */
 	padding-left: 6.8181818181818%; /* 15px / 220px */
 	margin-bottom:0;
@@ -735,7 +688,6 @@ h2.widgettitle {
 }
 
 #undergrad-widget .textwidget h4 {
-	color:#00337f;
 	text-transform: none;
 	font-weight: 700;
 	font-size: 1.25em;
