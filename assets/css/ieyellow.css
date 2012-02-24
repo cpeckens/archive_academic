@@ -1,0 +1,10 @@
+#homepage {
+	background-position-x:70%;
+}
+
+#container-head {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F504837,endColorstr=#7F504837)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F504837,endColorstr=#7F504837);   /* IE6 & 7 */
+    zoom: 1;
+}

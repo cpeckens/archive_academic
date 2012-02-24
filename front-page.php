@@ -19,7 +19,7 @@
 				
 				<?php while ($my_slider_query->have_posts()) : $my_slider_query->the_post(); ?>
 				
-				<li class="<?php echo get_post_meta($post->ID, 'ecpt_slidecolor', true); ?>"
+				<li class="<?php echo get_post_meta($post->ID, 'ecpt_slidecolor', true); ?>">
 		   		 	<div class="slide-holder">
 		   		 		<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" /></a>
 		   		 		<div class="flex-caption">

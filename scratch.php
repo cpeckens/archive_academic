@@ -85,3 +85,50 @@ if($post->post_parent){
   $sidelinks = wp_list_pages("title_li=&echo=0&include=".$relations_string);
   
   ?>
+  
+<!--Begin Jump to faculty code -->
+
+<?php if ( has_role( 'faculty' ) ) : ?>				
+		<?php 
+			$args=array(
+	  'post_type' => 'people',
+	  'role' => 'faculty',
+	  'meta_key' => 'people_alpha',
+	  'orderby' => 'meta_value',
+	  'order' => 'ASC',
+	  'post_status' => 'publish',
+	  'posts_per_page' => -1,
+	  'caller_get_posts'=> 1
+	);
+	$my_query = null;
+	$my_query = new WP_Query($args);
+	if( $my_query->have_posts() ) {
+?>
+	<div class="jumpmenu"><form name="jump">
+		<select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+		<option>Jump to faculty member</option>
+			<?php
+			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
+				<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
+				<?php
+
+			  endwhile;
+			}
+			?>
+		</select>
+	</form>
+</div>
+<?php
+	wp_reset_query();
+?>
+<?php endif; ?>
+	<!--End jump-menu -->	
+	
+<div class="wysiwyg-more-less">
+<div class="wysiwyg-more-less-top">
+<h4>Header Bane <span class="readmore">&nbsp;[<a class="wysiwyg-read-more-link" href="#">Read More</a>]</span></h4>
+</div>
+<div class="wysiwyg-more-less-toggle">
+<p>Amrita Ibrahim is a Ph.D. candidate at the Department of Anthropology at Johns Hopkins University. Her research interests span themes in the anthropology of media, visual anthropology, the anthropology of religion, and gender and sexuality, with a specific regional focus on South Asia. In her dissertation, these fields come together to explore the changing place of television news in forming Indian public and popular culture.</p>
+</div>
+</div>

@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
 
 		<!--[if lte IE 8]>
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
 		<![endif]-->
 	<?php if (is_front_page()) { ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
@@ -32,13 +32,13 @@
 		<![endif]-->
 	</head>
 	
-	<body>
+	<body <?php if (is_front_page()) { ?>class="home"<?php } else { ?> class="page"<?php } ?>>
 		<div id="container-head">
 			
 			<div id="header">
 				
 				<div id="header-left">
-				<div id="logo"><a href="http://krieger.jhu.edu" title="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
+				<div id="logo"><a href="http://krieger.jhu.edu" title="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo<?php echo $ksasaca_option['ksasaca_select_input']; ?>.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="header-right">
@@ -59,6 +59,14 @@
 					
 					
 				</div><!-- End header-right -->
+									<div id="searchbar" class="mobile">
+					<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
+<div><input type="text" size="put_a_size_here" name="s" id="s" value="Search this site" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"/>
+<input type="submit" id="searchsubmit" value="Search" class="btn" />
+</div>
+</form>
+					</div>
+
 				<div id="nav">
 					<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 					<div class="clearboth"></div> <!--to have background work properly -->

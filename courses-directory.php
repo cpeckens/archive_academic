@@ -38,18 +38,20 @@ Template Name: Courses
 				<div id="content">
  					<div class="entry">
  					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
-					<h2><?php the_title(); ?></h2>
+					<h2><?php the_title(); ?>&nbsp;<a class="acc_expandall">[Expand All]</a></h2>
 					<?php the_content() ?>
 					<?php endwhile; ?>
 					<?php endif; ?>
  				
 	<!-- Start loop -->
 					<?php if(is_page('undergraduate-courses')) : ?>
-					<?php $ksas_course_query = new WP_Query('post-type=course&course_type=undergraduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					
+					<?php $ksas_course_query = new WP_Query('post-type=course&coursetype=undergraduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					
 					<?php while ($ksas_course_query->have_posts()) : $ksas_course_query->the_post(); ?>
 					
 						
-							<h3 class="acc_trigger"><a href="#"><?php the_title(); ?><?php if ( get_post_meta($post->ID, 'ecpt_credits', true) ) : ?>&nbsp;(<?php echo get_post_meta($post->ID, 'ecpt_credits', true); ?> Credits)<?php endif; ?></a></h3>
+							<h3 class="acc_trigger"><a href="#"><?php the_title(); ?><?php if ( get_post_meta($post->ID, 'ecpt_credit', true) ) : ?>&nbsp;(<?php echo get_post_meta($post->ID, 'ecpt_credit', true); ?> Credits)<?php endif; ?></a></h3>
 							<div class="acc_container">
 								<div class="course">
 								<?php the_content()?>
@@ -60,7 +62,7 @@ Template Name: Courses
 									
 									<?php if ( get_post_meta($post->ID, 'ecpt_course_limit', true) ) : ?><span class="label">Course Limit:</span> <?php echo get_post_meta($post->ID, 'ecpt_course_limit', true); ?><br><?php endif; ?>
 									
-									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website</a><?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website/syllabus</a><?php endif; ?>
 								</p>
 								
 								
@@ -71,7 +73,7 @@ Template Name: Courses
 				
 				<?php elseif(is_page('graduate-courses')) :  ?>
 				
-					<?php $ksas_gradcourse_query = new WP_Query('post-type=course&course_type=graduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					<?php $ksas_gradcourse_query = new WP_Query('post-type=course&coursetype=graduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
 					<?php while ($ksas_gradcourse_query->have_posts()) : $ksas_gradcourse_query->the_post(); ?>
 					
 						
@@ -86,7 +88,7 @@ Template Name: Courses
 									
 									<?php if ( get_post_meta($post->ID, 'ecpt_course_limit', true) ) : ?><span class="label">Course Limit:</span> <?php echo get_post_meta($post->ID, 'ecpt_course_limit', true); ?><br><?php endif; ?>
 									
-									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website</a><?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website/syllabus</a><?php endif; ?>
 								</p>
 								
 								

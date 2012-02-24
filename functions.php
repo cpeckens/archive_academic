@@ -17,8 +17,9 @@
 	add_theme_support( 'post-thumbnails' );
 
 	// name of the thumbnail, width, height, crop mode
-		add_image_size( 'page-image', 678, 204, true );
+		add_image_size( 'page-blue', 678, 204, true );
 		add_image_size( 'thumbnail', 75, 75, true );
+		add_image_size( 'page-yellow', 678, 280, true );
 
 //pagination function
 	function ksas_pagination($prev = '«', $next = '»') {
@@ -189,13 +190,13 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 }
 
 // Add conditional statement for people type
-	function has_role( $role, $_post = null ) {
+function has_role( $role, $_post = null ) {
 	if ( empty( $role ) )
 		return false;
 	if ( $_post )
 		$_post = get_post( $_post );
 	else
-		$_post =& $GLOBALS['post'];
+		$_post =& $GLOBALS['people'];
 	if ( !$_post )
 		return false;
 	$r = is_object_in_term( $_post->ID, 'role', $role );
@@ -203,7 +204,13 @@ if ( !function_exists( 'iframe_embed_shortcode' ) ) {
 		return false;
 	return $r;
 }
-		
+// add WYSIWYG stylesheet
+function ksasaca_add_editor_style() {
+  add_editor_style( 'style-editor.css' );
+}
+add_action( 'after_setup_theme', 'ksasaca_add_editor_style' );
+
+	
 // include custom widget functionality
 	include_once (TEMPLATEPATH . '/assets/functions/widget-profiles.php');
 	

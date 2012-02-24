@@ -86,11 +86,9 @@ hr {
 ----------------------------------- */
 #container-head {
 	width:100%;
-	background: #333;
 }
 
 #nav-break {
-	background: url('../img/header_bg.png') repeat-x left bottom;
 	height:27px;
 	position:relative;
 	z-index: 2;
@@ -123,7 +121,6 @@ hr {
 #main {
 	width:100%;
 	max-width: 960px;
-	background: #e2e1df url("../img/blog.png") repeat-y 22.9166666666667% 0; /* 220px / 960px */
 	margin: 0 auto;
 	display: block;
 }
@@ -147,7 +144,6 @@ hr {
 /* 2.3 Footer Container
 ----------------------------------- */
 #container-foot {
-	background: #a9aaa4 url('../img/bg_footer.png') repeat-x left top;
 	width:100%;
 }
 
@@ -196,7 +192,7 @@ hr {
 #social-media {
 	list-style:none;
 	display:inline;
-	height:32px;
+	height:2em;
 	float:right;
 }
 
@@ -227,6 +223,12 @@ hr {
 #social-media .youtube:hover,
 #social-media .rss:hover {
 	background-position:0 -32px;
+}
+#social-media .facebook a,
+#social-media .youtube a,
+#social-media .rss a {
+	height:32px;
+	width:35px;
 }
 
 #social-media .facebook span,
@@ -272,14 +274,6 @@ hr {
 	float: left;
 }
 
-#nav li.current_page_item,
-#nav li.current-page-ancestor {
-	background: url('../img/nav-current.gif') no-repeat center bottom;
-}
-
-#nav li:hover {
-	background: url('../img/nav-hover.png') no-repeat center bottom;
-}
 
 #nav .sub-menu { /* second-level lists */
 	position: absolute;
@@ -308,9 +302,6 @@ hr {
 	padding-left:5px;
 }
 
-#nav .sub-menu li:hover {
-	background:#38638e;
-}
  
 #nav .sub-menu .sub-menu { /* third-and-above-level lists */
 	margin-top: -14px;
@@ -362,14 +353,12 @@ ul#subnav {
 	
 #subnav li.current_page_item, 
 #subnav li.current_page_ancestor {
-	background: url('../img/subnav-current.png') no-repeat 5.4545454545455% .4em;
 	padding-left: 14.5454545454546%; /* 20px / 220px */
 }
 
 #subnav li ul li.current_page_item,
 #subnav li ul li.current_page_parent {
 	background: none;
-	list-style-image:url('../img/tert_nav.png');
 	list-style-position: outside;
 	margin-left: 5px;
 	padding-left: 0;
@@ -425,7 +414,7 @@ ___________________________________________________________*/
 }
 #searchbar input {
 	background-color: #686868;
-	border-color: #343434;
+	border: none;
 	color: #999999;
 }
 
@@ -445,7 +434,6 @@ ___________________________________________________________*/
 #searchresults {
 	width:100%;
 	max-width: 960px;
-	background: #e2e1df;
 	margin: 40px auto;
 	display: block;
 }
@@ -659,8 +647,6 @@ h2.widgettitle {
 	margin-bottom:0;
 }
 
-
-
 .textwidget {
 	padding: 6.8181818181818%; /* 15px / 220px */
 }
@@ -676,14 +662,6 @@ h2.widgettitle {
 }
 
 #undergrad-widget {
-	background: rgb(237,237,237); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(198,197,195,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(198,197,195,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* IE10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#c6c5c3',GradientType=0 ); /* IE6-9 */
-	background: linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* W3C */
 	padding-bottom:10px;
 }
 
@@ -703,24 +681,14 @@ h2.widgettitle {
 /* 12.2 Profile/Spotlight Widgets
 ___________________________________________________________*/
 .profile_box {
-	background: rgb(237,237,237); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(198,197,195,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(198,197,195,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* IE10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#c6c5c3',GradientType=0 ); /* IE6-9 */
-	background: linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* W3C */
 	padding-bottom:10px;
 }
 
 .profile_box .spotlight {
-	background: #c4a41d url(../img/widget_header.png) no-repeat top left;
 	height: 35px;
 }
 
 .profile_box .jobmarket {
-	background: #c4a41d url(../img/jobmarket.gif) no-repeat top left;
 	height: 35px;
 }
 
@@ -804,6 +772,11 @@ h3.acc_trigger {
 	margin: 0 0 5px; padding: 0;
 	overflow: hidden;
 	clear: both;
+}
+
+.acc_expandall {
+	text-transform: uppercase;
+	font-size:50%;
 }
 
 .acc_container .course {
@@ -903,3 +876,11 @@ table.fc-header {
 	margin-bottom:0;
 }
 
+#searchbar.mobile {display: none;}
+
+.readmore {
+	font-size:.75em;
+}
+
+.wysiwyg-more-less-toggle,
+.acc_container {display:none;}

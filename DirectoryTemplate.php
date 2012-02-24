@@ -62,7 +62,7 @@ Template Name: Directory
 					<?php $my_faculty_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'faculty',
-					'meta_key' => 'people_alpha',
+					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
 					'posts_per_page' => '25')); ?>
@@ -88,7 +88,7 @@ Template Name: Directory
 					<?php $my_emeriti_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'professor-emeriti',
-					'meta_key' => 'people_alpha',
+					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
 					'posts_per_page' => '25')); ?>
@@ -101,7 +101,7 @@ Template Name: Directory
 					<?php $my_emeriti_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'professor-emeriti',
-					'meta_key' => 'people_alpha',
+					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
 					'posts_per_page' => '25')); ?>
@@ -134,7 +134,7 @@ Template Name: Directory
 					<?php $my_candidate_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'job-market-candidate',
-					'meta_key' => 'people_alpha',
+					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
 					'posts_per_page' => '25')); ?>
@@ -172,7 +172,7 @@ Template Name: Directory
 					<?php $my_staff_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'staff',
-					'meta_key' => 'people_alpha',
+					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
 					'posts_per_page' => '25')); ?>

@@ -57,17 +57,6 @@ ul.slides {
 /* FlexSlider Default Theme
 *********************************/
 
-.blueslide {
-	background: #679bcd url('../img/slider-bottom-bg.png') repeat-x left bottom;
-}
-
-.greenslide {
-	background: #95a739 url('../img/slider-bottom-bg.png') repeat-x left bottom;
-}
-
-.yellowslide {
-	background: #c4a41d url('../img/slider-bottom-bg.png') repeat-x left bottom;
-}
 
 
 /* Caption style */

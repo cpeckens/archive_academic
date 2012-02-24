@@ -10,6 +10,7 @@
 
 /* HTML5 elements display
 ---------------------------------------- */
+@import url("http://fonts.googleapis.com/css?family=PT+Sans+Narrow");
 
 /* Corrects block display not defined in IE6/7/8 and FF3 */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, dialog {
@@ -527,24 +528,119 @@ sub {
 	bottom: -0.25em;
 }
 
-/* Helper classes
----------------------------------------- */
-
-/*
-	* Micro clearfix hack, more semantically titled with 'group'
-	* Source: nicolasgallagher.com/micro-clearfix-hack/
-*/
-.group:before, .group:after {
-	content: "";
-	display: table;
+.label { 
+	font-weight: 700;
 }
 
-.group:after {
+.clearboth {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;	
+}
+
+.floatleft {
+	float:left;
+}
+
+.floatright {
+	float:right;
+}
+
+.divider,
+hr {
+	width:100%;
+	height:3px;
+	margin-bottom: 1.6em;
+	border-bottom: ridge 5px #fafafa;
+
+}
+
+.video-container { /* Wrap around iFrame and SWF embeds for responsive sizing */
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed, {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.thumbnail img {
+	max-width:75px;
+	margin-right: 2.1428571428571%;
+	border: solid #cad4d5 3px;
+}
+
+ul.tabs-content li {
+	padding-left: 10px;
+}
+
+
+
+
+/* 13.0 Accordion
+___________________________________________________________*/
+h3.acc_trigger {
+	padding: 4px;	
+	margin: 0 0 10px 0;
+	background: #f0f0f0;
+	border: 1px solid #d6d6d6;
+	-webkit-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-radius: 5px;
+	font-size: 1.25em;
+}
+
+.acc_container {
+	margin: 0 0 5px; padding: 0;
+	overflow: hidden;
 	clear: both;
 }
 
-.group {
-	*zoom: 1;
+.acc_expandall {
+	text-transform: uppercase;
+	font-size:50%;
 }
 
+.acc_container .course {
+	padding: 20px;
+}
+
+.readmore {
+	font-size:.75em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #181818;
+}
+
+.altcolorblack,
+#homepage a p,
+#homepage p a,
+h2.widgettitle,
+.page-numbers.current,
+#subnav li .highlight a {
+	color:#333333;
+}
+	
+.altcolorblue,
+#homepage .morenews p a,
+#undergrad-widget .textwidget h4,
+.people-tabs h4 {
+	color:#00337F;
+}
 

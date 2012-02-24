@@ -1,0 +1,215 @@
+body.home {
+	background: #e2e1df url('../../img/books.jpg') center top no-repeat;
+}
+
+body.page { 
+	background: #e2e1df;
+}
+
+#header {
+	margin-top: -15px;
+}
+h1, h2, h3, h4, h5, h6,
+h3.acc_trigger a,
+.tabs li a {
+	color: #383327;
+}
+
+a, a:visited {
+	color: #C4A41D;
+}
+
+.entry a {
+	font-weight: 700;
+	}
+.altcolorblack,
+#homepage a p,
+#homepage p a,
+h2.widgettitle,
+.page-numbers.current,
+#subnav li .highlight a {
+	color:#333333;
+}
+	
+.altcolorblue,
+#homepage .morenews p a,
+#undergrad-widget .textwidget h4,
+.people-tabs h4 {
+	color:#383327;
+}
+
+#nav .sub-menu,
+#nav .sub-menu a {
+	color: #FFFFFF;
+}
+
+#subnav li a {
+	color:#383327;
+}
+
+#subnav li ul li a {
+	color:#504837;
+}
+
+li.subnav-head {
+	color: #a6a6a6;
+}
+
+#blogfeed h2 {
+	color: #999999;
+}
+
+
+#sidebar-right {
+	background-color: #ededed;
+}
+
+#footer p a,
+#footer {
+	color: #ccc;
+}
+
+#nav a {
+	color:#CCC;
+}
+ 
+body.page #container-head {
+  	background: url('../../img/books.jpg') center top no-repeat;
+  	
+}
+
+body.home #container-head {
+  	background-color:rgba(80,72,55,0.5);
+}
+#nav-break {
+	background: url('../../img/header_bgYellow.png') repeat-x left bottom;
+}
+
+#nav .sub-menu {
+	background: #504837;
+}
+
+#homepage {
+	background: #e2e1df url("../../img/home_bg.png") repeat-y 69.791666666666667% 0; /* 675px / 960px */
+}
+
+#subnav li.current_page_item, 
+#subnav li.current_page_ancestor {
+	background: url('../../img/subnav-currentYellow.png') no-repeat 5.4545454545455% .4em;
+}
+
+#nav .sub-menu li:hover {
+	background:#383327;
+}
+
+#nav li.current_page_item,
+#nav li.current-page-ancestor {
+	background: url('../../img/nav-currentYellow.png') no-repeat center bottom;
+}
+
+#nav li:hover {
+	background: url('../../img/nav-hoverYellow.png') no-repeat center bottom;
+}
+
+#main {
+	background: #e2e1df url("../../img/blog.png") repeat-y 22.9166666666667% 0; /* 220px / 960px */
+}
+
+#container-foot {
+	background: #64675e url('../../img/bg_footerYellow.png') repeat-x left top;
+}
+
+#subnav li ul li.current_page_item,
+#subnav li ul li.current_page_parent {
+	list-style-image:url('../img/tert_navYellow.png');
+}
+
+#searchresults {
+	background: #e2e1df;
+}
+
+#undergrad-widget,
+.profile_box {
+	background: rgb(237,237,237); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(237,237,237,1) 0%, rgba(198,197,195,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(198,197,195,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#c6c5c3',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(237,237,237,1) 0%,rgba(198,197,195,1) 100%); /* W3C */
+}
+
+.profile_box .spotlight {
+	background: #c4a41d url(../img/widget_header.png) no-repeat top left;
+}
+
+.profile_box .jobmarket {
+	background: #c4a41d url(../img/jobmarket.gif) no-repeat top left;
+}
+
+#nav {
+	width:100%;
+	margin-left:1%;
+	margin-top:1em;
+}
+
+#nav ul { /* all lists */
+	margin: 0 auto;
+	width:100%;
+	max-width: 960px;
+	padding: 0;
+	font-weight: 700;
+	font-size: 1.25em;
+	font-family: 'PT Sans Narrow', sans-serif;
+	text-transform: uppercase;
+	font-smooth:always;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-ms-filter:none;
+    filter:none;
+	list-style: none;
+	line-height: 1;
+}
+#nav ul li {
+	margin-right: 5%;
+}
+#nav ul li a {
+	display: block;
+	color:#f7f7f7;
+}
+#nav ul li {
+padding-top: 1em;
+}
+
+#nav .sub-menu li {
+	text-transform: none;
+	border-bottom: #695e48 solid 1px;
+}
+
+#logo {
+	min-width: 175px;
+	margin-bottom: 2px;
+}
+
+#logo img {
+	margin: 0;
+}
+
+#searchbar input {
+	background-color: #686868;
+	border: none;
+	color: #999999;
+}
+
+.yellowslide,
+.greenslide,
+.blueslide {
+	background: rgba(80,72,55,0.5);
+	padding-bottom: 20px;
+}
+
+.flexslider .slides img {
+	width:70%;
+	margin: 0px 0 25px 0;
+	padding-top:25px;
+	}

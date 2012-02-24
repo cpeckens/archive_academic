@@ -46,7 +46,7 @@
 									
 									<?php if ( get_post_meta($post->ID, 'ecpt_course_limit', true) ) : ?><span class="label">Course Limit:</span> <?php echo get_post_meta($post->ID, 'ecpt_course_limit', true); ?><br><?php endif; ?>
 									
-									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website</a><?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website/syllabus</a><?php endif; ?>
 			
 					</div><!--End entry -->
 					

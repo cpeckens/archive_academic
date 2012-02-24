@@ -40,11 +40,12 @@
 					<div class="entry">
 						
 						<?php if ( has_post_thumbnail()) { ?> 
-						<img src="<?php $image_id = get_post_thumbnail_id();
-										$image_url = wp_get_attachment_image_src($image_id,'page-image', true);
-										echo $image_url[0];  ?>" />
-						<?php	} ?>
-						
+							<img src="<?php $image_id = get_post_thumbnail_id();
+										$image_color =  $ksasaca_option['ksasaca_select_input'];
+										$image_name = "page-$image_color";
+										$image_url = wp_get_attachment_image_src($image_id, $image_name, true);
+										echo $image_url[0];  ?>" class="<?php echo $image_name; ?>" />
+						<?php	} ?>						
 						<h2><?php the_title() ?></h2>
 						
 						<?php the_content() ?>

@@ -12,9 +12,9 @@
 				
 				<div id="footer-right">
 						<ul id="social-media">
-							<li class="facebook"><a href="http://www.facebook.com"><span>Facebook</span></a></li>
-							<li class="youtube"><span>YouTube</span</li>
-							<li class="rss"><span>RSS</span></li>
+							<a href="http://www.facebook.com"><li class="facebook"><span>Facebook</span></li></a>
+							<a href="http://www.youtube.com/user/johnshopkins"><li class="youtube"><span>Youtube</span></li></a>
+							<a href="<?php bloginfo('url'); ?>/feed"><li class="rss"><span>RSS</span></li></a>
 						</ul>
 				
 				</div>
@@ -35,20 +35,6 @@
 		<?php if (is_front_page()) { ?>
 			
 			<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.flexslider-min.js"></script>
-		<?php } ?>
-			
-		<!--people specific scripts -->
-		<?php if ( 'people' == get_post_type() ) { ?>
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
-		<?php } ?>
-		
-		<?php if ( is_page('recent-placements') ) { ?>
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/tabs.js"></script>
-		<?php } ?>
-		
-		<!--courses specific scripts -->
-		<?php if (is_page_template('courses-directory.php')) { ?>
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_accordion.js"></script>
-		<?php } ?>
+		<?php } ?>			
 </html>
 
