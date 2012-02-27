@@ -55,7 +55,7 @@
 					<?php endwhile; else: ?>
 						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
 					<?php endif; ?>
-				
+		
 				</div> <!--End content -->		
 				<div class="clearboth"></div> <!--to have background work properly -->
 			</div> <!--End main -->

@@ -7,6 +7,7 @@ add_action('widgets_init', 'ksas_register_widgets');
 		register_widget('Graduate_Profile_Widget');
 		register_widget('job_candidate_Widget');
 		register_widget('Spotlight_Widget');
+		register_widget('Bulletin_Board_Widget');
 	}
 
 
@@ -99,6 +100,64 @@ class Graduate_Profile_Widget extends WP_Widget {
 	
 	<?php endwhile; ?>
 
+
+
+<?php echo $after_widget;
+
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '') );
+		$title = $instance['title'];
+?>
+		
+<?php
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$new_instance = wp_parse_args((array) $new_instance, array( 'title' => ''));
+		$instance['title'] = strip_tags($new_instance['title']);
+		return $instance;
+	}
+
+}
+
+
+?>
+<?php 
+// Define bulletin board widget
+class Bulletin_Board_Widget extends WP_Widget {
+
+	function Bulletin_Board_Widget() {
+		$widget_ops = array('classname' => 'widget_bulletin_board', 'description' => __( "Bulletin Board Widget") );
+		$this->WP_Widget('bulletin-board-widget', 'Bulletin Board Widget', $widget_ops);
+	}
+
+	function widget( $args, $instance ) {
+		extract($args);
+		$title = apply_filters('widget_title', $instance['title'], $instance, $this->id_base);
+
+		echo $before_widget;
+		if ( $title )
+			echo $before_title . $title . $after_title;                     
+	
+
+		global $post; ?>
+		<?php global $wp_query;
+			$bulletin_board_query = new WP_Query("post_type=bulletinboard&post_status=publish&posts_per_page=5"); ?>
+<div class="bulletinboard">
+    	<h3><img src="/wp-content/themes/academic/assets/img/arrow.png" width="25" height="25" />Bulletin Board</h3>
+					<?php while ($bulletin_board_query->have_posts()) : $bulletin_board_query->the_post(); ?>
+    	
+    	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+    	<?php the_excerpt(); ?>
+    	
+	
+	
+	<?php endwhile; ?>
+	<p align="right"><a href="<?php bloginfo('url'); ?>/bulletin_board">View all &gt;&gt;</a></p>
+</div>
 
 
 <?php echo $after_widget;

@@ -8,15 +8,11 @@
 				
 					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
 				<?php
-						
-				if(ksasaca_in_taxonomy('profiletype', 'undergraduate')) : 
-					 $parent = ksas_get_page_id('undergraduate');
-				elseif(ksasaca_in_taxonomy('profiletype', 'graduate')) :
-					 $parent = ksas_get_page_id('graduate');
-				elseif(ksasaca_in_taxonomy('profiletype', 'spotlight')) :
-					 $parent = ksas_get_page_id('about');
-				endif;
 				
+							
+					$parent = ksas_get_page_id('about');;
+								
+									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
 									
 					if ($children) { ?>
@@ -27,27 +23,26 @@
 				<?php } ?> <!--End subnav -->
 
 						<!--End Subpage Navigation code -->
-						
-				<div id="address"><?php get_sidebar('address-sb'); ?></div>
 				</div> <!--End sidebar-left -->
 				
-		
 				<div id="content">
+					<div class="entry">
+					<h2>Bulletin Board</h2>
+					</div>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 					
-					<div class="entry">
+					<div class="snippet">
 						
+						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 						
-						<h2><?php the_title() ?></h2>
-						<img src="<?php echo get_post_meta($post->ID, 'ecpt_profile_photo', true); ?>" class="floatleft" />
-						<?php the_content()?>
-								
+						<?php the_excerpt() ?>
 			
-					</div><!--End entry -->
+					</div><!--End snippet -->
 					
-					<?php endwhile; else: ?>
-						<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+					<?php endwhile; ?>
+						<div class="pagination"><?php ksas_pagination('«', '»'); ?></div>
 					<?php endif; ?>
+
 				
 				</div> <!--End content -->		
 				<div class="clearboth"></div> <!--to have background work properly -->

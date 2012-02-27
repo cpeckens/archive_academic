@@ -147,7 +147,31 @@ function has_course_type( $the_course, $_post = null ) {
 
 	return $course_answer;
 }
-
+/**
+* Conditional function to check if post belongs to term in a custom taxonomy.
+*
+* @param    tax        string                taxonomy to which the term belons
+* @param    term    int|string|array    attributes of shortcode
+* @param    _post    int                    post id to be checked
+* @return             BOOL                True if term is matched, false otherwise
+*/
+function ksasaca_in_taxonomy($tax, $term, $_post = NULL) {
+// if neither tax nor term are specified, return false
+if ( !$tax || !$term ) { return FALSE; }
+// if post parameter is given, get it, otherwise use $GLOBALS to get post
+if ( $_post ) {
+$_post = get_post( $_post );
+} else {
+$_post =& $GLOBALS['post'];
+}
+// if no post return false
+if ( !$_post ) { return FALSE; }
+// check whether post matches term belongin to tax
+$return = is_object_in_term( $_post->ID, $tax, $term );
+// if error returned, then return false
+if ( is_wp_error( $return ) ) { return FALSE; }
+return $return;
+}
 //Change Excerpt Length -- Add to functions.php
 function ksas_new_excerpt_length($length) {
 	return 35; //Change word count
