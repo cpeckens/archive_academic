@@ -147,7 +147,7 @@ class Bulletin_Board_Widget extends WP_Widget {
 		<?php global $wp_query;
 			$bulletin_board_query = new WP_Query("post_type=bulletinboard&post_status=publish&posts_per_page=5"); ?>
 <div class="bulletinboard">
-    	<h3><img src="/wp-content/themes/academic/assets/img/arrow.png" width="25" height="25" />Bulletin Board</h3>
+    	<h3><img src="<?php bloginfo('template_url'); ?>/assets/img/arrow.png" width="25" height="25" />Bulletin Board</h3>
 					<?php while ($bulletin_board_query->have_posts()) : $bulletin_board_query->the_post(); ?>
     	
     	<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
