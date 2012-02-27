@@ -68,11 +68,7 @@ ul.slides {
 	padding-left: 1.5625% /*15px / 960px */	
 }
 
-.flex-caption h3 {
-	font-size: 1.4em; 
-	line-height: 1.4em;
-	color:#fff;
-}
+
 
 .flex-direction-nav {
 	display: none;
