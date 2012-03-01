@@ -11,11 +11,18 @@ define('KSASACA_PAGE_BASENAME', 'ksasaca-settings'); // the settings page slug
 add_action( 'admin_menu', 'ksasaca_add_menu' );
 add_action( 'admin_init', 'ksasaca_register_settings' );
 
+
 /**
  * Include the required files
  */
 // page settings sections & fields as well as the contextual help text.
 require_once('ksasaca-theme-options.php');
+function ksasaca_get_settings_page_cap() {
+	return 'edit_theme_options';
+}
+// Hook into option_page_capability_{option_page}
+add_filter( 'option_page_capability_ksasaca_options', 'ksasaca_get_settings_page_cap' );
+
 
 /**
  * Helper function for defining variables for the current page
@@ -119,7 +126,7 @@ function ksasaca_add_menu(){
 	
 	// Display Settings Page link under the "Appearance" Admin Menu
 	// add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function);
-	$ksasaca_settings_page = add_theme_page(__('Academic Theme Options'), __('Academic Theme Options','ksasaca_textdomain'), 'manage_options', KSASACA_PAGE_BASENAME, 'ksasaca_settings_page_fn');
+	$ksasaca_settings_page = add_theme_page(__('Academic Theme Options'), __('Academic Theme Options','ksasaca_textdomain'), 'edit_theme_options', KSASACA_PAGE_BASENAME, 'ksasaca_settings_page_fn');
 		// contextual help
 		// css & js
 		add_action( 'load-'. $ksasaca_settings_page, 'ksasaca_settings_scripts' );	
@@ -266,11 +273,9 @@ function ksasaca_settings_page_fn() {
 			settings_fields($settings_output['ksasaca_option_name']); 
 			// http://codex.wordpress.org/Function_Reference/do_settings_sections
 			do_settings_sections(__FILE__); 
+			submit_button();
 			?>
 			
-			<p class="submit">
-				<input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes','ksasaca_textdomain'); ?>" />
-			</p>
 			
 		</form>
 	</div><!-- wrap -->

@@ -9,9 +9,9 @@
 					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
 				<?php
 				
-						if ( has_course_type( 'undergraduate-course' ) ) : 
+						if ( ksasaca_in_taxonomy( 'coursetype', 'undergraduate-course' ) ) : 
 					 $parent = ksas_get_page_id('undergraduate');
-				elseif( has_course_type( 'graduate-course' ) ) :
+				elseif( ksasaca_in_taxonomy( 'coursetype', 'graduate-course' ) ) :
 					 $parent = ksas_get_page_id('graduate');
 				endif;				
 									

@@ -132,3 +132,40 @@ if($post->post_parent){
 <p>Amrita Ibrahim is a Ph.D. candidate at the Department of Anthropology at Johns Hopkins University. Her research interests span themes in the anthropology of media, visual anthropology, the anthropology of religion, and gender and sexuality, with a specific regional focus on South Asia. In her dissertation, these fields come together to explore the changing place of television news in forming Indian public and popular culture.</p>
 </div>
 </div>
+<?php
+//Add iframe shortcode
+if ( !function_exists( 'iframe_embed_shortcode' ) ) {
+	function iframe_embed_shortcode($atts, $content = null) {
+		extract(shortcode_atts(array(
+			'width' => '100%',
+			'height' => '480',
+			'src' => '',
+			'frameborder' => '0',
+			'scrolling' => 'no',
+			'marginheight' => '0',
+			'marginwidth' => '0',
+			'allowtransparency' => 'true',
+			'id' => '',
+			'class' => 'iframe-class',
+			'same_height_as' => ''
+		), $atts));
+		$src_cut = substr($src, 0, 35);
+		if(strpos($src_cut, 'maps.google' )){
+			$google_map_fix = '&output=embed';
+		}else{
+			$google_map_fix = '';
+		}
+		$return = '';
+		if( $id != '' ){
+			$id_text = 'id="'.$id.'" ';
+		}else{
+			$id_text = '';
+		}
+		$return .= '<div class="video-container"><iframe '.$id_text.'class="'.$class.'" width="'.$width.'" height="'.$height.'" src="'.$src.$google_map_fix.'" frameborder="'.$frameborder.'" scrolling="'.$scrolling.'" marginheight="'.$marginheight.'" marginwidth="'.$marginwidth.'" allowtransparency="'.$allowtransparency.'" webkitAllowFullScreen allowFullScreen></iframe></div>';
+		// &amp;output=embed
+		return $return;
+	}
+	add_shortcode('iframe', 'iframe_embed_shortcode');
+}
+
+?>

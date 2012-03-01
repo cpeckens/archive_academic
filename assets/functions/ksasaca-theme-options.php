@@ -29,9 +29,17 @@ function ksasaca_options_page_fields() {
 		"desc"    => __( 'Choose your color palette', 'ksasaca_textdomain' ),
 		"type"    => "select",
 		"std"    => "blue",
-		"choices" => array( "blue", "yellow", "green")
+		"choices" => array( "blue", "yellow")
 	);
-	
+	$options[] = array(
+		"section" => "checkbox_section",
+		"id"      => KSASACA_SHORTNAME . "_multicheckbox_inputs",
+		"title"   => __( 'Multi-Checkbox', 'ksasaca_textdomain' ),
+		"desc"    => __( 'Choose necessary modules and content types', 'ksasaca_textdomain' ),
+		"type"    => "multi-checkbox",
+		"std"     => 'chckbx1',
+		"choices" => array( __('People','ksasaca_textdomain') . "|chckbx1", __('Courses','ksasaca_textdomain') . "|chckbx2", __('Bulletin Board','ksasaca_textdomain') . "|chckbx3", __('Profiles and Spotlights','ksasaca_textdomain') . "|chckbx4")	
+	);
 	return $options;	
 }
 

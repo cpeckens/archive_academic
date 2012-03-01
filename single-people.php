@@ -19,50 +19,11 @@
 							<?php echo $children; ?>
 						</ul>			
 				<?php } ?> <!--End subnav -->
-<!--Begin Jump to faculty code -->
-
-<?php if ( has_role( 'faculty' ) ) : ?>				
-		<?php 
-			$args=array(
-	  'post_type' => 'people',
-	  'role' => 'faculty',
-	  'meta_key' => 'people_alpha',
-	  'orderby' => 'meta_value',
-	  'order' => 'ASC',
-	  'post_status' => 'publish',
-	  'posts_per_page' => -1,
-	  'caller_get_posts'=> 1
-	);
-	$my_query = null;
-	$my_query = new WP_Query($args);
-	if( $my_query->have_posts() ) {
-?>
-	<div class="jumpmenu"><form name="jump">
-		<select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
-		<option>Jump to faculty member</option>
-			<?php
-			  while ($my_query->have_posts()) : $my_query->the_post(); ?>
-				<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
-				<?php
-
-			  endwhile;
-			}
-			?>
-		</select>
-	</form>
-</div>
-<?php
-	wp_reset_query();
-?>
-<?php endif; ?>
-	<!--End jump-menu -->	
 
 						<!--End Subpage Navigation code -->
 				<div id="address"><?php get_sidebar('address-sb'); ?></div>
 
 				</div> <!--End sidebar-left -->
-				
-
 				
 		
 				<div id="content">
