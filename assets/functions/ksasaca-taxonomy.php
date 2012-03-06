@@ -1,7 +1,5 @@
 <?php
 
-
-
 // registration code for coursetype taxonomy
 function register_coursetype_tax() {
 	$labels = array(

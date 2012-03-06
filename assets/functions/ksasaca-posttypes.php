@@ -196,4 +196,4 @@
 	}
 	add_action('init', 'register_profile_posttype');			
 
-?>						
+					

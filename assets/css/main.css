@@ -59,7 +59,7 @@ body {
 
 /* Fonts settings based on the 100E2R standard: http://www.informationarchitects.jp/en/100e2r/ */
 body, button, input, select, textarea {
-	font: 1em/1.5 "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 1em/1.5 "HelveticaNeue", "Helvetica Neue", Helvetica, Verdana, sans-serif;
 	color: #444; /* Black on white is too much contrast, #333 is a lot better */
 	font-smooth:always;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */

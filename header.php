@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		
-		<title><?php if ( is_front_page() ) { ?><? bloginfo('name'); ?> - <?php bloginfo('description'); } else { wp_title(''); } ?></title>
+		<title><?php if ( is_front_page() ) { ?><?php bloginfo('description'); ?>&nbsp;<? bloginfo('name'); } else { wp_title(''); ?> | Department of <?php bloginfo('name'); } ?></title>
 
 		<!-- Meta tags -->
 		<meta name="description" content="" />
@@ -19,6 +19,9 @@
 
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
+		<![endif]-->
+		<!--[if lte IE 7]>
+		<style>#header {margin-top: 0;}</style>
 		<![endif]-->
 	<?php if (is_front_page()) { ?>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
@@ -38,7 +41,7 @@
 			<div id="header">
 				
 				<div id="header-left">
-				<div id="logo"><a href="http://krieger.jhu.edu" title="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo<?php echo $ksasaca_option['ksasaca_select_input']; ?>.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
+				<div id="logo"><a href="http://krieger.jhu.edu" title="Johns Hopkins University Zanvyl Krieger School of Arts & Sciences"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo<?php echo $ksasaca_option['ksasaca_select_input']; ?>.png" alt="Johns Hopkins Univeristy Zanvyl Krieger School of Arts & Sciences" /></a></div>
 				</div> <!-- End header-left -->
 			
 				<div id="header-right">
@@ -50,7 +53,7 @@
 					
 					<div id="searchbar">
 					<form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
-<div><input type="text" size="put_a_size_here" name="s" id="s" value="Search this site" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"/>
+<div><label title="search" /><input type="text" size="put_a_size_here" name="s" id="s" value="Search this site" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;"/>
 <input type="submit" id="searchsubmit" value="Search" class="btn" />
 </div>
 </form>

@@ -2,9 +2,47 @@
 	background-position-x:70%;
 }
 
-#container-head {
+#container-head,
+ul.slides {
 	background: transparent;
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F504837,endColorstr=#7F504837)"; /* IE8 */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F504837,endColorstr=#7F504837);   /* IE6 & 7 */
     zoom: 1;
+}
+
+#undergrad-widget,
+.profile_box,
+.textwidget,
+.widget_bulletin_board {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#c6c5c3,endColorstr=#e6e5e3)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c5c3', endColorstr='#e6e5e3'); /* IE6 & 7 */
+	zoom: 1;
+}
+
+#address-widget .textwidget {
+	background: none;
+	filter: none;
+	-ms-filter: none;
+}
+
+.WPCalendarSimple {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6e5e3,endColorstr=#c6c5c3)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e5e3', endColorstr='#c6c5c3'); /* IE6 & 7 */
+	zoom: 1;
+}
+
+#subnav li,
+#nav ul {
+	font-size: 1.45em;
+	letter-spacing: normal;
+}
+
+.WPCalendarSimple h2 {
+	font-size: 1.45em;
+}
+
+.widget h4 {
+	font-family: "Trebuchet MS", sans-serif;
 }

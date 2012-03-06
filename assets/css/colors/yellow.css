@@ -103,7 +103,7 @@ h2.widgettitle,
 	line-height: 1;
 }
 #nav ul li {
-	margin-right: 5%;
+	margin-right: 3%;
 }
 #nav ul li a {
 	display: block;
@@ -181,7 +181,7 @@ li.subnav-head {
 /* Widgets
 *********************************/
 #undergrad-widget,
-.profile_box,
+.profile_box
 {
 background: rgb(198,197,195); /* Old browsers */
 background: -moz-linear-gradient(top,  rgb(198,197,195) 0%, rgb(230,229,227) 100%); /* FF3.6+ */
@@ -190,7 +190,6 @@ background: -webkit-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 1
 background: -o-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* IE10+ */
 background: linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c5c3', endColorstr='#e6e5e3',GradientType=0 ); /* IE6-9 */
 }
 .textwidget,
 .widget_bulletin_board {
@@ -201,7 +200,16 @@ background: -webkit-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 1
 background: -o-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Opera 11.10+ */
 background: -ms-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* IE10+ */
 background: linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c5c3', endColorstr='#e6e5e3',GradientType=0 ); /* IE6-9 */
+}
+
+.WPCalendarSimple {
+	background: rgb(230,229,227); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(230,229,227,1) 0%, rgba(198,197,195,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,229,227,1)), color-stop(100%,rgba(198,197,195,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(230,229,227,1) 0%,rgba(198,197,195,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(230,229,227,1) 0%,rgba(198,197,195,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(230,229,227,1) 0%,rgba(198,197,195,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(230,229,227,1) 0%,rgba(198,197,195,1) 100%); /* W3C */
 }
 
 #address-widget .textwidget {
@@ -215,7 +223,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c5c3', end
 	background: #c4a41d url(../img/jobmarketYellow.gif) no-repeat top left;
 }
 
-.textwidget p,
+#grad-widget .textwidget p,
+#undergrad-widget .textwidget p,
 .bulletinboard p {
 	font-size: .85em;
 }
@@ -281,6 +290,7 @@ a.button:hover {
 .textwidget img,
 .widget_bulletin_board img {
 	box-shadow: none;
+	filter: none;
 }
 
 .fc-event a {

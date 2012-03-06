@@ -24,7 +24,9 @@
 		   		 		<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" /></a>
 		   		 		<div class="flex-caption">
 		   		 			<h3><?php the_content(); ?></h3>
-		   					<p><a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" class="button">Find Out More</a></p>
+		   		 			<?php if ( get_post_meta($post->ID, 'ecpt_button', true) ) : ?>
+		   						<p><a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>" class="button">Find Out More</a></p>
+		   					<?php endif;?>
 		   				</div>
 		   			</div>
 		   		 </li>

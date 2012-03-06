@@ -457,6 +457,7 @@ ___________________________________________________________*/
 	-webkit-box-shadow: -3px 3px 5px rgba(50, 50, 50, 0.5);
 	-moz-box-shadow:    -3px 3px 5px rgba(50, 50, 50, 0.5);
 	box-shadow:         -3px 3px 5px rgba(50, 50, 50, 0.5);
+	filter: progid:DXImageTransform.Microsoft.dropShadow(color=#818181, offX=-3, offY=3, positive=true);
 	margin-right:10px;
 }
 

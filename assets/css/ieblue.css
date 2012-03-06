@@ -1,3 +1,26 @@
 #homepage {
 	background-position-x:70%;
 	}
+	
+#undergrad-widget,
+.profile_box,
+.textwidget,
+.widget_bulletin_board {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#c6c5c3,endColorstr=#e6e5e3)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c5c3', endColorstr='#e6e5e3'); /* IE6 & 7 */
+	zoom: 1;
+}
+
+#address-widget .textwidget {
+	background: none;
+	filter:none;
+	-ms-filter:none;
+}
+
+.WPCalendarSimple {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e6e5e3,endColorstr=#c6c5c3)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e5e3', endColorstr='#c6c5c3'); /* IE6 & 7 */
+	zoom: 1;
+}

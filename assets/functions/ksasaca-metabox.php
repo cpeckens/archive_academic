@@ -1,8 +1,4 @@
 <?php
-
-
-
-
 $coursedetails_metabox_courses = array( 
 	'id' => 'coursedetails',
 	'title' => 'Course Details',
@@ -266,7 +262,7 @@ $sliderinfo_metabox_slider = array(
 				
 				array(
 					'name' 			=> 'Slide Image',
-					'desc' 			=> 'Image needs to be 960x360',
+					'desc' 			=> 'Image needs to be 670x360',
 					'id' 			=> 'ecpt_slideimage',
 					'class' 		=> 'ecpt_slideimage',
 					'type' 			=> 'upload',
@@ -276,7 +272,7 @@ $sliderinfo_metabox_slider = array(
 															
 				array(
 					'name' 			=> 'Slide Color',
-					'desc' 			=> 'Choose yellow, blue, green',
+					'desc' 			=> 'Choose yellow, blue, green. This is only relevant for the \"Blue\" variation of this theme.',
 					'id' 			=> 'ecpt_slidecolor',
 					'class' 		=> 'ecpt_slidecolor',
 					'type' 			=> 'radio',
@@ -292,6 +288,16 @@ $sliderinfo_metabox_slider = array(
 					'class' 		=> 'ecpt_urldestination',
 					'type' 			=> 'text',
 					'rich_editor' 	=> 0,			
+					'max' 			=> 0													
+				),
+															
+				array(
+					'name' 			=> 'Find Out More Button',
+					'desc' 			=> 'Add a Find Out More button after the caption',
+					'id' 			=> 'ecpt_button',
+					'class' 		=> 'ecpt_button',
+					'type' 			=> 'checkbox',
+					'rich_editor' 	=> 1,			
 					'max' 			=> 0													
 				),
 												)
@@ -2065,5 +2071,4 @@ if(!function_exists('ecpt_format_date')) {
 		return $date;
 	}
 }
-
 ?>
