@@ -28,7 +28,7 @@
 	</body>
 			
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/respond.min.js"></script>
-		<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_custom.js"></script>
+		<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_custom.min.js"></script>
 		
 		
 		<!-- front-page specific scripts and css -->

@@ -83,6 +83,21 @@
 	//Function to call theme options in theme files 
 		$ksasaca_option = ksasaca_get_global_options();
 
+//Add style dropdown to WYSIWYG editor
+function ksasaca_mce_buttons_2($buttons)
+{
+	array_unshift($buttons, 'styleselect');
+	return $buttons;
+}
+add_filter('mce_buttons_2', 'ksasaca_mce_buttons_2');
+
+function ksasaca_mce_before_init($init_array)
+{
+	// add classes using a ; separated values
+	$init_array['theme_advanced_styles'] = "Button=button;Divider=divider;Dark Blue=altcolorblue; Yellow=altyellow";
+	return $init_array;
+}
+add_filter('tiny_mce_before_init', 'ksasaca_mce_before_init');
 	
 /********************Functions for Template Files**********************/
 //pagination function
@@ -183,5 +198,5 @@ add_filter( 'show_admin_bar', '__return_false' );
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-posttypes.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-taxonomy.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-metabox.php');
-	
+	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-shortcodes.php');	
 ?>

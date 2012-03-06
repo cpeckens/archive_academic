@@ -1,36 +1,45 @@
 <?php get_header(); ?>
-<!-- Insert them single.php container code below -->
 		<div id="container-mid">
 			<div id="main">
 				<div id="sidebar-left">
 				
-					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
+				<!--Subpage navigation -->
 				<?php
-				
-							
 					$parent = ksas_get_page_id('directoryindex');;
-								
-									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
-									
 					if ($children) { ?>
 						<ul id="subnav">
 							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo get_permalink($parent); ?>"><?php echo get_the_title($parent); ?></a></span></li>
 							<?php echo $children; ?>
 						</ul>			
 				<?php } ?> <!--End subnav -->
-
-						<!--End Subpage Navigation code -->
-				<div id="address"><?php get_sidebar('address-sb'); ?></div>
-
+				<!--Begin Jump to faculty code -->
+					<?php if ( ksasaca_in_taxonomy('role', 'faculty') ) : 
+					 	$jump_menu_query = new WP_Query(array(
+										'post-type' => 'people',
+										'role' => 'faculty',
+										'meta_key' => 'ecpt_people_alpha',
+										'orderby' => 'meta_value',
+										'order' => 'ASC',
+										'posts_per_page' => '25')); ?>
+						<div class="jumpmenu">
+							<form name="jump">
+								<select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+									<option>Jump to faculty member</option>
+									<?php while ($jump_menu_query->have_posts()) : $jump_menu_query->the_post(); ?>				
+										<option value="<?php the_permalink() ?>"><?php the_title(); ?></option>
+									<?php endwhile; ?>
+								</select>
+							</form>
+						</div>
+					<?php endif; ?>
+				<!--End jump-menu -->
+				<!--End Subpage Navigation code -->
+					<div id="address"><?php get_sidebar('address-sb'); ?></div>
 				</div> <!--End sidebar-left -->
 				
-		
 				<div id="content">
- 
- 
-	<!-- Start loop -->
-
+					<!-- Start loop -->
 					<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 					
 						<div class="entry">
@@ -41,7 +50,6 @@
 								
 								<div class="people-contact"><h2><?php the_title() ?></h2>
 								<h3><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h3>
-								
 								
 								<p><?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?><span class="label">Office:</span> <?php echo get_post_meta($post->ID, 'ecpt_office', true); ?><br><?php endif; ?>
 								<?php if ( get_post_meta($post->ID, 'ecpt_hours', true) ) : ?><span class="label">Office Hours:</span> <?php echo get_post_meta($post->ID, 'ecpt_hours', true); ?><br><?php endif; ?>
@@ -94,12 +102,8 @@
 							</div>
 						
 						</div><!--End entry -->
-						<!-- NOTE: jQuery that fires the change is in app.js -->
 					
 					<?php endwhile; // end of the loop. ?>
-
-
-<!-- Insert themes single.php closing container code below -->
 
 				</div> <!--End content -->		
 				
