@@ -91,10 +91,9 @@ h2.widgettitle,
 	width:100%;
 	max-width: 960px;
 	padding: 0;
-	font-weight: 700;
-	font-size: 1.25em;
+	font-weight: 400;
+	font-size: 1.4em;
 	font-family: 'PT Sans Narrow', sans-serif;
-	text-transform: uppercase;
 	font-smooth:always;
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-ms-filter:none;
@@ -271,7 +270,7 @@ ul.slides {
 	font-size: 1.7em; 
 	line-height: 1.4em;
 	color:#f7f7f7;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 a.button,

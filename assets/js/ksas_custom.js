@@ -1,3 +1,7 @@
+//**************************Set jQuery no conflict.  Use $j instead of $ in all scripts*****************************//
+var $j = jQuery.noConflict();
+
+//**************************Drop Down Menus*****************************//
 //Suckerfish dropdown
 
  sfHover = function() {
@@ -12,14 +16,14 @@
 	}
 }
 if (window.attachEvent) window.attachEvent("onload", sfHover);
- 
 
-//PDF open in new window
-var $j = jQuery.noConflict();
+//**************************Open PDFs in new window*****************************//
 $j(document).ready(function(){
   $j("a[href$='pdf']").attr('target','_blank');
 });
 
+
+//**************************Accordions (Courses and FAQs)*****************************//
 $j(document).ready(function() {
 	
 	//Set default open/close settings
@@ -35,6 +39,7 @@ $j('.acc_trigger').click(function(){
 	return false; //Prevent the browser jump to the link anchor
 });
 
+//Expand All and Collapse all functions
 $j(".acc_expandall").toggle(function() {
 					$j(this).text("[Collapse All]").stop();
 					$j(".acc_container").show();
@@ -45,6 +50,8 @@ $j(".acc_expandall").toggle(function() {
 
 });
 
+
+//**************************Read More/Read Less Function*****************************//
 $j(document).ready(function() {
 					$j(".wysiwyg-read-more-link").toggle(function() {
 					$j(this).text("Read Less").stop();
@@ -58,10 +65,9 @@ $j(document).ready(function() {
 
 });
 
-$j(document).ready(function() {
 
-	/* Tabs Activiation
-	================================================== */
+//**************************Tabs*****************************//
+$j(document).ready(function() {
 
 	var tabs = $j('ul.tabs');
 
