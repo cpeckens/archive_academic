@@ -98,6 +98,14 @@ function ksasaca_mce_before_init($init_array)
 	return $init_array;
 }
 add_filter('tiny_mce_before_init', 'ksasaca_mce_before_init');
+
+function ksasaca_enable_more_buttons($buttons) {
+  $buttons[] = 'hr';
+  $buttons[] = 'sub';
+  $buttons[] = 'sup'; 
+  return $buttons;
+}
+add_filter("mce_buttons_3", "ksasaca_enable_more_buttons");
 	
 /********************Functions for Template Files**********************/
 //pagination function

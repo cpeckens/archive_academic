@@ -46,7 +46,7 @@ Template Name: Courses
 	<!-- Start loop -->
 					<?php if(is_page('undergraduate-courses')) : ?>
 					
-					<?php $ksas_course_query = new WP_Query('post-type=course&coursetype=undergraduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					<?php $ksas_course_query = new WP_Query('post-type=courses&coursetype=undergraduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
 					
 					<?php while ($ksas_course_query->have_posts()) : $ksas_course_query->the_post(); ?>
 					
@@ -73,7 +73,7 @@ Template Name: Courses
 				
 				<?php elseif(is_page('graduate-courses')) :  ?>
 				
-					<?php $ksas_gradcourse_query = new WP_Query('post-type=course&coursetype=graduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					<?php $ksas_gradcourse_query = new WP_Query('post-type=courses&coursetype=graduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
 					<?php while ($ksas_gradcourse_query->have_posts()) : $ksas_gradcourse_query->the_post(); ?>
 					
 						

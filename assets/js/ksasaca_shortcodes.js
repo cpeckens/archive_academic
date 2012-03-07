@@ -1,11 +1,11 @@
 (function() {
-    tinymce.create('tinymce.plugins.acc-title', {
+    tinymce.create('tinymce.plugins.acctitle', {
         init : function(ed, url) {
-            ed.addButton('acc-title', {
+            ed.addButton('acctitle', {
                 title : 'Accordion Title',
-                image : url+'/acc-title.png',
+                image : url+'/acctitle.png',
                 onclick : function() {
-                     ed.selection.setContent('[acc-title]' + ed.selection.getContent() + '[/acc-title]');
+                     ed.selection.setContent('[acctitle]' + ed.selection.getContent() + '[/acctitle]');
 
                 }
             });
@@ -14,17 +14,17 @@
             return null;
         },
     });
-    tinymce.PluginManager.add('acc-title', tinymce.plugins.acc-title);
+    tinymce.PluginManager.add('acctitle', tinymce.plugins.acctitle);
 })();
 
 (function() {
-    tinymce.create('tinymce.plugins.acc-content', {
+    tinymce.create('tinymce.plugins.acccontent', {
         init : function(ed, url) {
-            ed.addButton('acc-content', {
+            ed.addButton('acccontent', {
                 title : 'Accordion Content',
-                image : url+'/acc-content.png',
+                image : url+'/acccontent.png',
                 onclick : function() {
-                     ed.selection.setContent('[acc-content]' + ed.selection.getContent() + '[/acc-content]');
+                     ed.selection.setContent('[acccontent]' + ed.selection.getContent() + '[/acccontent]');
 
                 }
             });
@@ -33,17 +33,17 @@
             return null;
         },
     });
-    tinymce.PluginManager.add('acc-content', tinymce.plugins.acc-content);
+    tinymce.PluginManager.add('acccontent', tinymce.plugins.acccontent);
 })();
 
 (function() {
-    tinymce.create('tinymce.plugins.readmore-title', {
+    tinymce.create('tinymce.plugins.readmoretitle', {
         init : function(ed, url) {
-            ed.addButton('readmore-title', {
+            ed.addButton('readmoretitle', {
                 title : 'Read More Title',
-                image : url+'/readmore-title.png',
+                image : url+'/readmoretitle.png',
                 onclick : function() {
-                     ed.selection.setContent('[readmore-title]' + ed.selection.getContent() + '[/readmore-title]');
+                     ed.selection.setContent('[readmoretitle]' + ed.selection.getContent() + '[/readmoretitle]');
 
                 }
             });
@@ -52,17 +52,17 @@
             return null;
         },
     });
-    tinymce.PluginManager.add('readmore-title', tinymce.plugins.readmore-title);
+    tinymce.PluginManager.add('readmoretitle', tinymce.plugins.readmoretitle);
 })();
 
 (function() {
-    tinymce.create('tinymce.plugins.readmore-content', {
+    tinymce.create('tinymce.plugins.readmorecontent', {
         init : function(ed, url) {
-            ed.addButton('readmore-content', {
+            ed.addButton('readmorecontent', {
                 title : 'Read More Content',
-                image : url+'/readmore-content.png',
+                image : url+'/readmorecontent.png',
                 onclick : function() {
-                     ed.selection.setContent('[readmore-content]' + ed.selection.getContent() + '[/readmore-content]');
+                     ed.selection.setContent('[readmorecontent]' + ed.selection.getContent() + '[/readmorecontent]');
 
                 }
             });
@@ -71,5 +71,5 @@
             return null;
         },
     });
-    tinymce.PluginManager.add('readmore-content', tinymce.plugins.readmore-content);
+    tinymce.PluginManager.add('readmorecontent', tinymce.plugins.readmorecontent);
 })();

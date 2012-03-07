@@ -33,7 +33,6 @@
 			'rewrite' 			=> array('slug' => 'courses', 'with_front' => false ),
 			'supports' 			=> $supports,
 			'menu_position' 	=> 5,
-			'menu_icon' 		=> 'http://soc.dev/wp-content/plugins/easy-content-types/includes/images/icon.png',
 			'taxonomies'		=> $taxonomies
 		 );
 		 register_post_type('courses',$post_type_args);
@@ -72,7 +71,6 @@
 			'rewrite' 			=> array('slug' => 'slider', 'with_front' => false ),
 			'supports' 			=> $supports,
 			'menu_position' 	=> 5,
-			'menu_icon' 		=> 'http://soc.dev/wp-content/plugins/easy-content-types/includes/images/icon.png',
 			'taxonomies'		=> $taxonomies
 		 );
 		 register_post_type('slider',$post_type_args);
@@ -111,7 +109,6 @@
 			'rewrite' 			=> array('slug' => 'directory', 'with_front' => false ),
 			'supports' 			=> $supports,
 			'menu_position' 	=> 5,
-			'menu_icon' 		=> 'http://soc.dev/wp-content/plugins/easy-content-types/includes/images/icon.png',
 			'taxonomies'		=> $taxonomies
 		 );
 		 register_post_type('people',$post_type_args);
@@ -150,7 +147,6 @@
 			'rewrite' 			=> array('slug' => 'bulletin_board', 'with_front' => false ),
 			'supports' 			=> $supports,
 			'menu_position' 	=> 5,
-			'menu_icon' 		=> 'http://soc.dev/wp-content/plugins/easy-content-types/includes/images/icon.png',
 			'taxonomies'		=> $taxonomies
 		 );
 		 register_post_type('bulletinboard',$post_type_args);
@@ -189,7 +185,6 @@
 			'rewrite' 			=> array('slug' => 'profiles', 'with_front' => false ),
 			'supports' 			=> $supports,
 			'menu_position' 	=> 5,
-			'menu_icon' 		=> 'http://soc.dev/wp-content/plugins/easy-content-types/includes/images/icon.png',
 			'taxonomies'		=> $taxonomies
 		 );
 		 register_post_type('profile',$post_type_args);
