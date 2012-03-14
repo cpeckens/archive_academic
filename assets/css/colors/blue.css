@@ -1,7 +1,35 @@
+/* Body/Container Modifications
+*********************************/
 body {
 	background-color:#e2e1df;
 }
 
+#sidebar-right {
+	background-color: #ededed;
+}
+
+#container-head {
+	background: #333;
+}
+
+#nav-break {
+	background: url('../../img/header_bg.png') repeat-x left bottom;
+}
+
+#homepage {
+	background: #e2e1df url("../../img/home_bg.png") repeat-y 69.791666666666667% 0; /* 675px / 960px */
+}
+
+#main {
+	background: #e2e1df url("../../img/blog.png") repeat-y 22.9166666666667% 0; /* 220px / 960px */
+}
+
+#searchresults {
+	background: #e2e1df;
+}
+
+/* Body Font Colors and Mods
+*********************************/
 h1, h2, h3, h4, h5, h6 {
 	color: #181818;
 }
@@ -22,61 +50,24 @@ h2.widgettitle,
 	color:#00337F;
 }
 
-#nav .sub-menu,
-#nav .sub-menu a {
-	color: #FFFFFF;
-}
-
-#subnav li a {
-	color:#487ca3;
-}
-
-#subnav li ul li a {
-	color:#386180;
-}
-
-li.subnav-head {
-	color: #a6a6a6;
-}
-
 #blogfeed h2 {
 	color: #999999;
 }
 
-
-#sidebar-right {
-	background-color: #ededed;
-}
-
-#footer p a {
-	color: #444;
+/* Navigation Fonts and Backgrounds
+*********************************/
+#nav .sub-menu,
+#nav .sub-menu a {
+	color: #FFFFFF;
 }
 
 #nav a {
 	color:#CCC;
 }
 
-#container-head {
-	background: #333;
-}
-
-#nav-break {
-	background: url('../../img/header_bg.png') repeat-x left bottom;
-}
-
 #nav .sub-menu {
 	background: #679bcd;
 }
-
-#homepage {
-	background: #e2e1df url("../../img/home_bg.png") repeat-y 69.791666666666667% 0; /* 675px / 960px */
-}
-
-#subnav li.current_page_item, 
-#subnav li.current_page_ancestor {
-	background: url('../../img/subnav-current.png') no-repeat 5.4545454545455% .4em;
-}
-
 
 #nav .sub-menu li:hover {
 	background:#38638e;
@@ -91,12 +82,22 @@ li.subnav-head {
 	background: url('../../img/nav-hover.png') no-repeat center bottom;
 }
 
-#main {
-	background: #e2e1df url("../../img/blog.png") repeat-y 22.9166666666667% 0; /* 220px / 960px */
+/* Sub-page left hand nav */
+li.subnav-head {
+	color: #a6a6a6;
 }
 
-#container-foot {
-	background: #a9aaa4 url('../../img/bg_footer.png') repeat-x left top;
+#subnav li a {
+	color:#487ca3;
+}
+
+#subnav li ul li a {
+	color:#386180;
+}
+
+#subnav li.current_page_item, 
+#subnav li.current_page_ancestor {
+	background: url('../../img/subnav-current.png') no-repeat 5.4545454545455% .4em;
 }
 
 #subnav li ul li.current_page_item,
@@ -104,10 +105,18 @@ li.subnav-head {
 	list-style-image:url('../../img/tert_nav.png');
 }
 
-#searchresults {
-	background: #e2e1df;
+/* Footer
+*********************************/
+#footer p a {
+	color: #444;
 }
 
+#container-foot {
+	background: #a9aaa4 url('../../img/bg_footer.png') repeat-x left top;
+}
+
+/* Widgets
+*********************************/
 #undergrad-widget,
 .profile_box {
 	background: rgb(237,237,237); /* Old browsers */
@@ -128,6 +137,8 @@ li.subnav-head {
 	background: #c4a41d url(../../img/jobmarket.gif) no-repeat top left;
 }
 
+/* Homepage slider
+*********************************/
 .blueslide {
 	background: #679bcd url('../../img/slider-bottom-bg.png') repeat-x left bottom;
 }

@@ -29,7 +29,7 @@ class Undergrad_Profile_Widget extends WP_Widget {
 	
 
 		global $post; ?>
-		<?php $undergrad_profile_query = new WP_Query('post-type=profiles&profile_type=undergraduate&orderby=rand&posts_per_page=1'); ?>
+		<?php $undergrad_profile_query = new WP_Query('post-type=profiles&profiletype=undergraduate&orderby=rand&posts_per_page=1'); ?>
 					<?php while ($undergrad_profile_query->have_posts()) : $undergrad_profile_query->the_post(); ?>           
     	<div class="profile_box">
     	<div class="spotlight"></div>
@@ -86,7 +86,7 @@ class Graduate_Profile_Widget extends WP_Widget {
 	
 
 		global $post; ?>
-		<?php $graduate_profile_query = new WP_Query('post-type=profile&profile_type=graduate&orderby=rand&posts_per_page=1'); ?>
+		<?php $graduate_profile_query = new WP_Query('post-type=profile&profiletype=graduate&orderby=rand&posts_per_page=1'); ?>
 					<?php while ($graduate_profile_query->have_posts()) : $graduate_profile_query->the_post(); ?>
          <?php // get_the_ID(); ?>
          <?php //$profileid = $post->ID; ?>               
@@ -257,7 +257,7 @@ class Spotlight_Widget extends WP_Widget {
 	
 
 		global $post; ?>
-		<?php $spotlight_query = new WP_Query('post-type=profile&profile_type=spotlight&orderby=rand&posts_per_page=1'); ?>
+		<?php $spotlight_query = new WP_Query('post-type=profile&profiletype=spotlight&orderby=rand&posts_per_page=1'); ?>
 					<?php while ($spotlight_query->have_posts()) : $spotlight_query->the_post(); ?>
          <?php // get_the_ID(); ?>
          <?php //$profileid = $post->ID; ?>               

@@ -1,11 +1,11 @@
 <?php
-$coursedetails_metabox_courses = array( 
+$coursedetails_1_metabox = array( 
 	'id' => 'coursedetails',
 	'title' => 'Course Details',
-	'page' => 'courses',
+	'page' => array('courses'),
 	'context' => 'normal',
 	'priority' => 'default',
-	'fields' => $coursedetails_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -70,27 +70,29 @@ $coursedetails_metabox_courses = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_coursedetails_meta_box');
-function ecpt_add_coursedetails_meta_box() {
+add_action('admin_menu', 'ecpt_add_coursedetails_1_meta_box');
+function ecpt_add_coursedetails_1_meta_box() {
 
-	global $coursedetails_metabox_courses;			
-		
-	add_meta_box($coursedetails_metabox_courses['id'], $coursedetails_metabox_courses['title'], 'ecpt_show_coursedetails_box', 'courses', 'normal', 'default', $coursedetails_metabox_courses);
+	global $coursedetails_1_metabox;		
+
+	foreach($coursedetails_1_metabox['page'] as $page) {
+		add_meta_box($coursedetails_1_metabox['id'], $coursedetails_1_metabox['title'], 'ecpt_show_coursedetails_1_box', $page, 'normal', 'default', $coursedetails_1_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_coursedetails_box()	{
+function ecpt_show_coursedetails_1_box()	{
 	global $post;
-	global $coursedetails_metabox_courses;
+	global $coursedetails_1_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_coursedetails_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_coursedetails_1_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($coursedetails_metabox_courses['fields'] as $field) {
+	foreach ($coursedetails_1_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -103,7 +105,8 @@ function ecpt_show_coursedetails_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -200,15 +203,14 @@ function ecpt_show_coursedetails_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_coursedetails_save');
-
+add_action('save_post', 'ecpt_coursedetails_1_save');
 // Save data from meta box
-function ecpt_coursedetails_save($post_id) {
+function ecpt_coursedetails_1_save($post_id) {
 	global $post;
-	global $coursedetails_metabox_courses;
+	global $coursedetails_1_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_coursedetails_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_coursedetails_1_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -226,7 +228,7 @@ function ecpt_coursedetails_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($coursedetails_metabox_courses['fields'] as $field) {
+	foreach ($coursedetails_1_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -236,9 +238,6 @@ function ecpt_coursedetails_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -249,15 +248,13 @@ function ecpt_coursedetails_save($post_id) {
 	}
 }
 
-								
-
-$sliderinfo_metabox_slider = array( 
+								$sliderinfo_2_metabox = array( 
 	'id' => 'sliderinfo',
 	'title' => 'Slider Info',
-	'page' => 'slider',
+	'page' => array('slider'),
 	'context' => 'normal',
 	'priority' => 'default',
-	'fields' => $sliderinfo_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -303,27 +300,29 @@ $sliderinfo_metabox_slider = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_sliderinfo_meta_box');
-function ecpt_add_sliderinfo_meta_box() {
+add_action('admin_menu', 'ecpt_add_sliderinfo_2_meta_box');
+function ecpt_add_sliderinfo_2_meta_box() {
 
-	global $sliderinfo_metabox_slider;			
-		
-	add_meta_box($sliderinfo_metabox_slider['id'], $sliderinfo_metabox_slider['title'], 'ecpt_show_sliderinfo_box', 'slider', 'normal', 'default', $sliderinfo_metabox_slider);
+	global $sliderinfo_2_metabox;		
+
+	foreach($sliderinfo_2_metabox['page'] as $page) {
+		add_meta_box($sliderinfo_2_metabox['id'], $sliderinfo_2_metabox['title'], 'ecpt_show_sliderinfo_2_box', $page, 'normal', 'default', $sliderinfo_2_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_sliderinfo_box()	{
+function ecpt_show_sliderinfo_2_box()	{
 	global $post;
-	global $sliderinfo_metabox_slider;
+	global $sliderinfo_2_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_sliderinfo_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_sliderinfo_2_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($sliderinfo_metabox_slider['fields'] as $field) {
+	foreach ($sliderinfo_2_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -336,7 +335,8 @@ function ecpt_show_sliderinfo_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -433,15 +433,15 @@ function ecpt_show_sliderinfo_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_sliderinfo_save');
+add_action('save_post', 'ecpt_sliderinfo_2_save');
 
 // Save data from meta box
-function ecpt_sliderinfo_save($post_id) {
+function ecpt_sliderinfo_2_save($post_id) {
 	global $post;
-	global $sliderinfo_metabox_slider;
+	global $sliderinfo_2_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_sliderinfo_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_sliderinfo_2_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -459,7 +459,7 @@ function ecpt_sliderinfo_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($sliderinfo_metabox_slider['fields'] as $field) {
+	foreach ($sliderinfo_2_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -469,9 +469,6 @@ function ecpt_sliderinfo_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -482,15 +479,13 @@ function ecpt_sliderinfo_save($post_id) {
 	}
 }
 
-								
-
-$personaldetails_metabox_people = array( 
+								$personaldetails_3_metabox = array( 
 	'id' => 'personaldetails',
 	'title' => 'Personal Details',
-	'page' => 'people',
+	'page' => array('people'),
 	'context' => 'normal',
 	'priority' => 'high',
-	'fields' => $personaldetails_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -585,27 +580,29 @@ $personaldetails_metabox_people = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_personaldetails_meta_box');
-function ecpt_add_personaldetails_meta_box() {
+add_action('admin_menu', 'ecpt_add_personaldetails_3_meta_box');
+function ecpt_add_personaldetails_3_meta_box() {
 
-	global $personaldetails_metabox_people;			
-		
-	add_meta_box($personaldetails_metabox_people['id'], $personaldetails_metabox_people['title'], 'ecpt_show_personaldetails_box', 'people', 'normal', 'high', $personaldetails_metabox_people);
+	global $personaldetails_3_metabox;		
+
+	foreach($personaldetails_3_metabox['page'] as $page) {
+		add_meta_box($personaldetails_3_metabox['id'], $personaldetails_3_metabox['title'], 'ecpt_show_personaldetails_3_box', $page, 'normal', 'high', $personaldetails_3_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_personaldetails_box()	{
+function ecpt_show_personaldetails_3_box()	{
 	global $post;
-	global $personaldetails_metabox_people;
+	global $personaldetails_3_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_personaldetails_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_personaldetails_3_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($personaldetails_metabox_people['fields'] as $field) {
+	foreach ($personaldetails_3_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -618,7 +615,8 @@ function ecpt_show_personaldetails_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -715,15 +713,15 @@ function ecpt_show_personaldetails_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_personaldetails_save');
+add_action('save_post', 'ecpt_personaldetails_3_save');
 
 // Save data from meta box
-function ecpt_personaldetails_save($post_id) {
+function ecpt_personaldetails_3_save($post_id) {
 	global $post;
-	global $personaldetails_metabox_people;
+	global $personaldetails_3_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_personaldetails_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_personaldetails_3_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -741,7 +739,7 @@ function ecpt_personaldetails_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($personaldetails_metabox_people['fields'] as $field) {
+	foreach ($personaldetails_3_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -751,9 +749,6 @@ function ecpt_personaldetails_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -764,15 +759,13 @@ function ecpt_personaldetails_save($post_id) {
 	}
 }
 
-								
-
-$facultyinformation_metabox_people = array( 
+								$facultyinformation_4_metabox = array( 
 	'id' => 'facultyinformation',
 	'title' => 'Faculty Information',
-	'page' => 'people',
+	'page' => array('people'),
 	'context' => 'normal',
 	'priority' => 'high',
-	'fields' => $facultyinformation_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -837,27 +830,29 @@ $facultyinformation_metabox_people = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_facultyinformation_meta_box');
-function ecpt_add_facultyinformation_meta_box() {
+add_action('admin_menu', 'ecpt_add_facultyinformation_4_meta_box');
+function ecpt_add_facultyinformation_4_meta_box() {
 
-	global $facultyinformation_metabox_people;			
-		
-	add_meta_box($facultyinformation_metabox_people['id'], $facultyinformation_metabox_people['title'], 'ecpt_show_facultyinformation_box', 'people', 'normal', 'high', $facultyinformation_metabox_people);
+	global $facultyinformation_4_metabox;		
+
+	foreach($facultyinformation_4_metabox['page'] as $page) {
+		add_meta_box($facultyinformation_4_metabox['id'], $facultyinformation_4_metabox['title'], 'ecpt_show_facultyinformation_4_box', $page, 'normal', 'high', $facultyinformation_4_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_facultyinformation_box()	{
+function ecpt_show_facultyinformation_4_box()	{
 	global $post;
-	global $facultyinformation_metabox_people;
+	global $facultyinformation_4_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_facultyinformation_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_facultyinformation_4_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($facultyinformation_metabox_people['fields'] as $field) {
+	foreach ($facultyinformation_4_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -870,7 +865,8 @@ function ecpt_show_facultyinformation_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -967,15 +963,15 @@ function ecpt_show_facultyinformation_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_facultyinformation_save');
+add_action('save_post', 'ecpt_facultyinformation_4_save');
 
 // Save data from meta box
-function ecpt_facultyinformation_save($post_id) {
+function ecpt_facultyinformation_4_save($post_id) {
 	global $post;
-	global $facultyinformation_metabox_people;
+	global $facultyinformation_4_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_facultyinformation_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_facultyinformation_4_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -993,7 +989,7 @@ function ecpt_facultyinformation_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($facultyinformation_metabox_people['fields'] as $field) {
+	foreach ($facultyinformation_4_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -1003,9 +999,6 @@ function ecpt_facultyinformation_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -1016,15 +1009,13 @@ function ecpt_facultyinformation_save($post_id) {
 	}
 }
 
-								
-
-$uploadsforprofile_metabox_people = array( 
+								$uploadsforprofile_5_metabox = array( 
 	'id' => 'uploadsforprofile',
 	'title' => 'Uploads for Profile',
-	'page' => 'people',
+	'page' => array('people'),
 	'context' => 'side',
 	'priority' => 'default',
-	'fields' => $uploadsforprofile_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -1059,27 +1050,29 @@ $uploadsforprofile_metabox_people = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_uploadsforprofile_meta_box');
-function ecpt_add_uploadsforprofile_meta_box() {
+add_action('admin_menu', 'ecpt_add_uploadsforprofile_5_meta_box');
+function ecpt_add_uploadsforprofile_5_meta_box() {
 
-	global $uploadsforprofile_metabox_people;			
-		
-	add_meta_box($uploadsforprofile_metabox_people['id'], $uploadsforprofile_metabox_people['title'], 'ecpt_show_uploadsforprofile_box', 'people', 'side', 'default', $uploadsforprofile_metabox_people);
+	global $uploadsforprofile_5_metabox;		
+
+	foreach($uploadsforprofile_5_metabox['page'] as $page) {
+		add_meta_box($uploadsforprofile_5_metabox['id'], $uploadsforprofile_5_metabox['title'], 'ecpt_show_uploadsforprofile_5_box', $page, 'side', 'default', $uploadsforprofile_5_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_uploadsforprofile_box()	{
+function ecpt_show_uploadsforprofile_5_box()	{
 	global $post;
-	global $uploadsforprofile_metabox_people;
+	global $uploadsforprofile_5_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_uploadsforprofile_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_uploadsforprofile_5_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($uploadsforprofile_metabox_people['fields'] as $field) {
+	foreach ($uploadsforprofile_5_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -1092,7 +1085,8 @@ function ecpt_show_uploadsforprofile_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -1189,15 +1183,15 @@ function ecpt_show_uploadsforprofile_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_uploadsforprofile_save');
+add_action('save_post', 'ecpt_uploadsforprofile_5_save');
 
 // Save data from meta box
-function ecpt_uploadsforprofile_save($post_id) {
+function ecpt_uploadsforprofile_5_save($post_id) {
 	global $post;
-	global $uploadsforprofile_metabox_people;
+	global $uploadsforprofile_5_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_uploadsforprofile_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_uploadsforprofile_5_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -1215,7 +1209,7 @@ function ecpt_uploadsforprofile_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($uploadsforprofile_metabox_people['fields'] as $field) {
+	foreach ($uploadsforprofile_5_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -1225,9 +1219,6 @@ function ecpt_uploadsforprofile_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -1238,15 +1229,13 @@ function ecpt_uploadsforprofile_save($post_id) {
 	}
 }
 
-								
-
-$jobcandidatedetails_metabox_people = array( 
+								$jobcandidatedetails_6_metabox = array( 
 	'id' => 'jobcandidatedetails',
 	'title' => 'Job Candidate Details',
-	'page' => 'people',
+	'page' => array('people'),
 	'context' => 'normal',
 	'priority' => 'low',
-	'fields' => $jobcandidatedetails_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -1331,27 +1320,29 @@ $jobcandidatedetails_metabox_people = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_jobcandidatedetails_meta_box');
-function ecpt_add_jobcandidatedetails_meta_box() {
+add_action('admin_menu', 'ecpt_add_jobcandidatedetails_6_meta_box');
+function ecpt_add_jobcandidatedetails_6_meta_box() {
 
-	global $jobcandidatedetails_metabox_people;			
-		
-	add_meta_box($jobcandidatedetails_metabox_people['id'], $jobcandidatedetails_metabox_people['title'], 'ecpt_show_jobcandidatedetails_box', 'people', 'normal', 'low', $jobcandidatedetails_metabox_people);
+	global $jobcandidatedetails_6_metabox;		
+
+	foreach($jobcandidatedetails_6_metabox['page'] as $page) {
+		add_meta_box($jobcandidatedetails_6_metabox['id'], $jobcandidatedetails_6_metabox['title'], 'ecpt_show_jobcandidatedetails_6_box', $page, 'normal', 'low', $jobcandidatedetails_6_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_jobcandidatedetails_box()	{
+function ecpt_show_jobcandidatedetails_6_box()	{
 	global $post;
-	global $jobcandidatedetails_metabox_people;
+	global $jobcandidatedetails_6_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_jobcandidatedetails_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_jobcandidatedetails_6_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($jobcandidatedetails_metabox_people['fields'] as $field) {
+	foreach ($jobcandidatedetails_6_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -1364,7 +1355,8 @@ function ecpt_show_jobcandidatedetails_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -1461,15 +1453,15 @@ function ecpt_show_jobcandidatedetails_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_jobcandidatedetails_save');
+add_action('save_post', 'ecpt_jobcandidatedetails_6_save');
 
 // Save data from meta box
-function ecpt_jobcandidatedetails_save($post_id) {
+function ecpt_jobcandidatedetails_6_save($post_id) {
 	global $post;
-	global $jobcandidatedetails_metabox_people;
+	global $jobcandidatedetails_6_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_jobcandidatedetails_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_jobcandidatedetails_6_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -1487,7 +1479,7 @@ function ecpt_jobcandidatedetails_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($jobcandidatedetails_metabox_people['fields'] as $field) {
+	foreach ($jobcandidatedetails_6_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -1497,9 +1489,6 @@ function ecpt_jobcandidatedetails_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -1510,15 +1499,13 @@ function ecpt_jobcandidatedetails_save($post_id) {
 	}
 }
 
-								
-
-$pullquote_metabox_profile = array( 
+								$pullquote_7_metabox = array( 
 	'id' => 'pullquote',
 	'title' => 'Pull Quote',
-	'page' => 'profile',
+	'page' => array('profile'),
 	'context' => 'normal',
 	'priority' => 'default',
-	'fields' => $pullquote_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -1533,27 +1520,29 @@ $pullquote_metabox_profile = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_pullquote_meta_box');
-function ecpt_add_pullquote_meta_box() {
+add_action('admin_menu', 'ecpt_add_pullquote_7_meta_box');
+function ecpt_add_pullquote_7_meta_box() {
 
-	global $pullquote_metabox_profile;			
-		
-	add_meta_box($pullquote_metabox_profile['id'], $pullquote_metabox_profile['title'], 'ecpt_show_pullquote_box', 'profile', 'normal', 'default', $pullquote_metabox_profile);
+	global $pullquote_7_metabox;		
+
+	foreach($pullquote_7_metabox['page'] as $page) {
+		add_meta_box($pullquote_7_metabox['id'], $pullquote_7_metabox['title'], 'ecpt_show_pullquote_7_box', $page, 'normal', 'default', $pullquote_7_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_pullquote_box()	{
+function ecpt_show_pullquote_7_box()	{
 	global $post;
-	global $pullquote_metabox_profile;
+	global $pullquote_7_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_pullquote_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_pullquote_7_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($pullquote_metabox_profile['fields'] as $field) {
+	foreach ($pullquote_7_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -1566,7 +1555,8 @@ function ecpt_show_pullquote_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -1663,15 +1653,15 @@ function ecpt_show_pullquote_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_pullquote_save');
+add_action('save_post', 'ecpt_pullquote_7_save');
 
 // Save data from meta box
-function ecpt_pullquote_save($post_id) {
+function ecpt_pullquote_7_save($post_id) {
 	global $post;
-	global $pullquote_metabox_profile;
+	global $pullquote_7_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_pullquote_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_pullquote_7_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -1689,7 +1679,7 @@ function ecpt_pullquote_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($pullquote_metabox_profile['fields'] as $field) {
+	foreach ($pullquote_7_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -1699,9 +1689,6 @@ function ecpt_pullquote_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -1712,15 +1699,13 @@ function ecpt_pullquote_save($post_id) {
 	}
 }
 
-								
-
-$profileuploads_metabox_profile = array( 
+								$profileuploads_8_metabox = array( 
 	'id' => 'profileuploads',
 	'title' => 'Profile Uploads',
-	'page' => 'profile',
+	'page' => array('profile'),
 	'context' => 'side',
 	'priority' => 'high',
-	'fields' => $profileuploads_fields = array(
+	'fields' => array(
 
 				
 				array(
@@ -1735,27 +1720,29 @@ $profileuploads_metabox_profile = array(
 												)
 );			
 			
-add_action('admin_menu', 'ecpt_add_profileuploads_meta_box');
-function ecpt_add_profileuploads_meta_box() {
+add_action('admin_menu', 'ecpt_add_profileuploads_8_meta_box');
+function ecpt_add_profileuploads_8_meta_box() {
 
-	global $profileuploads_metabox_profile;			
-		
-	add_meta_box($profileuploads_metabox_profile['id'], $profileuploads_metabox_profile['title'], 'ecpt_show_profileuploads_box', 'profile', 'side', 'high', $profileuploads_metabox_profile);
+	global $profileuploads_8_metabox;		
+
+	foreach($profileuploads_8_metabox['page'] as $page) {
+		add_meta_box($profileuploads_8_metabox['id'], $profileuploads_8_metabox['title'], 'ecpt_show_profileuploads_8_box', $page, 'side', 'high', $profileuploads_8_metabox);
+	}
 }
 
 // function to show meta boxes
-function ecpt_show_profileuploads_box()	{
+function ecpt_show_profileuploads_8_box()	{
 	global $post;
-	global $profileuploads_metabox_profile;
+	global $profileuploads_8_metabox;
 	global $ecpt_prefix;
 	global $wp_version;
 	
 	// Use nonce for verification
-	echo '<input type="hidden" name="ecpt_profileuploads_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="ecpt_profileuploads_8_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	
 	echo '<table class="form-table">';
 
-	foreach ($profileuploads_metabox_profile['fields'] as $field) {
+	foreach ($profileuploads_8_metabox['fields'] as $field) {
 		// get current post meta data
 
 		$meta = get_post_meta($post->ID, $field['id'], true);
@@ -1768,7 +1755,8 @@ function ecpt_show_profileuploads_box()	{
 				echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" /><br/>', '', $field['desc'];
 				break;
 			case 'date':
-				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. ecpt_timestamp_to_date($meta) . '" size="30" style="width:97%" />' . '' . $field['desc'];
+				if($meta) { $value = ecpt_timestamp_to_date($meta); } else {  $value = ''; }
+				echo '<input type="text" class="ecpt_datepicker" name="' . $field['id'] . '" id="' . $field['id'] . '" value="'. $value . '" size="30" style="width:97%" />' . '' . $field['desc'];
 				break;
 			case 'upload':
 				echo '<input type="text" class="ecpt_upload_field" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:80%" /><input class="ecpt_upload_image_button" type="button" value="Upload Image" /><br/>', '', $field['desc'];
@@ -1865,15 +1853,15 @@ function ecpt_show_profileuploads_box()	{
 	echo '</table>';
 }	
 
-add_action('save_post', 'ecpt_profileuploads_save');
+add_action('save_post', 'ecpt_profileuploads_8_save');
 
 // Save data from meta box
-function ecpt_profileuploads_save($post_id) {
+function ecpt_profileuploads_8_save($post_id) {
 	global $post;
-	global $profileuploads_metabox_profile;
+	global $profileuploads_8_metabox;
 	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['ecpt_profileuploads_meta_box_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['ecpt_profileuploads_8_meta_box_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 
@@ -1891,7 +1879,7 @@ function ecpt_profileuploads_save($post_id) {
 		return $post_id;
 	}
 	
-	foreach ($profileuploads_metabox_profile['fields'] as $field) {
+	foreach ($profileuploads_8_metabox['fields'] as $field) {
 	
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];
@@ -1901,9 +1889,6 @@ function ecpt_profileuploads_save($post_id) {
 				$new = ecpt_format_date($new);
 				update_post_meta($post_id, $field['id'], $new);
 			} else {
-				if(is_string($new)) {
-					$new = esc_attr($data);
-				} 
 				update_post_meta($post_id, $field['id'], $new);
 				
 				
@@ -1918,8 +1903,7 @@ function ecpt_profileuploads_save($post_id) {
 function ecpt_export_ui_scripts() {
 
 	global $ecpt_options;
-?> 
-<script type="text/javascript">
+?><script type="text/javascript">
 		jQuery(document).ready(function($)
 		{
 			
@@ -2030,13 +2014,13 @@ function ecpt_export_ui_scripts() {
 			});											
 													
 		});
-  </script>
-<?php
+  </script><?php
 }
 
 function ecpt_export_datepicker_ui_scripts() {
 	global $ecpt_base_dir;
-	wp_enqueue_script('jquery-ui.min', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js', false, '1.8', 'all');
+	wp_enqueue_script('jquery-ui-datepicker');
+	wp_enqueue_script('jquery-ui-slider');
 }
 function ecpt_export_datepicker_ui_styles() {
 	global $ecpt_base_dir;

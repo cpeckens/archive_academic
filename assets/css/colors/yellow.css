@@ -160,7 +160,7 @@ padding-top: 1em;
 
 #subnav li ul li.current_page_item,
 #subnav li ul li.current_page_parent {
-	list-style-image:url('../img/tert_navYellow.png');
+	list-style-image:url('../../img/tert_navYellow.png');
 }
 
 li.subnav-head {
@@ -180,26 +180,17 @@ li.subnav-head {
 
 /* Widgets
 *********************************/
-#undergrad-widget,
-.profile_box
-{
-background: rgb(198,197,195); /* Old browsers */
-background: -moz-linear-gradient(top,  rgb(198,197,195) 0%, rgb(230,229,227) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(198,197,195)), color-stop(100%,rgb(230,229,227))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* IE10+ */
-background: linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* W3C */
-}
+.profile_box,
 .textwidget,
-.widget_bulletin_board {
-background: rgb(198,197,195); /* Old browsers */
-background: -moz-linear-gradient(top,  rgb(198,197,195) 0%, rgb(230,229,227) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(198,197,195)), color-stop(100%,rgb(230,229,227))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* IE10+ */
-background: linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* W3C */
+.widget_bulletin_board 
+{
+	background: rgb(198,197,195); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgb(198,197,195) 0%, rgb(230,229,227) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(198,197,195)), color-stop(100%,rgb(230,229,227))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /* W3C */
 }
 
 .WPCalendarSimple {
@@ -215,12 +206,13 @@ background: linear-gradient(top,  rgb(198,197,195) 0%,rgb(230,229,227) 100%); /*
 #address-widget .textwidget {
 	background: none;
 }
+
 .profile_box .spotlight {
-	background: #c4a41d url(../img/widget_headerYellow.png) no-repeat top left;
+	background: #4b8ab5 url(../../img/widget_headerYellow.png) no-repeat top left;
 }
 
 .profile_box .jobmarket {
-	background: #c4a41d url(../img/jobmarketYellow.gif) no-repeat top left;
+	background: #4b8ab5 url(../../img/jobmarketYellow.gif) no-repeat top left;
 }
 
 #grad-widget .textwidget p,

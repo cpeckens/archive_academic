@@ -1,5 +1,4 @@
 <?php
-
 // registration code for coursetype taxonomy
 function register_coursetype_tax() {
 	$labels = array(
@@ -120,5 +119,4 @@ function register_profiletype_tax() {
 	register_taxonomy('profiletype', $pages, $args);
 }
 add_action('init', 'register_profiletype_tax');								
-
 ?>

@@ -82,30 +82,34 @@
 	
 	//Function to call theme options in theme files 
 		$ksasaca_option = ksasaca_get_global_options();
+		
+		
+/********************WYSIWYG Editor Modification**********************/
 
 //Add style dropdown to WYSIWYG editor
-function ksasaca_mce_buttons_2($buttons)
-{
-	array_unshift($buttons, 'styleselect');
-	return $buttons;
-}
-add_filter('mce_buttons_2', 'ksasaca_mce_buttons_2');
+	function ksasaca_mce_buttons_2($buttons)
+	{
+		array_unshift($buttons, 'styleselect');
+		return $buttons;
+	}
+	add_filter('mce_buttons_2', 'ksasaca_mce_buttons_2');
+	
+	function ksasaca_mce_before_init($init_array)
+	{
+		// add classes using a ; separated values
+		$init_array['theme_advanced_styles'] = "Button=button;Divider=divider;Dark Blue=altcolorblue; Yellow=altyellow";
+		return $init_array;
+	}
+	add_filter('tiny_mce_before_init', 'ksasaca_mce_before_init');
 
-function ksasaca_mce_before_init($init_array)
-{
-	// add classes using a ; separated values
-	$init_array['theme_advanced_styles'] = "Button=button;Divider=divider;Dark Blue=altcolorblue; Yellow=altyellow";
-	return $init_array;
-}
-add_filter('tiny_mce_before_init', 'ksasaca_mce_before_init');
-
-function ksasaca_enable_more_buttons($buttons) {
-  $buttons[] = 'hr';
-  $buttons[] = 'sub';
-  $buttons[] = 'sup'; 
-  return $buttons;
-}
-add_filter("mce_buttons_3", "ksasaca_enable_more_buttons");
+// add additional buttons to WYSIWYG editor
+	function ksasaca_enable_more_buttons($buttons) {
+	  $buttons[] = 'hr';
+	  $buttons[] = 'sub';
+	  $buttons[] = 'sup'; 
+	  return $buttons;
+	}
+	add_filter("mce_buttons_3", "ksasaca_enable_more_buttons");
 	
 /********************Functions for Template Files**********************/
 //pagination function
@@ -190,21 +194,23 @@ add_filter("mce_buttons_3", "ksasaca_enable_more_buttons");
 	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
 
-	// remove version info from head and feeds
-		function complete_version_removal() {
-			return '';
-		}
-		add_filter('the_generator', 'complete_version_removal');
+// remove version info from head and feeds
+    function complete_version_removal() {
+    	return '';
+    }
+    add_filter('the_generator', 'complete_version_removal');
 
 //removes admin bar from front end
-add_filter( 'show_admin_bar', '__return_false' );
+	add_filter( 'show_admin_bar', '__return_false' );
 
 
 /********************Includes to Additional Functions**********************/	
 // include custom widget functionality, posttypes, taxonomies, and metaboxes
-	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-widgets.php');
+// uncomment the four lines below if using on a single install.  These are now plugins on the network install.
+/* 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-widgets.php'); 
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-posttypes.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-taxonomy.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-metabox.php');
+*/
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-shortcodes.php');	
 ?>
