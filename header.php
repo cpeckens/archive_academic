@@ -16,6 +16,7 @@
 		<!-- CSS -->
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/media.css" />
 
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />

@@ -207,7 +207,8 @@
 /********************Includes to Additional Functions**********************/	
 // include custom widget functionality, posttypes, taxonomies, and metaboxes
 // uncomment the four lines below if using on a single install.  These are now plugins on the network install.
-/* 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-widgets.php'); 
+/*
+	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-widgets.php'); 
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-posttypes.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-taxonomy.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-metabox.php');

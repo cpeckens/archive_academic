@@ -793,27 +793,27 @@ h3.acc_trigger {
 
 /* 14.0 Calendar
 ___________________________________________________________*/
-div .fc-event.category-17, div .fc-event.category-17 a { /* Theory Events */
+div .fc-event.category-30, div .fc-event.category-30 a { /* Theory Events */
 	background-color: #679bcd; 
 	border-color: #679bcd; 
 }
 
-div .fc-event.category-18, div .fc-event.category-18 a { /* Micro Events */
+div .fc-event.category-33, div .fc-event.category-33 a { /* Micro Events */
 	background-color: #95a739; 
 	border-color: #95a739; 
 }
 
-div .fc-event.category-19, div .fc-event.category-19 a { /* Macro Events */
+div .fc-event.category-32, div .fc-event.category-32 a { /* Macro Events */
 	background-color: #c4a41d; 
 	border-color: #c4a41d; 
 }
 
-div .fc-event.category-24, div .fc-event.category-24 a { /* Lunch Seminar Events */
+div .fc-event.category-31, div .fc-event.category-31 a { /* Lunch Seminar Events */
 	background-color: #c4691d; 
 	border-color: #c4691d; 
 }
 
-div .fc-event.category-23, div .fc-event.category-23 a { /* 2nd Year Seminar Events */
+div .fc-event.category-34, div .fc-event.category-34 a { /* 2nd Year Seminar Events */
 	background-color: #a64938; 
 	border-color: #a64938; 
 }

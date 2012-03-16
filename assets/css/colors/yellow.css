@@ -8,10 +8,6 @@ body.page {
 	background: #e2e1df;
 }
 
-#header {
-	margin-top: -15px;
-}
-
 body.page #container-head {
   	background: url('../../img/books.jpg') center top no-repeat;
   	
@@ -85,6 +81,7 @@ h2.widgettitle,
 	width:100%;
 	margin-left:1%;
 	margin-top:1em;
+	clear:both;
 }
 
 #nav ul { /* all lists */
@@ -128,6 +125,7 @@ padding-top: 1em;
 /* Dropdown nav */
 #nav .sub-menu {
 	background: #504837;
+	width: 10em;
 }
 
 #nav .sub-menu,
@@ -136,6 +134,7 @@ padding-top: 1em;
 }
 
 #nav .sub-menu li {
+	width:10em;
 	text-transform: none;
 	border-bottom: #695e48 solid 1px;
 }
@@ -145,8 +144,20 @@ padding-top: 1em;
 }
 
 /* Sub-page left hand nav */
+
+#subnav li {
+	padding: 5px 7px 5px 14%;
+	text-indent:-13px;
+	line-height: 1.2em;
+	zoom: 0;
+}
+
 #subnav li a {
 	color:#383327;
+}
+
+#subnav li ul li {
+	line-height: 1em;
 }
 
 #subnav li ul li a {
@@ -155,12 +166,16 @@ padding-top: 1em;
 
 #subnav li.current_page_item, 
 #subnav li.current_page_ancestor {
-	background: url('../../img/subnav-currentYellow.png') no-repeat 5.4545454545455% .4em;
+	background: url('../../img/subnav-currentYellow.png') no-repeat 5.4545454545455% .45em;
+	padding-left: 18.6%;
 }
 
 #subnav li ul li.current_page_item,
 #subnav li ul li.current_page_parent {
 	list-style-image:url('../../img/tert_navYellow.png');
+	margin-left:12px;
+	padding-left:7px;
+	padding-right: 0px;
 }
 
 li.subnav-head {

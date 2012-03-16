@@ -62,7 +62,7 @@ Template Name: Job Market
 					<?php $my_candidate_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'job-market-candidate',
-					'meta_key' => 'people_alpha',
+					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
 					'posts_per_page' => '25')); ?>

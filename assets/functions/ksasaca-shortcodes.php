@@ -22,6 +22,27 @@ function readmore_content_shortcode( $attr, $content = null ) {
 }
 add_shortcode('readmorecontent', 'readmore_content_shortcode'); 
 
+//******************iFrame Shortcode************************//
+function iframe_shortcode($atts, $content=null) {
+ 
+	extract(shortcode_atts(array(
+	 
+	'url'   => '',
+	'scrolling'     => 'no',
+	'width'     => '100%',
+	'height'    => '500',
+	'frameborder'   => '0',
+	'marginheight'  => '0',
+	 
+	), $atts));
+	 
+	if (empty($url)) return 'http://';
+	 
+	return '<iframe src="'.$url.'" title="" scrolling="'.$scrolling.'" width="'.$width.'" height="'.$height.'" frameborder="'.$frameborder.'" marginheight="'.$marginheight.'">'.$content.'</iframe>';
+	 
+	}
+ 
+add_shortcode('iframe','iframe_shortcode');
 
 //******************Create WYSIWYG Buttons for Shortcodes************************//
 

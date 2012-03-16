@@ -46,8 +46,8 @@
 	#sidebar-right { display:none;}
 	#blogfeed {	width:100%;}
 	#searchbar {display: none;}
-	#searchbar.mobile {display: block; width:100%;}
-	
+	#searchbar.mobile {display: block; width:220px;}
+	.entry-text {width: 95%;}
 }
 
 @media screen and (max-width: 400px) {
@@ -55,6 +55,10 @@
 	#nav ul li { letter-spacing: normal; font-weight: 400; margin-right:2.1666666666667%; }
 	.people-picture { display: none; float:none; width:0%; }
 	.people-contact { float:left; width:100%; }
+	#sidebar-left {display: none;}
+	#content { width: 100%; float:left;}
+	#nav ul li {padding-top:0;}
+	#main {background: #E2E1DF; background-image: none;}
 
 }/*End 400px media query */
 

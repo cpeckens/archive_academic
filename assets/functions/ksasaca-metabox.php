@@ -115,7 +115,7 @@ function ecpt_show_coursedetails_1_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
@@ -345,7 +345,7 @@ function ecpt_show_sliderinfo_2_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
@@ -625,7 +625,7 @@ function ecpt_show_personaldetails_3_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
@@ -875,7 +875,7 @@ function ecpt_show_facultyinformation_4_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
@@ -1095,7 +1095,7 @@ function ecpt_show_uploadsforprofile_5_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
@@ -1365,7 +1365,7 @@ function ecpt_show_jobcandidatedetails_6_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
@@ -1565,7 +1565,7 @@ function ecpt_show_pullquote_7_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';
@@ -1765,7 +1765,7 @@ function ecpt_show_profileuploads_8_box()	{
 			
 				if($field['rich_editor'] == 1) {
 					if($wp_version >= 3.3) {
-						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id']));
+						echo wp_editor($meta, $field['id'], array('textarea_name' => $field['id'], 'wpautop' => false));
 					} else {
 						// older versions of WP
 						$editor = '';

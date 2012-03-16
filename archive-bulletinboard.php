@@ -10,7 +10,7 @@
 				<?php
 				
 							
-					$parent = ksas_get_page_id('about');;
+					$parent = ksas_get_page_id('undergraduate');;
 								
 									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
