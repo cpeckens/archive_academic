@@ -33,7 +33,7 @@
 					
 					<div class="snippet">
 						
-						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+						<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_date()?>&nbsp;<?php the_title(); ?></a></h3>
 						
 						<?php the_excerpt() ?>
 			

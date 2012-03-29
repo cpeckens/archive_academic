@@ -203,15 +203,23 @@
 //removes admin bar from front end
 	add_filter( 'show_admin_bar', '__return_false' );
 
+//remove unneccessary classes for navigation menus
+add_filter('nav_menu_css_class', 'ksasaca_css_attributes_filter', 100, 1);
+add_filter('nav_menu_item_id', 'ksasaca_css_attributes_filter', 100, 1);
+add_filter('page_css_class', 'ksasaca_css_attributes_filter', 100, 1);
+function ksasaca_css_attributes_filter($var) {
+	 $newnavclasses = is_array($var) ? array_intersect($var, array('current-menu-item', 'current_page_item', 'current-page-ancestor', 'current-page-parent')) : '';
+	 return $newnavclasses;
+}
 
 /********************Includes to Additional Functions**********************/	
 // include custom widget functionality, posttypes, taxonomies, and metaboxes
-// uncomment the four lines below if using on a single install.  These are now plugins on the network install.
+// uncomment the five lines below if using on a single install.  These are now plugins on the network install.
 /*
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-widgets.php'); 
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-posttypes.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-taxonomy.php');
 	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-metabox.php');
-*/
-	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-shortcodes.php');	
+	include_once (TEMPLATEPATH . '/assets/functions/ksasaca-shortcodes.php');
+*/	
 ?>

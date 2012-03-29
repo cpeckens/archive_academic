@@ -109,13 +109,6 @@ function ksasaca_register_settings(){
 	}
 }
 
-/**
- * Group scripts (js & css)
- */
-function ksasaca_settings_scripts(){
-	wp_enqueue_style('ksasaca_theme_settings_css', get_template_directory_uri() . '/lib/css/ksasaca_theme_settings.css');
-	wp_enqueue_script( 'ksasaca_theme_settings_js', get_template_directory_uri() . '/lib/js/ksasaca_theme_settings.js', array('jquery'));
-}
 
 /**
  * The Admin menu page

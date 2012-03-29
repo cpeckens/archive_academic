@@ -110,6 +110,7 @@ hr {
 #header-right {
 	width: 77.0833333333333%; /* 740px / 960px */
 	float:right;
+	
 }
 
 /* 2.2 Content Container
@@ -409,7 +410,7 @@ ___________________________________________________________*/
 	float:right;
 	position:relative;
 	width: 220px;
-	margin-top: 2.027027027027027%; /* 15px /740px */
+	margin-top:5px; /* 15px /740px */
 
 }
 #searchbar input {
