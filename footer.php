@@ -23,19 +23,16 @@
 			</div> <!--End footer -->
 			
 			<div class="clearboth"></div> <!--to have background work properly -->
-		
 		</div> <!--End container-foot -->
 
 	</body>
 			
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/respond.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_custom.min.js"></script>
-		
-		
 		<!-- front-page specific scripts and css -->
 		<?php if (is_front_page()) { ?>
-			
-			<script src="<?php bloginfo('template_url'); ?>/assets/js/jquery.flexslider-min.js"></script>
-		<?php } ?>			
+			<script src="<?php bloginfo('template_url'); ?>/assets/js/ksas_frontpage.min.js"></script>
+		<?php } ?>	
+	
 </html>
 

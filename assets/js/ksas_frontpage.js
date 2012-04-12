@@ -9,6 +9,10 @@
  * TouchWipe gesture credits: http://www.netcu.de/jquery-touchwipe-iphone-ipad-library
  */
 
+var $j = jQuery.noConflict();
+		$j(window).load(function() {
+			$j('.flexslider').flexslider();
+		});
 
 (function ($) {
   $.fn.extend({

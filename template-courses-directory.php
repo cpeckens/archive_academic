@@ -5,13 +5,11 @@ Template Name: Courses
 ?>
 
 <?php get_header(); ?>
-
-<!-- Insert them single.php container code below -->
 		<div id="container-mid">
 			<div id="main">
 				<div id="sidebar-left">
 				
-					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
+			<!--Subpage navigation-->
 			<?php
 				if(is_page('undergraduate-courses')) : 
 					 $parent = ksas_get_page_id('undergraduate');
@@ -43,13 +41,19 @@ Template Name: Courses
 					<?php endwhile; ?>
 					<?php endif; ?>
  				
-	<!-- Start loop -->
+					<!-- Start course loop -->
 					<?php if(is_page('undergraduate-courses')) : ?>
 					
-					<?php $ksas_course_query = new WP_Query('post-type=courses&coursetype=undergraduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					<?php 
+						// Get any existing copy of our transient data
+						if ( false === ( $ksas_course_query = get_transient( 'ksas_course_query' ) ) ) {
+    					// It wasn't there, so regenerate the data and save the transient
+     					$ksas_course_query = new WP_Query('post-type=courses&coursetype=undergraduate-course&orderby=title&order=asc&posts_per_page=100');
+     					set_transient( 'ksas_course_query', $ksas_course_query, 86400 );
+						} 
+					?>
 					
 					<?php while ($ksas_course_query->have_posts()) : $ksas_course_query->the_post(); ?>
-					
 						
 							<h3 class="acc_trigger"><a href="#"><?php the_title(); ?><?php if ( get_post_meta($post->ID, 'ecpt_credit', true) ) : ?>&nbsp;(<?php echo get_post_meta($post->ID, 'ecpt_credit', true); ?> Credits)<?php endif; ?></a></h3>
 							<div class="acc_container">
@@ -73,9 +77,15 @@ Template Name: Courses
 				
 				<?php elseif(is_page('graduate-courses')) :  ?>
 				
-					<?php $ksas_gradcourse_query = new WP_Query('post-type=courses&coursetype=graduate-course&orderby=title&order=asc&posts_per_page=100'); ?>
+					<?php
+						// Get any existing copy of our transient data
+						if ( false === ( $ksas_gradcourse_query = get_transient( 'ksas_gradcourse_query' ) ) ) {
+    					// It wasn't there, so regenerate the data and save the transient
+     					$ksas_gradcourse_query = new WP_Query('post-type=courses&coursetype=graduate-course&orderby=title&order=asc&posts_per_page=100');
+     					set_transient( 'ksas_gradcourse_query', $ksas_gradcourse_query, 86400 );
+						} 
+					?>
 					<?php while ($ksas_gradcourse_query->have_posts()) : $ksas_gradcourse_query->the_post(); ?>
-					
 						
 							<h3 class="acc_trigger"><a href="#"><?php the_title(); ?></a></h3>
 							<div class="acc_container">
@@ -90,8 +100,6 @@ Template Name: Courses
 									
 									<?php if ( get_post_meta($post->ID, 'ecpt_course_website', true) ) : ?><a href="<?php echo get_post_meta($post->ID, 'ecpt_course_website', true); ?>" target="_blank">View course website/syllabus</a><?php endif; ?>
 								</p>
-								
-								
 								</div>
 							</div>
 							
@@ -105,6 +113,5 @@ Template Name: Courses
 			</div> <!--End main -->
 			
 		</div> <!--End container-mid -->
-	
 	
 	<?php get_footer() ?>

@@ -4,19 +4,13 @@ Template Name: Directory
 */
 ?>		
 	<?php get_header() ?>	
-
-		
 		<div id="container-mid">
 			<div id="main">
 				<div id="sidebar-left">
-				
-					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
+				<!--Subpage navigation -->
 				<?php
 				
-							
 					$parent = ksas_get_page_id('directoryindex');;
-								
-									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
 									
 					if ($children) { ?>
@@ -24,48 +18,37 @@ Template Name: Directory
 							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo get_permalink($parent); ?>"><?php echo get_the_title($parent); ?></a></span></li>
 							<?php echo $children; ?>
 						</ul>			
-				<?php } ?> <!--End subnav -->
-
-						<!--End Subpage Navigation code -->
+				<?php } ?> 
+				<!--End Subpage Navigation code -->
 				<div id="address"><?php get_sidebar('address-sb'); ?></div>
-
 				</div> <!--End sidebar-left -->
 				
 				<div id="content">
 					<div class="entry">
 					
-					<!--This is the page content: Title and searchbar -->
+					<!--This is the page content: Title -->
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 					<h2><?php the_title(); ?></h2>
 					<?php endwhile; ?>
 					<?php endif; ?>
-<!--
-					<div class="searchbar"><form method=”get” id=”searchform” action=”<?php // bloginfo(‘home’); ?>/people”>
-<div><input type=”text” size=”18″ value=” ” name=”s” id=”s” />
-<input type=”submit” id=”searchsubmit” value=”Search” class=”btn” />
-</div>
-</form></div>
--->					
-
-
-
-
 					<div class="directory-table">
 					<table>
 					
-					
-					
-					
 					<?php if(is_page('faculty')) : ?>
 					
-					<!--Create query -->
-					<?php $my_faculty_query = new WP_Query(array(
+					<!--Create Faculty query -->
+					<?php 	    	// Get any existing copy of our transient data
+	    	if ( false === ( $my_faculty_query = get_transient( 'ksas_faculty_query' ) ) ) {
+        	// It wasn't there, so regenerate the data and save the transient
+        	$my_faculty_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'faculty',
 					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '25')); ?>
+					'posts_per_page' => '25'));
+        	set_transient( 'ksas_faculty_query', $my_faculty_query, 86400 );
+	    	} ?>
 					
 					<?php while ($my_faculty_query->have_posts()) : $my_faculty_query->the_post(); ?>
 					
@@ -83,28 +66,38 @@ Template Name: Directory
 					
 					<?php endwhile; ?>
 					<?php endif; ?>
-					
+					<!--Create Emeriti query -->
 					<?php if(is_page('faculty')) : ?>
-					<?php $my_emeriti_query = new WP_Query(array(
+					<?php // Get any existing copy of our transient data
+	    	if ( false === ( $my_emeriti_query = get_transient( 'ksas_emeriti_query' ) ) ) {
+        	// It wasn't there, so regenerate the data and save the transient
+        	$my_emeriti_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'professor-emeriti',
 					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '25')); ?>
+					'posts_per_page' => '25'));
+        	set_transient( 'ksas_emeriti_query', $my_emeriti_query, 86400 );
+	    	} ?>
 					<?php if ($my_emeriti_query->have_posts()) : ?>
 					</table>
 					<h2>Professor Emeriti</h2>
 					<table>
 					<?php endif; ?>
 					
-					<?php $my_emeriti_query = new WP_Query(array(
+					<?php // Get any existing copy of our transient data
+	    	if ( false === ( $my_emeriti_query = get_transient( 'ksas_emeriti_query' ) ) ) {
+        	// It wasn't there, so regenerate the data and save the transient
+        	$my_emeriti_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'professor-emeriti',
 					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '25')); ?>
+					'posts_per_page' => '25'));
+        	set_transient( 'ksas_emeriti_query', $my_emeriti_query, 86400 );
+	    	} ?>
 					<?php while ($my_emeriti_query->have_posts()) : $my_emeriti_query->the_post(); ?>
 					
 					<tr>
@@ -121,7 +114,7 @@ Template Name: Directory
 					
 					<?php endwhile; ?>
 					<?php endif; ?>
-					
+					<!--Create Job Market query -->
 					<?php if(is_page('job-market-candidates')) :  ?>
 					
 					<tr>
@@ -131,13 +124,18 @@ Template Name: Directory
 					</tr>
 					
 					<!--Create query -->
-					<?php $my_candidate_query = new WP_Query(array(
+					<?php // Get any existing copy of our transient data
+	    	if ( false === ( $my_candidate_query = get_transient( 'ksas_candidate_query' ) ) ) {
+        	// It wasn't there, so regenerate the data and save the transient
+        	$my_candidate_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'job-market-candidate',
 					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '25')); ?>
+					'posts_per_page' => '25'));
+        	set_transient( 'ksas_candidate_query', $my_candidate_query, 86400 );
+	    	} ?>
 					<?php while ($my_candidate_query->have_posts()) : $my_candidate_query->the_post(); ?>
 					
 					
@@ -155,11 +153,7 @@ Template Name: Directory
 					</tr>
 					
 					<?php endwhile; ?>
-					
-					
-					
-					
-					
+					<!--Create Staff query -->					
 					<?php elseif(is_page('staff')) :  ?>
 					<tr>
 					<th>Name</th>
@@ -169,13 +163,18 @@ Template Name: Directory
 					<th>Email</th></tr>
 					
 					<!--Create query -->
-					<?php $my_staff_query = new WP_Query(array(
+					<?php // Get any existing copy of our transient data
+	    	if ( false === ( $my_staff_query = get_transient( 'ksas_staff_query' ) ) ) {
+        	// It wasn't there, so regenerate the data and save the transient
+        	$my_staff_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'staff',
 					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '25')); ?>
+					'posts_per_page' => '25'));
+        	set_transient( 'ksas_staff_query', $my_staff_query, 86400 );
+	    	} ?>
 					<?php while ($my_staff_query->have_posts()) : $my_staff_query->the_post(); ?>
 					<div class="staff">
 					<tr>
@@ -187,31 +186,16 @@ Template Name: Directory
 					</tr>
 					</div>
 					<?php endwhile; ?>
-					
-			
-					
 					<?php endif; ?>
-					
-					
-					
-					
-					
-					
 					</table>
 					</div> <!--end directory-table-->
 						<div class="pagination"><?php ksas_pagination('«', '»'); ?></div>
-				
-				
 				
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 					<?php the_content(); ?>
 					<?php endwhile; ?>
 					<?php endif; ?>
 					
-				
-				
-
-
 					</div> <!--End entry-->
 				</div> <!--End content -->		
 				<div class="clearboth"></div> <!--to have background work properly -->

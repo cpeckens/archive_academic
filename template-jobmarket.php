@@ -4,19 +4,12 @@ Template Name: Job Market
 */
 ?>		
 	<?php get_header() ?>	
-
-		
 		<div id="container-mid">
 			<div id="main">
 				<div id="sidebar-left">
-				
-					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
+					<!--Subpage navigation-->
 				<?php
-				
-							
 					$parent = ksas_get_page_id('directoryindex');;
-								
-									
 					$children = wp_list_pages("title_li=&child_of=". $parent ."&echo=0&depth=1");
 									
 					if ($children) { ?>
@@ -24,48 +17,36 @@ Template Name: Job Market
 							<li class="subnav-head">Also in <span class="highlight"><a href="<?php echo get_permalink($parent); ?>"><?php echo get_the_title($parent); ?></a></span></li>
 							<?php echo $children; ?>
 						</ul>			
-				<?php } ?> <!--End subnav -->
-
-						<!--End Subpage Navigation code -->
+				<?php } ?> 
+				<!--End Subpage Navigation code -->
 				<div id="address"><?php get_sidebar('address-sb'); ?></div>
-
 				</div> <!--End sidebar-left -->
 				
 				<div id="content">
 					<div class="entry">
-					
-					<!--This is the page content: Title and searchbar -->
+					<!--This is the page content -->
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
 					<h2><?php the_title(); ?></h2>
 					<?php the_content(); ?>
-
 					<?php endwhile; ?>
 					<?php endif; ?>
-<!--
-					<div class="searchbar"><form method=”get” id=”searchform” action=”<?php // bloginfo(‘home’); ?>/people”>
-<div><input type=”text” size=”18″ value=” ” name=”s” id=”s” />
-<input type=”submit” id=”searchsubmit” value=”Search” class=”btn” />
-</div>
-</form></div>
--->					
-
-
-
-
 					<div class="directory-table">
 					<table>
 					
 					<?php if(is_page('job-market')) :  ?>
-					
-					
 					<!--Create query -->
-					<?php $my_candidate_query = new WP_Query(array(
+					<?php // Get any existing copy of our transient data
+	    	if ( false === ( $my_candidate_query = get_transient( 'ksas_candidate_query' ) ) ) {
+        	// It wasn't there, so regenerate the data and save the transient
+        	$my_candidate_query = new WP_Query(array(
 					'post-type' => 'people',
 					'role' => 'job-market-candidate',
 					'meta_key' => 'ecpt_people_alpha',
 					'orderby' => 'meta_value',
 					'order' => 'ASC',
-					'posts_per_page' => '25')); ?>
+					'posts_per_page' => '25'));
+        	set_transient( 'ksas_candidate_query', $my_candidate_query, 86400 );
+	    	} ?>
 					<?php while ($my_candidate_query->have_posts()) : $my_candidate_query->the_post(); ?>
 					
 					
@@ -85,20 +66,9 @@ Template Name: Job Market
 					
 					<?php endwhile; ?>
 					<?php endif; ?>
-					
-					
-					
-					
-					
-					
 					</table>
 					</div> <!--end directory-table-->
 						<div class="pagination"><?php ksas_pagination('«', '»'); ?></div>
-					
-				
-				
-
-
 					</div> <!--End entry-->
 				</div> <!--End content -->		
 				<div class="clearboth"></div> <!--to have background work properly -->

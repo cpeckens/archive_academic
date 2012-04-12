@@ -1,0 +1,14 @@
+/*
+Theme Name: Academic Template
+Version: 2.1
+Description: Designed by <a href="http://www.cpeckens.com">Cara Peckens</a>. 
+Author: Cara Peckens
+Author URI: http://www.cpeckens.com
+*/
+
+@import url("/wp-content/themes/academic/assets/css/main.css");
+@import url("/wp-content/themes/academic/assets/css/classes.css");
+@import url("/wp-content/themes/academic/assets/css/colors/blue.css"); /* change to color your testing */
+@import url("/wp-content/themes/academic/assets/css/media.css");
+@import url("http://fonts.googleapis.com/css?family=PT+Sans+Narrow");
+

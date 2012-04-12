@@ -9,7 +9,7 @@ Template Name: Mini-Home
 			<div id="main">
 				<div id="sidebar-left">
 				
-					<!--Subpage navigation - Current code needs to be tweaked to show appropriate pages -->
+					<!--Subpage navigation-->
 				<?php
 				
 					if ($post->post_parent)	{
@@ -65,9 +65,6 @@ Template Name: Mini-Home
 						</div>
 			
 					</div><!--End entry -->
-					
-					
-				
 				</div> <!--End content -->		
 				<div class="clearboth"></div> <!--to have background work properly -->
 			</div> <!--End main -->

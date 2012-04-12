@@ -181,37 +181,6 @@
 	
 	add_filter('excerpt_length', 'ksas_new_excerpt_length');
 
-
-/********************Security/Performance Functions**********************/
-// remove junk from head
-	remove_action('wp_head', 'rsd_link');
-	remove_action('wp_head', 'wp_generator');
-	remove_action('wp_head', 'feed_links', 2);
-	remove_action('wp_head', 'index_rel_link');
-	remove_action('wp_head', 'wlwmanifest_link');
-	remove_action('wp_head', 'feed_links_extra', 3);
-	remove_action('wp_head', 'start_post_rel_link', 10, 0);
-	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-	remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-
-// remove version info from head and feeds
-    function complete_version_removal() {
-    	return '';
-    }
-    add_filter('the_generator', 'complete_version_removal');
-
-//removes admin bar from front end
-	add_filter( 'show_admin_bar', '__return_false' );
-
-//remove unneccessary classes for navigation menus
-add_filter('nav_menu_css_class', 'ksasaca_css_attributes_filter', 100, 1);
-add_filter('nav_menu_item_id', 'ksasaca_css_attributes_filter', 100, 1);
-add_filter('page_css_class', 'ksasaca_css_attributes_filter', 100, 1);
-function ksasaca_css_attributes_filter($var) {
-	 $newnavclasses = is_array($var) ? array_intersect($var, array('current-menu-item', 'current_page_item', 'current-page-ancestor', 'current-page-parent')) : '';
-	 return $newnavclasses;
-}
-
 /********************Includes to Additional Functions**********************/	
 // include custom widget functionality, posttypes, taxonomies, and metaboxes
 // uncomment the five lines below if using on a single install.  These are now plugins on the network install.

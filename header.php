@@ -14,10 +14,8 @@
 		<?php $ksasaca_option = ksasaca_get_global_options(); ?>
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/media.css" />
-
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.min.css" /> <!-- change to styledev.css for development style.min.css for productions -->
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.min.css" />
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
 		<![endif]-->

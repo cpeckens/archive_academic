@@ -1,24 +1,19 @@
 	<?php get_header() ?>	
-	
-	<!-- Hook up the FlexSlider -->
-	<script type="text/javascript">
-	var $j = jQuery.noConflict();
-		$j(window).load(function() {
-			$j('.flexslider').flexslider();
-		});
-	</script>
-	
+	<?php
+	    	// Get any existing copy of our transient data
+	    	if ( false === ( $my_slider_query = get_transient( 'ksas_slider_query' ) ) ) {
+        	// It wasn't there, so regenerate the data and save the transient
+        	$my_slider_query = new WP_Query(array(
+	    			'post_type' => 'slider',
+	    			'posts_per_page' => '4'));
+        	set_transient( 'ksas_slider_query', $my_slider_query, 86400 );
+	    	} ?>		
+	<!-- Hook up the FlexSlider -->	
+	<?php if ($my_slider_query->have_posts()) : ?>
 	<div id="slider-holder">
-		
 		<div class="flexslider">
 	   		<ul class="slides">
-	   		 
-		   		<?php $my_slider_query = new WP_Query(array(
-				    'post_type' => 'slider',
-				    'posts_per_page' => '4')); ?>		
-				
 				<?php while ($my_slider_query->have_posts()) : $my_slider_query->the_post(); ?>
-				
 				<li class="<?php echo get_post_meta($post->ID, 'ecpt_slidecolor', true); ?>">
 		   		 	<div class="slide-holder">
 		   		 		<a href="<?php echo get_post_meta($post->ID, 'ecpt_urldestination', true); ?>"><img src="<?php echo get_post_meta($post->ID, 'ecpt_slideimage', true); ?>" /></a>
@@ -35,8 +30,9 @@
 	    <div class="clearboth"></div> <!--to have background work properly -->
 	  </div> <!--End flexslider-->
 		<div class="clearboth"></div> <!--to have background work properly -->
-	  </div> <!--End slider-holder-->	
-
+	  </div> <!--End slider-holder-->
+	  <?php endif;?>
+	  	
 	    <div id="container-mid">
 	    	<div id="homepage">
 	    	
