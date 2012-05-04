@@ -12,19 +12,16 @@
 
 		<!-- Don't forget to update the bookmark icons (favicon.ico and apple-touch-icons) in the root: http://mathiasbynens.be/notes/touch-icons -->
 		<?php $ksasaca_option = ksasaca_get_global_options(); ?>
-
+		
+		
+		<link rel="stylesheet" type="text/css" href="<?php network_home_url(); ?>/min/?f=wp-content/themes/academic/assets/css/main.css,wp-content/themes/academic/assets/css/classes.css,wp-content/themes/academic/assets/css/media.css,wp-content/themes/academic/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css<?php if (is_front_page()) { ?>,wp-content/themes/academic/assets/css/flexslider.css<?php } ?>&3">
 		<!-- CSS -->
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.min.css" /> <!-- change to styledev.css for development style.min.css for productions -->
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.min.css" />
 		<!--[if lte IE 8]>
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/ie<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
+		<link rel="stylesheet" href="<?php echo site_url(); ?>/min/?f=wp-content/themes/academic/assets/css/ie<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
 		<![endif]-->
 		<!--[if lte IE 7]>
 		<style>#header {margin-top: 0;}</style>
 		<![endif]-->
-	<?php if (is_front_page()) { ?>
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/flexslider.css" />
-	<?php } ?>
 		<!--Wordpress Neccessities -->
 		<?php wp_enqueue_script('jquery'); ?> 
 		<?php wp_head(); ?>

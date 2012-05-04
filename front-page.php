@@ -41,14 +41,18 @@
 	    		</div> <!--End sidebar-right -->
 	    		
 	    		<div id="blogfeed">
-	    		
-	    			<h2>Department <span class="altcolorblack">News and Announcements</span></h2>
-	    				
-	    				<?php //limit posts to 3 and start the loop
+					<?php while ( have_posts() ) : the_post(); ?> <!--Start the loop -->
+						<?php the_content() ?>
+					<?php endwhile; ?>
+
+					
+					<?php //limit posts to 3 and start the loop
         					$recentPosts = new WP_Query();
         					$recentPosts->query('showposts=6');
-	    					while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?> 
-	    				
+	    					if ($recentPosts->have_posts() ) : ?> 
+	    			<h2>Department <span class="altcolorblack">News and Announcements</span></h2>
+	    					<?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?> 
+	    					    				
 	    			<div class="snippet">
 	    			    
 	    			    <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
@@ -68,8 +72,8 @@
 	    				
 	    			<?php endwhile; //End loop ?>
 	    				
-	    			<div class="morenews"><p><a href="<?php bloginfo('url'); ?>/about/news-archive/">More News and Announcements &gt;&gt;</a></div>
-	    		
+	    			<div class="morenews"><p><a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">More News and Announcements &gt;&gt;</a></div>
+	    		<?php endif; ?>
 	    		</div> <!--End blogfeed -->	
 	    		
 	    		

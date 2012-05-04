@@ -45,11 +45,19 @@ ___________________________________________________________*/
   height: 0;	
 }
 
-.floatleft {
+.clearleft {
+	clear:left;
+}
+
+.clearright {
+	clear:right;
+}
+
+.floatleft, alignleft {
 	float:left;
 }
 
-.floatright {
+.floatright, alignright {
 	float:right;
 }
 
