@@ -180,6 +180,23 @@
 	}
 	
 	add_filter('excerpt_length', 'ksas_new_excerpt_length');
+	
+/********************DELETE TRANSIENTS ON UPDATES**********************/
+function delete_people_transients() {
+	if($_POST[post_type] == 'people') {
+		delete_transient('ksas_emeriti_query');
+		delete_transient('ksas_faculty_query');
+		delete_transient('ksas_staff_query');
+	}
+}
+add_action('save_post','delete_people_transients');
+
+function delete_slider_transients() {
+	if($_POST[post_type] == 'slider') {
+		delete_transient('ksas_slider_query');
+	}
+}
+add_action('save_post','delete_slider_transients');
 
 /********************Includes to Additional Functions**********************/	
 // include custom widget functionality, posttypes, taxonomies, and metaboxes

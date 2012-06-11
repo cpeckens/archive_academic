@@ -14,7 +14,7 @@
 		<?php $ksasaca_option = ksasaca_get_global_options(); ?>
 		
 		
-		<link rel="stylesheet" type="text/css" href="<?php network_home_url(); ?>/min/?f=wp-content/themes/academic/assets/css/main.css,wp-content/themes/academic/assets/css/classes.css,wp-content/themes/academic/assets/css/media.css,wp-content/themes/academic/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css<?php if (is_front_page()) { ?>,wp-content/themes/academic/assets/css/flexslider.css<?php } ?>&3">
+		<link rel="stylesheet" type="text/css" href="<?php network_home_url(); ?>/min/?f=wp-content/themes/academic/assets/css/main.css,wp-content/themes/academic/assets/css/classes.css,wp-content/themes/academic/assets/css/media.css,wp-content/themes/academic/assets/css/colors/<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css<?php if (is_front_page()) { ?>,wp-content/themes/academic/assets/css/flexslider.css<?php } ?>&4">
 		<!-- CSS -->
 		<!--[if lte IE 8]>
 		<link rel="stylesheet" href="<?php echo site_url(); ?>/min/?f=wp-content/themes/academic/assets/css/ie<?php echo $ksasaca_option['ksasaca_select_input']; ?>.css" />
