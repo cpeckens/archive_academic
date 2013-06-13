@@ -106,7 +106,8 @@
 	function ksasaca_enable_more_buttons($buttons) {
 	  $buttons[] = 'hr';
 	  $buttons[] = 'sub';
-	  $buttons[] = 'sup'; 
+	  $buttons[] = 'sup';
+	  $buttons[] = 'anchor'; 
 	  return $buttons;
 	}
 	add_filter("mce_buttons_3", "ksasaca_enable_more_buttons");
@@ -197,6 +198,14 @@ function delete_slider_transients() {
 	}
 }
 add_action('save_post','delete_slider_transients');
+
+function delete_course_transients() {
+	if($_POST[post_type] == 'courses') {
+		delete_transient('ksas_course_query');
+		delete_transient('ksas_gradcourse_query');
+	}
+}
+add_action('save_post','delete_course_transients');
 
 /********************Includes to Additional Functions**********************/	
 // include custom widget functionality, posttypes, taxonomies, and metaboxes
